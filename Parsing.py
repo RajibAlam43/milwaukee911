@@ -26,11 +26,11 @@ for DataTable in BSParsedWebsite.find('tbody').find_all('tr'): #Iterates through
 Data = pd.DataFrame(NewData, columns =ColumnNamesList) #Converts list to pandas df
 
 #Connects to database
-connection = pymysql.connect(host='localhost',user='root',password='newPass',db='TestDataBase_INDSDS')
+connection = pymysql.connect(host='localhost',user='project1',password='ThisIsATest',db='MPD')
 my_cursor = connection.cursor()
 
 engine = create_engine("mysql+pymysql://{user}:{pw}@localhost/{db}" # create sqlalchemy engine
-                       .format(user="root", pw="newPass",db="TestDataBase_INDSDS"))
+                       .format(user="project1", pw="ThisIsATest",db="MPD"))
 
 #Removes entries that would be duplicates
 #my_cursor.execute("SELECT * from MPDCOS") #Pulls all data from database
