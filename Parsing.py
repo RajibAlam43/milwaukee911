@@ -26,18 +26,18 @@ for DataTable in BSParsedWebsite.find('tbody').find_all('tr'): #Iterates through
 Data = pd.DataFrame(NewData, columns =ColumnNamesList) #Converts list to pandas df
 
 #Connects to database
-connection = pymysql.connect(host='localhost',user='root',password='newPass',db='TestDataBase_INDSDS')
+connection = pymysql.connect(host='localhost',user='project1',password='ThisIsATest',db='MPD')
 my_cursor = connection.cursor()
 
 engine = create_engine("mysql+pymysql://{user}:{pw}@localhost/{db}" # create sqlalchemy engine
-                       .format(user="root", pw="newPass",db="TestDataBase_INDSDS"))
+                       .format(user="project1", pw="ThisIsATest",db="MPD"))
 
 #Removes entries that would be duplicates
 #my_cursor.execute("SELECT * from MPDCOS") #Pulls all data from database
-my_cursor.execute("SELECT  * FROM MPDCOS WHERE `Last Updated` = (SELECT(SUBSTRING(MIN(`Last Updated`), 1, 10)  = left(`Last Updated`,10) OR left(`Last Updated`,10) = DATE_FORMAT(DATE_SUB(STR_TO_DATE(SUBSTRING(MIN(`Last Updated`), 1, 10),'%m/%d/%Y'),INTERVAL 1 DAY),'%m/%d/%Y'))FROM MPDCOS);") #Pulls only the last 2 days of data from the database
+my_cursor.execute("SELECT * FROM MPDCOS RIGHT JOIN (SELECT DATE_FORMAT(DATE_SUB(STR_TO_DATE(SUBSTRING(MAX(`Last Updated`), 1, 10),'%m/%d/%Y'),INTERVAL 1 DAY),'%m/%d/%Y') as PrevDay, SUBSTRING(MAX(`Last Updated`), 1, 10) as CurrentDay FROM MPDCOS) a ON (a.CurrentDay = left(MPDCOS.`Last Updated`,10) OR a.PrevDay = left(MPDCOS.`Last Updated`,10));") #Pulls only the last 2 days of data from the database
 result = my_cursor.fetchall()
-DataBaseData = pd.DataFrame(result,columns = ColumnNamesList) #Creates Dataframe with all data in database
-SendToDatabase = (pd.merge(Data,DataBaseData, indicator=True, how='outer') #removes any values in Data that already exist in database
+DataBaseData = pd.DataFrame(result,columns = ColumnNamesList + ["Delete1","Delete2"]) #Creates Dataframe with all data in database
+SendToDatabase = (pd.merge(Data,DataBaseData.iloc[:,0:2], indicator=True, how='outer') #removes any values in Data that already exist in database
          .query('_merge=="left_only"')
          .drop('_merge', axis=1))
 
