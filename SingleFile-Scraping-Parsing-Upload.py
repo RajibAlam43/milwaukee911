@@ -46,7 +46,8 @@ fields = ['Call Number', 'Date/Time', 'Location', 'Police District', 'Nature of 
 # data rows of csv file 
 rows = list_table
 
-dir = os.path.dirname(__file__)
+#dir = os.path.dirname(__file__)
+dir = "/users/home/cgluesing/Tulsa-MPDCOS"
 
 with open(dir+'/police_scrape_data.csv', 'a', newline='') as f:
     # using csv.writer method from CSV package
