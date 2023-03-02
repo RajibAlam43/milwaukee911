@@ -15,3 +15,4 @@ result = my_cursor.fetchall()
 Data = pd.DataFrame(result,columns = ColumnNames) #Converts into a pandas dataframe
 
 print(Data)
+connection.close()
