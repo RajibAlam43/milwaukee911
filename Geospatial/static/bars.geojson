@@ -1,0 +1,3597 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-ide",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2023-02-21T03:41:12Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/876636286",
+        "amenity": "pub",
+        "name": "Bar Louie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9138525,
+          43.1217233
+        ]
+      },
+      "id": "node/876636286"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1043409620",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1837",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Humboldt Avenue",
+        "amenity": "bar",
+        "contact:phone": "+1 414 273 1665",
+        "contact:website": "http://scaffidishideout.com",
+        "entrance": "yes",
+        "leisure": "sports_centre",
+        "name": "Scaffidi’s Hideout",
+        "name:1963": "Charlie’s Hideout",
+        "name:1971": "Gary’s Hideout",
+        "name:1983": "Scaffidi’s Hideout",
+        "opening_hours": "Mo-Th 16:00-02:00; Fr-Sa 14:00-02:30; Su 12:00-02:00",
+        "source": "http://urbanmilwaukee.com/2014/07/08/taverns-scaffidis-hideout-perfect-place-to-play-pool/",
+        "sport": "billiards"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8982237,
+          43.0552663
+        ]
+      },
+      "id": "node/1043409620"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1050385145",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "142",
+        "addr:postcode": "53203",
+        "addr:street": "West Wisconsin Avenue",
+        "amenity": "pub",
+        "branch": "Milwaukee",
+        "contact:email": "info@mosirishpub.com",
+        "contact:phone": "+1 414 272 0721",
+        "contact:website": "http://mosirishpub.com/milwaukee/",
+        "cuisine": "irish",
+        "delivery": "yes",
+        "entrance": "yes",
+        "mapillary": "313408003710628",
+        "name": "Mo's",
+        "not:brand:wikidata": "Q17022303",
+        "opening_hours": "Su-Th 11:00-02:00; Fr-Sa 11:00-02:30",
+        "outdoor_seating": "yes",
+        "survey:date": "2017-09-03",
+        "takeaway": "yes",
+        "theme": "irish"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9115365,
+          43.0389254
+        ]
+      },
+      "id": "node/1050385145"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1097058609",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "112",
+        "addr:postcode": "53203",
+        "addr:street": "West Wisconsin Avenue",
+        "amenity": "bar",
+        "contact:email": "Info@stirmilwaukee.com",
+        "contact:facebook": "https://www.facebook.com/pg/stir.milwaukee/",
+        "contact:phone": "+1 414 628 2521",
+        "contact:website": "https://www.stirmilwaukee.com",
+        "entrance": "yes",
+        "name": "Stir",
+        "opening_hours": "Tu-Fr 16:00-02:00; Sa 19:00-02:00",
+        "outdoor_seating": "yes",
+        "start_date": "2007"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9106626,
+          43.0388933
+        ]
+      },
+      "id": "node/1097058609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1201306328",
+        "amenity": "bar",
+        "name": "Kaña Mojito Lounge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9127451,
+          43.0121671
+        ]
+      },
+      "id": "node/1201306328"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1201316129",
+        "amenity": "bar",
+        "name": "Bomb Shelter",
+        "toilets:wheelchair": "no",
+        "website": "http://www.bombshelterbar.com/",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9127743,
+          43.015585
+        ]
+      },
+      "id": "node/1201316129"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1239454027",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "722",
+        "addr:postcode": "53202",
+        "addr:street": "North Milwaukee Street",
+        "amenity": "bar",
+        "contact:email": "info@distilmilwaukee.com",
+        "contact:phone": "+1 414 220 9411",
+        "contact:website": "https://www.distilmke.com",
+        "description": "Milwaukee's House of Bourbon",
+        "entrance": "yes",
+        "name": "Distil",
+        "opening_hours": "Mo-Sa 17:00+",
+        "operator": "SURG Restaurant Group",
+        "start_date": "2011"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9064605,
+          43.0393945
+        ]
+      },
+      "id": "node/1239454027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1239454028",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "708",
+        "addr:postcode": "53202",
+        "addr:street": "North Milwaukee Street",
+        "amenity": "bar",
+        "branch": "Milwaukee Street",
+        "contact:email": "info@getindulge.com",
+        "contact:phone": "+1 414 390 9463",
+        "contact:website": "http://www.getbianchini.com/indulge-restaurant.html",
+        "cuisine": "world",
+        "entrance": "yes",
+        "name": "Indulge",
+        "name:2007": "Nectar Coffee Shop",
+        "opening_hours": "We 16:30-22:00; Th 16:30-23:00; Fr-Sa 16:30-01:00",
+        "operator": "Bianchini",
+        "outdoor_seating": "no",
+        "reservation": "yes",
+        "start_date": "2008-06-17"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9064361,
+          43.0391254
+        ]
+      },
+      "id": "node/1239454028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1301292921",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "706",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Lyon Street",
+        "amenity": "bar",
+        "capacity": "100",
+        "contact:phone": "+1 414 347 9972",
+        "contact:yelp": "https://www.yelp.com/biz/y-not-ii-tavern-milwaukee",
+        "entrance": "yes",
+        "name": "Y-Not II",
+        "opening_hours": "Su-Th 11:00-02:00; Fr-Sa 11:00-02:30",
+        "outdoor_seating": "no",
+        "source": "https://urbanmilwaukee.com/2014/06/19/taverns-the-easy-going-charm-of-y-not-ii/",
+        "start_date": "1968",
+        "wheelchair": "limited"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9030903,
+          43.0494989
+        ]
+      },
+      "id": "node/1301292921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1312423927",
+        "access": "customers",
+        "amenity": "bar",
+        "contact:email": "info@bugsysmke.com",
+        "contact:phone": "+1 414 221 6565",
+        "contact:website": "https://www.bugsysmke.com",
+        "entrance": "yes",
+        "name": "Bugsy's Back Alley Speakeasy",
+        "opening_hours": "Th-Fr 17:00-02:00; Sa 19:00-02:30",
+        "operator": "SURG Restaurant Group",
+        "start_date": "2013"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9086043,
+          43.0329044
+        ]
+      },
+      "id": "node/1312423927"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1318506241",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "320",
+        "addr:postcode": "53202",
+        "addr:street": "East Menomonee Street",
+        "amenity": "bar",
+        "contact:phone": "+1 414 763 8548",
+        "contact:website": "https://www.clubcharlies.com",
+        "cuisine": "american",
+        "entrance": "yes",
+        "name": "Club Charlies",
+        "opening_hours": "Mo-Th 11:00-02:00; Fr-Sa 11:00-02:30; Su 10:00-02:00",
+        "outdoor_seating": "yes",
+        "start_date": "2008",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9062824,
+          43.031609
+        ]
+      },
+      "id": "node/1318506241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1320891584",
+        "amenity": "bar",
+        "name": "Liquid Johnny's"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0068866,
+          43.0263128
+        ]
+      },
+      "id": "node/1320891584"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1354435228",
+        "amenity": "pub",
+        "name": "Henry's Pub & Grill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.87859,
+          43.065983
+        ]
+      },
+      "id": "node/1354435228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1740518851",
+        "amenity": "pub",
+        "contact:email": "frontdesk@countyclareinn.com",
+        "contact:phone": "+1 414 272 5273",
+        "contact:website": "https://countyclare-inn.com/irish-pub/",
+        "contact:yelp": "https://www.yelp.com/biz/county-clare-irish-pub-milwaukee",
+        "cuisine": "irish",
+        "delivery": "yes",
+        "name": "County Clare",
+        "opening_hours": "Mo 15:00-24:00; Tu-Th 15:00-01:00; Fr 15:00-02:00; Sa 09:00-02:00; Su 09:00-24:00",
+        "outdoor_seating": "yes",
+        "reservation": "yes",
+        "service_times": "Mo-Th 17:00-21:00; Fr 16:00-22:00; Sa-Su 09:00-21:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8994682,
+          43.0467572
+        ]
+      },
+      "id": "node/1740518851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1815507499",
+        "addr:housename": "Ardmore",
+        "addr:postcode": "53233",
+        "addr:street": "North 16th Street",
+        "amenity": "pub",
+        "internet_access": "wlan",
+        "name": "Caffrey's",
+        "source": "local_knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9331036,
+          43.0392014
+        ]
+      },
+      "id": "node/1815507499"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1816100350",
+        "addr:postcode": "53233",
+        "addr:street": "West Wells Street",
+        "amenity": "pub",
+        "name": "Murphy's Pub",
+        "source": "local_knowledge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9334572,
+          43.0401354
+        ]
+      },
+      "id": "node/1816100350"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2046700143",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "616",
+        "addr:postcode": "53204",
+        "addr:state": "WI",
+        "addr:street": "West Virginia Street",
+        "amenity": "bar",
+        "name": "Great Lakes Distillery Tasting Room",
+        "opening_hours": "Su 11:00-20:00; Mo-Th 11:00-22:00; Fr-Sa 11:00-24:00",
+        "outdoor_seating": "yes",
+        "phone": "+1-414-431-8683",
+        "website": "https://www.greatlakesdistillery.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9187168,
+          43.0266465
+        ]
+      },
+      "id": "node/2046700143"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2046700144",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "539",
+        "addr:postcode": "53204-1536",
+        "addr:state": "WI",
+        "addr:street": "West Virginia Street",
+        "amenity": "pub",
+        "name": "Conojito's Place"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9180549,
+          43.02617
+        ]
+      },
+      "id": "node/2046700144"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2052378346",
+        "addr:city": "Mequon",
+        "addr:housenumber": "5616",
+        "addr:postcode": "53092",
+        "addr:street": "W Donges Bay Rd",
+        "amenity": "bar",
+        "name": "Libby Montana Bar & Grill",
+        "outdoor_seating": "yes",
+        "phone": "262-242-2232",
+        "smoking": "no",
+        "website": "http://www.libby-montana.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.979471,
+          43.207333
+        ]
+      },
+      "id": "node/2052378346"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2406548790",
+        "amenity": "pub"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0077356,
+          43.0785192
+        ]
+      },
+      "id": "node/2406548790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2406556442",
+        "amenity": "bar",
+        "min_age": "All ages",
+        "name": "The Butler Inn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.066334,
+          43.1049925
+        ]
+      },
+      "id": "node/2406556442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2406556443",
+        "amenity": "bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.066334,
+          43.1033945
+        ]
+      },
+      "id": "node/2406556443"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2406556447",
+        "amenity": "bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0663555,
+          43.1037705
+        ]
+      },
+      "id": "node/2406556447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2406556448",
+        "amenity": "bar",
+        "min_age": "21",
+        "name": "Scoops Sports Bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.066334,
+          43.1040838
+        ]
+      },
+      "id": "node/2406556448"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2406851491",
+        "amenity": "bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9829295,
+          43.0496692
+        ]
+      },
+      "id": "node/2406851491"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2834287424",
+        "addr:city": "Wauwatosa",
+        "addr:housenumber": "1427",
+        "addr:postcode": "53213",
+        "addr:state": "WI",
+        "addr:street": "Underwood Avenue",
+        "amenity": "bar",
+        "name": "Lucky Joe's",
+        "opening_hours": "Mo-Th 16:00-22:00; Fr-Sa 16:00-24:00",
+        "outdoor_seating": "yes",
+        "phone": "+1 414 269 9981",
+        "smoking": "no",
+        "website": "https://www.luckyjoestosa.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0086151,
+          43.0500696
+        ]
+      },
+      "id": "node/2834287424"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3049739921",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "345",
+        "addr:postcode": "53202",
+        "addr:street": "North Broadway Street",
+        "amenity": "bar",
+        "contact:email": "info@thewickedhop.com",
+        "contact:phone": "+1 414 223 0345",
+        "contact:website": "https://www.thewickedhop.com",
+        "covered": "yes",
+        "cuisine": "brunch",
+        "delivery": "no",
+        "entrance": "yes",
+        "name": "The Wicked Hop",
+        "opening_hours": "Mo-Th 11:00-02:00; Fr 11:00-02:30; Sa 09:00-02:30; Su 09:00-02:00",
+        "outdoor_seating": "yes",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9075696,
+          43.0348876
+        ]
+      },
+      "id": "node/3049739921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3049749535",
+        "addr:city": "New Berlin",
+        "addr:housenumber": "12400",
+        "addr:postcode": "53151",
+        "addr:street": "West Beloit Road",
+        "amenity": "bar",
+        "cuisine": "pizza",
+        "name": "Varsity Club"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0693844,
+          42.9638609
+        ]
+      },
+      "id": "node/3049749535"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3812184915",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1044",
+        "addr:postcode": "53203",
+        "addr:street": "North Doctor Martin Luther King Junior Drive",
+        "amenity": "bar",
+        "contact:email": "rwbmke@gmail.com",
+        "contact:facebook": "https://www.facebook.com/buckheadmilwaukee/",
+        "contact:phone": "+1 414 226 6044",
+        "contact:website": "http://mke.redwhitebluebar.com",
+        "entrance": "yes",
+        "name": "RWB",
+        "name:2005": "Buckhead Saloon",
+        "name:2016": "Red White & Blue",
+        "name:2018-06-22": "RWB",
+        "opening_hours": "We 20:30-02:00; Fr-Sa 20:00-02:30",
+        "start_date": "2016-01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9142987,
+          43.0439433
+        ]
+      },
+      "id": "node/3812184915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3812184917",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1048",
+        "addr:postcode": "53203",
+        "addr:street": "North Doctor Martin Luther King Junior Drive",
+        "amenity": "pub",
+        "contact:email": "info@wisconsincheesemart.com",
+        "contact:phone": "+1 414 755 2424",
+        "contact:website": "https://brudd-cafe.business.site/",
+        "contact:yelp": "https://www.yelp.com/biz/br%C3%BCdd-cafe-milwaukee",
+        "delivery": "yes",
+        "entrance": "yes",
+        "name": "Brüdd Cafe",
+        "name:2012": "Über Tap Room and Cheese Bar",
+        "name:en": "Brudd Cafe",
+        "opening_hours": "Mo-We 09:00-18:00; Th-Sa 09:00-20:00; Su 10:00-20:00",
+        "operator": "Kenneth & Melissa McNulty",
+        "outdoor_seating": "yes",
+        "reservation": "no",
+        "start_date": "2009",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.914298,
+          43.0440047
+        ]
+      },
+      "id": "node/3812184917"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3882343846",
+        "access": "private",
+        "addr:housenumber": "131",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Jackson Street",
+        "amenity": "bar",
+        "building": "house",
+        "contact:facebook": "https://www.facebook.com/pg/campsite131/",
+        "contact:phone": "+1 414 837 5790",
+        "entrance": "yes",
+        "name": "Campsite 131",
+        "opening_hours": "Mo-Tu 16:00-24:00; We-Th 15:00-24:00; Fr 14:00-02:30; Sa 12:00-02:30; Su 12:00-02:00",
+        "operator": "Hackbarth Hospitality",
+        "source": "https://www.jsonline.com/story/money/2019/02/22/campsite-131-camp-bar-owner-open-march-1-third-ward/2942065002/",
+        "start_date": "2019-03-01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9032399,
+          43.0304584
+        ]
+      },
+      "id": "node/3882343846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3962796293",
+        "amenity": "bar",
+        "contact:phone": "+1 414 298 3196",
+        "contact:website": "http://www.blumilwaukee.com",
+        "level": "22",
+        "name": "Blu",
+        "opening_hours": "Mo-Th 17:00-01:00; Fr-Sa 16:00-02:00",
+        "reservation": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9057546,
+          43.0396227
+        ]
+      },
+      "id": "node/3962796293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3964855273",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "784",
+        "addr:postcode": "53202",
+        "addr:street": "North Jefferson Street",
+        "amenity": "bar",
+        "branch": "Milwaukee",
+        "contact:phone": "+1 414 988 6161",
+        "contact:website": "http://thebelmontmilwaukee.com",
+        "entrance": "yes",
+        "name": "The Belmont Tavern",
+        "name:2004": "Melody's for Women",
+        "name:2011": "The Belmont Tavern",
+        "opening_hours": "Mo 16:00-22:00; Tu-Th 16:00-02:00; Fr-Sa 16:00-02:30",
+        "outdoor_seating": "yes",
+        "reservation": "no",
+        "start_date": "2011"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9053609,
+          43.0409069
+        ]
+      },
+      "id": "node/3964855273"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3966671168",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "137",
+        "addr:postcode": "53202",
+        "addr:street": "East Wells Street",
+        "amenity": "pub",
+        "contact:email": "control@safe-house.com",
+        "contact:phone": "+1 414 273 4900",
+        "contact:website": "https://www.safe-house.com/milwaukee-restaurant/newsroom-pub",
+        "entrance": "yes",
+        "name": "Newsroom Pub",
+        "opening_hours": "Mo-Tu 16:00-24:00; We-Th 11:00-01:00; Fr-Sa 11:00-02:00; Su 11:00-24:00",
+        "outdoor_seating": "no",
+        "owner": "SafeHouse",
+        "reservation": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.910313,
+          43.0408169
+        ]
+      },
+      "id": "node/3966671168"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3969864882",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "418",
+        "addr:postcode": "53202",
+        "addr:street": "East Wells Street",
+        "amenity": "bar",
+        "contact:phone": "+1 414 278 9192",
+        "contact:website": "http://www.thisisitbar.com",
+        "entrance": "yes",
+        "gay": "yes",
+        "lgbtq": "primary",
+        "name": "This Is It!",
+        "name:1940": "Vern’s Tap",
+        "name:1967": "The Establishment",
+        "name:1968": "This Is It!",
+        "opening_hours": "Mo-Th 15:00-02:00; Fr-Sa 15:00-02:30; Su 13:00-02:00",
+        "short_name": "TITS",
+        "source": "http://milwaukeerecord.com/food-drink/this-is-it-has-been-it-for-50-years-and-shows-no-signs-of-slowing-down/",
+        "start_date": "1968",
+        "wikidata": "Q18168398",
+        "wikipedia": "en:This Is It! (bar)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9061179,
+          43.0413879
+        ]
+      },
+      "id": "node/3969864882"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3984698245",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1228",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Astor Street",
+        "amenity": "bar",
+        "capacity": "99",
+        "contact:phone": "+1 414 765 9402",
+        "contact:yelp": "https://www.yelp.com/biz/monicas-on-astor-milwaukee",
+        "covered": "yes",
+        "entrance": "yes",
+        "level": "-1",
+        "name": "Monica's on Astor",
+        "name:1994": "Serafino’s",
+        "name:1998": "Christopher’s on Astor",
+        "opening_hours": "16:00-02:00",
+        "source": "http://urbanmilwaukee.com/2015/12/08/bar-exam-monicas-on-astor-replaced-former-bordello/",
+        "start_date": "2009"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8995009,
+          43.0464241
+        ]
+      },
+      "id": "node/3984698245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3993030972",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "158",
+        "addr:postcode": "53202",
+        "addr:street": "East Juneau Avenue",
+        "amenity": "bar",
+        "contact:email": "dukesonwatermke@gmail.com",
+        "contact:facebook": "https://www.facebook.com/pg/dukes.onwater/",
+        "contact:phone": "+1 414 274 7201",
+        "entrance": "yes",
+        "name": "Duke's On Water",
+        "name:1935": "Friendly 49 Drugist Association",
+        "name:1938": "George Nokkinos Wholesale Bakery",
+        "name:1972": "Reuter’s",
+        "name:1980": "Butch’s Tavern & Restaurant",
+        "name:1990": "Ken Elliot’s Casual Fine Dining",
+        "name:1993": "Mel’s Tavern",
+        "opening_hours": "Mo-Th 16:00-02:00; Fr 16:00-02:30; Sa 12:00-02:30; Su 12:00-02:00",
+        "outdoor_seating": "yes",
+        "start_date": "2006"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9113511,
+          43.045892
+        ]
+      },
+      "id": "node/3993030972"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3993030974",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "154",
+        "addr:postcode": "53202",
+        "addr:street": "East Juneau Avenue",
+        "amenity": "pub",
+        "contact:phone": "+1 414 274 7201",
+        "entrance": "yes",
+        "name": "Scooter's Pub",
+        "name:1935": "Friendly 49 Drugist Association",
+        "name:1938": "George Nokkinos Wholesale Bakery",
+        "name:1972": "Reuter’s",
+        "name:1980": "Butch’s Tavern & Restaurant",
+        "name:1990": "Ken Elliot’s Casual Fine Dining",
+        "name:1993": "Mel’s Tavern",
+        "opening_hours": "Tu-Th 16:00-02:00; Fr 16:00-02:30; Sa 12:00-02:30; Su 12:00-02:00",
+        "outdoor_seating": "yes",
+        "start_date": "2006"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9114467,
+          43.0458922
+        ]
+      },
+      "id": "node/3993030974"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4000853797",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "645",
+        "addr:postcode": "53233",
+        "addr:street": "North James Lovell Street",
+        "amenity": "bar",
+        "contact:email": "highnotekaraokelounge@gmail.com",
+        "contact:phone": "+1 414 226 5852",
+        "entrance": "yes",
+        "karaoke": "yes",
+        "name": "High Note Karaoke Lounge",
+        "name:2000": "The New Yorker Bar",
+        "name:2014": "The Mason Jar",
+        "name:2015": "High Note Karaoke Lounge",
+        "opening_hours": "We-Sa 21:00-02:00; \"Open By Request Mo,Tu,Su\"",
+        "source": "http://www.visitmilwaukee.org/member.php?mid=3761",
+        "start_date": "2015-09-04"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9205099,
+          43.0385197
+        ]
+      },
+      "id": "node/4000853797"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4015069926",
+        "amenity": "bar",
+        "contact:phone": "+1 414 271 3377",
+        "contact:website": "http://madersrestaurant.com/knightsbar/",
+        "entrance": "yes",
+        "name": "Knight's Bar",
+        "opening_hours": "Mo-Th 11:30-21:00; Fr-Sa 11:30-22:00; Su 11:00-21:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9145995,
+          43.0439168
+        ]
+      },
+      "id": "node/4015069926"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4015069929",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1023",
+        "addr:postcode": "53203",
+        "addr:state": "WI",
+        "addr:street": "North Doctor Martin Luther King Junior Drive",
+        "amenity": "bar",
+        "contact:email": "paul@campbarmke.com",
+        "contact:facebook": "https://www.facebook.com/DeerCampMKE/",
+        "contact:instagram": "https://www.instagram.com/deercampmke/",
+        "contact:phone": "+1 414 316 9900",
+        "contact:website": "https://www.campbarmke.com/deercamp",
+        "entrance": "yes",
+        "level": "0",
+        "name": "Deer Camp",
+        "name:2018-2019": "TRIO",
+        "opening_hours": "Mo-Th 15:00-02:00; Fr 14:00-02:30; Sa 12:00-02:30; Su 12:00-02:00",
+        "source": "https://onmilwaukee.com/bars/articles/deer-camp-opening.html",
+        "start_date": "2020-02-28"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9146115,
+          43.0435203
+        ]
+      },
+      "id": "node/4015069929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4017457625",
+        "access": "customers",
+        "amenity": "bar",
+        "contact:email": "events@whitetailmke.com",
+        "contact:facebook": "https://www.facebook.com/whitetailmke/",
+        "contact:phone": "+1 414 810 0390",
+        "contact:website": "https://whitetailmke.com/",
+        "contact:yelp": "https://www.yelp.com/biz/whitetail-mke-milwaukee",
+        "entrance": "yes",
+        "name": "WhiteTail Milwaukee",
+        "name:2017-12-2019-06": "1983 Arcade Bar",
+        "opening_hours": "Mo-Fr 16:00-02:00; Sa-Su 11:00-02:00",
+        "source": "https://onmilwaukee.com/bars/articles/1983-arcade-bar.html",
+        "start_date": "2019-12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9141799,
+          43.044747
+        ]
+      },
+      "id": "node/4017457625"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4018113420",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1111",
+        "addr:postcode": "53203",
+        "addr:street": "North Doctor Martin Luther King Junior Drive",
+        "amenity": "bar",
+        "contact:email": "truthloungemke@gmail.com",
+        "contact:phone": "+1 414 581 5540",
+        "contact:website": "https://www.facebook.com/pg/truthloungemke/",
+        "entrance": "yes",
+        "name": "Truth Lounge",
+        "name:2017": "Vallhalla",
+        "name:2017-12": "vacant",
+        "name:2018": "Truth Lounge",
+        "opening_hours": "We-Th,Su 16:00-02:00; Fr 16:00-02:30",
+        "reservation": "yes",
+        "start_date": "2018-05-25"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9145878,
+          43.0446851
+        ]
+      },
+      "id": "node/4018113420"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4018113426",
+        "access": "customers",
+        "amenity": "pub",
+        "contact:phone": "+1 414 988 5000",
+        "contact:website": "http://mke.thepubclubmilwaukee.com",
+        "cuisine": "american",
+        "entrance": "yes",
+        "level": "0",
+        "name": "The Pub Club",
+        "name:2000": "Have A Nice Day Café",
+        "name:2008": "Suite Club & Lounge",
+        "name:2015": "The Pub Club",
+        "opening_hours": "Tu-Th 16:00-02:00; Fr 16:00-02:30; Sa 11:00-02:30; Su 11:00-02:00",
+        "outdoor_seating": "yes",
+        "source": "https://onmilwaukee.com/bars/articles/firstlookthepubclub.html",
+        "start_date": "2015-01-23",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9145887,
+          43.0444865
+        ]
+      },
+      "id": "node/4018113426"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4018340250",
+        "amenity": "bar",
+        "contact:phone": "+1 414 226 0122",
+        "contact:website": "http://www.aloftmilwaukeedowntown.com/wxyz-bar-in-milwaukee",
+        "name": "W XYZ Bar",
+        "opening_hours": "Su-Th 17:00-24:00; Fr 17:00-02:30; Sa 15:00-02:30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9138259,
+          43.0462361
+        ]
+      },
+      "id": "node/4018340250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4029404585",
+        "access": "customers",
+        "amenity": "bar",
+        "branch": "Third Ward Milwaukee",
+        "contact:email": "nicolesthirdwardsocial@gmail.com",
+        "contact:facebook": "https://www.facebook.com/pg/NicolesThirdWardSocial/",
+        "contact:phone": "+1 414 431 5517",
+        "contact:website": "https://www.nicolesthirdwardsocial.com/",
+        "contact:yelp": "https://www.yelp.com/biz/nicoles-third-ward-social-milwaukee",
+        "covered": "yes",
+        "entrance": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Nicole's Third Ward Social",
+        "name:2012-2019": "Red Elephant Chocolate",
+        "opening_hours": "We-Th 13:00-24:00; Fr 16:00-02:00; Sa 11:00-02:00",
+        "outdoor_seating": "yes",
+        "source": "https://onmilwaukee.com/dining/articles/nicoles-third-ward-social.html",
+        "start_date": "2019-09-27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9075463,
+          43.0346658
+        ]
+      },
+      "id": "node/4029404585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4148239513",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1501",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Jackson Street",
+        "amenity": "pub",
+        "contact:email": "pointseast6259@hotmail.com",
+        "contact:phone": "+1 414 277 0122",
+        "contact:website": "http://thepointseastpub.com",
+        "contact:yelp": "https://www.yelp.com/biz/points-east-pub-milwaukee",
+        "cuisine": "american",
+        "delivery": "no",
+        "entrance": "yes",
+        "name": "Points East Pub",
+        "opening_hours": "Mo-Th 15:00-02:00; Fr 15:00-02:30; Sa 11:30-02:30; Su 12:00-02:00",
+        "reservation": "no",
+        "start_date": "1994",
+        "takeaway": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9048809,
+          43.0495168
+        ]
+      },
+      "id": "node/4148239513"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4318741064",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1339",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Brady Street",
+        "amenity": "bar",
+        "contact:email": "ClubBradyMKE@gmail.com",
+        "contact:phone": "+1 414 278 0188",
+        "contact:website": "https://www.clubbrady.com/",
+        "contact:yelp": "https://www.yelp.com/biz/club-brady-milwaukee",
+        "covered": "yes",
+        "entrance": "yes",
+        "name": "Club Brady",
+        "opening_hours": "Mo 18:00-02:00; Tu-Th 16:00-02:00; Fr 16:00-02:30; Sa 13:00-02:30; Su 13:00-02:00",
+        "start_date": "1984"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8941901,
+          43.052841
+        ]
+      },
+      "id": "node/4318741064"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4318741085",
+        "access": "customers",
+        "amenity": "bar",
+        "contact:email": "info@malonesonbrady.com",
+        "contact:facebook": "https://www.facebook.com/pg/MalonesonBrady/",
+        "contact:phone": "+1 414 763 3209",
+        "entrance": "yes",
+        "name": "Malone's on Brady",
+        "name:1951-2013": "Listwan's",
+        "name:2013": "Listwan’s; Bruno’s",
+        "opening_hours": "Mo-Th 15:00-02:00; Fr 14:00-02:30; Sa 13:00-02:30; Su 13:00-02:00",
+        "outdoor_seating": "yes",
+        "source": "https://urbanmilwaukee.com/2016/11/18/bar-exam-malones-bar-has-a-bay-view-style/",
+        "start_date": "2013-09-02"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8944976,
+          43.0528414
+        ]
+      },
+      "id": "node/4318741085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4331499272",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1689",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Franklin Place",
+        "amenity": "bar",
+        "contact:phone": "+1 414 223 3919",
+        "contact:website": "https://www.hosedonbrady.com/",
+        "contact:yelp": "https://www.yelp.com/biz/hosed-on-brady-milwaukee",
+        "name": "Hosed on Brady",
+        "name:1938": "Ziegler Brewing Company",
+        "name:1948": "G+G Bar",
+        "name:1954": "Schlitz Krueger’s",
+        "name:1979-2009": "Franklin Place",
+        "opening_hours": "Mo-Th 14:00-02:00; Fr 14:00-02:30; Sa 11:00-02:30; Su 11:00-02:00",
+        "outdoor_seating": "yes",
+        "source": "https://urbanmilwaukee.com/2014/11/07/taverns-hosed-on-brady-loves-fire-fighters/",
+        "start_date": "2009"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8970006,
+          43.0526784
+        ]
+      },
+      "id": "node/4331499272"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4379218105",
+        "addr:city": "Wauwatosa",
+        "addr:housenumber": "6600",
+        "addr:postcode": "53213",
+        "addr:street": "W North Ave",
+        "amenity": "bar",
+        "name": "CAMP Bar",
+        "website": "https://www.campbarmke.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9951202,
+          43.0608679
+        ]
+      },
+      "id": "node/4379218105"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4379240355",
+        "addr:city": "Wauwatosa",
+        "addr:housenumber": "6930",
+        "addr:postcode": "53213",
+        "addr:street": "W North Avenue",
+        "amenity": "bar",
+        "name": "Walter's on North",
+        "website": "waltersonnorth.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9994975,
+          43.0609159
+        ]
+      },
+      "id": "node/4379240355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4379282860",
+        "addr:city": "Wauwatosa",
+        "addr:housenumber": "6502",
+        "addr:postcode": "53213",
+        "addr:street": "West North Avenue",
+        "amenity": "bar",
+        "name": "Wauwatiki Bar & Grill",
+        "website": "https://wauwatikis.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9937965,
+          43.0609256
+        ]
+      },
+      "id": "node/4379282860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4455881296",
+        "addr:city": "Wauwatosa",
+        "addr:housenumber": "7208",
+        "addr:postcode": "53213",
+        "addr:state": "WI",
+        "addr:street": "W State St",
+        "amenity": "bar",
+        "name": "Leff's Lucky Town",
+        "website": "http://www.leffs.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0023825,
+          43.0482841
+        ]
+      },
+      "id": "node/4455881296"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4554705812",
+        "addr:city": "Wauwatosa",
+        "addr:housenumber": "8828",
+        "addr:postcode": "53226",
+        "addr:state": "WI",
+        "addr:street": "West North Avenue",
+        "amenity": "bar",
+        "name": "Club Tap Cocktail Lounge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0233493,
+          43.060691
+        ]
+      },
+      "id": "node/4554705812"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4622848056",
+        "access": "private",
+        "amenity": "bar",
+        "contact:phone": "+1 414 276 7101",
+        "entrance": "yes",
+        "name": "Jamo's",
+        "name:1976": "Tomasello’s",
+        "name:1980": "Nicky’s",
+        "name:1983": "OBG’s",
+        "name:2002": "Jamo’s",
+        "opening_hours": "Mo 21:00-22:00; Th 21:00-01:00; Fr 16:30-02:00; Sa-Su 18:00-02:00",
+        "outdoor_seating": "no",
+        "source": "http://urbanmilwaukee.com/2015/08/21/bar-exam-jamos-a-1950s-time-warp/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8948092,
+          43.054511
+        ]
+      },
+      "id": "node/4622848056"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4799378857",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "135",
+        "addr:postcode": "53204",
+        "addr:state": "WI",
+        "addr:street": "East Pittsburgh Avenue",
+        "amenity": "bar",
+        "capacity": "215",
+        "contact:email": "info@brokenbatbrewery.com",
+        "contact:facebook": "https://www.facebook.com/pg/BrokenBatBrewingCompany/",
+        "contact:phone": "+1 414 316 9197",
+        "contact:website": "http://brokenbatbrewery.com",
+        "craft": "brewery",
+        "microbrewery": "yes",
+        "name": "Broken Bat Brewing Company",
+        "source": "https://www.jsonline.com/story/entertainment/beer/2020/03/13/broken-bat-brewing-opens-larger-brewery-and-taproom/5023100002/",
+        "start_date": "2017-04-07"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9099667,
+          43.0291896
+        ]
+      },
+      "id": "node/4799378857"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4799652348",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "724",
+        "addr:postcode": "53202",
+        "addr:street": "North Milwaukee Street",
+        "amenity": "bar",
+        "contact:phone": "+1 414 323 7434",
+        "contact:website": "https://www.facebook.com/pg/oakandoyster/",
+        "cuisine": "seafood",
+        "level": "-1",
+        "name": "Oak & Oyster",
+        "opening_hours": "Mo-Th 16:00-22:00; Fr-Sa 16:00-24:00",
+        "start_date": "2017"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9063661,
+          43.0394493
+        ]
+      },
+      "id": "node/4799652348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4963834826",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "634",
+        "addr:postcode": "53212",
+        "addr:street": "West North Avenue",
+        "amenity": "bar",
+        "contact:phone": "+1 414 509 7010",
+        "entrance": "yes",
+        "name": "Levels On North",
+        "name:2005": "Just Jazz & Blues Lounge",
+        "name:2015": "On The Rocks",
+        "start_date": "2016"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9195872,
+          43.0604261
+        ]
+      },
+      "id": "node/4963834826"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5239005642",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "340",
+        "addr:postcode": "53212",
+        "addr:state": "WI",
+        "addr:street": "West Reservoir Avenue",
+        "amenity": "bar",
+        "contact:facebook": "https://www.facebook.com/pg/lounge340/",
+        "entrance": "yes",
+        "name": "Lounge 340",
+        "name:2000": "Breezes",
+        "opening_date": "We-Sa 15:00-02:00; Su 11:00-20:00",
+        "source": "https://urbanmilwaukee.com/2018/10/09/now-serving-more-tacos-for-downtown/",
+        "start_date": "2019-03-02"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9155785,
+          43.0553094
+        ]
+      },
+      "id": "node/5239005642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5282844421",
+        "addr:city": "Oak Creek",
+        "addr:housenumber": "7228",
+        "addr:postcode": "53154",
+        "addr:state": "WI",
+        "addr:street": "South 27th Street",
+        "amenity": "bar",
+        "facebook": "https://www.facebook.com/DVineOakCreek",
+        "name": "D'Vine",
+        "old_name:2017-2019": "Three Cellers",
+        "opening_hours": "Tu-Th 15:00-23:00; Sa-Su 11:00-23:00",
+        "website": "https://dvineoakcreek.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9494325,
+          42.9140061
+        ]
+      },
+      "id": "node/5282844421"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5293444822",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "2423",
+        "addr:postcode": "53211",
+        "addr:state": "WI",
+        "addr:street": "North Murray Avenue",
+        "amenity": "bar",
+        "contact:email": "info@jazzestate.com",
+        "contact:facebook": "https://www.facebook.com/thejazzestate/",
+        "contact:phone": "+1 414 964 9923",
+        "contact:website": "https://jazzestate.com",
+        "contact:yelp": "https://www.yelp.com/biz/the-jazz-estate-milwaukee",
+        "min_age": "21",
+        "music_genre": "jazz",
+        "name": "The Jazz Estate",
+        "opening_hours": "Su-Th 17:00-02:00; Fr-Sa 17:00-02:30",
+        "outdoor_seating": "no",
+        "start_date": "1977"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8857767,
+          43.0619672
+        ]
+      },
+      "id": "node/5293444822"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5301474423",
+        "amenity": "bar",
+        "name": "Steny's Tavern & Grill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9123161,
+          43.0230581
+        ]
+      },
+      "id": "node/5301474423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5415473642",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1110",
+        "addr:postcode": "53203",
+        "addr:state": "WI",
+        "addr:street": "North Doctor Martin Luther King Junior Drive",
+        "alt_name": "3rd Street Tavern",
+        "amenity": "bar",
+        "contact:facebook": "https://www.facebook.com/CantinaMilwaukee/",
+        "contact:instagram": "https://www.instagram.com/thirdstreettavernmke/",
+        "contact:twitter": "https://twitter.com/3rdStTavernMKE",
+        "cuisine": "burger",
+        "email": "info@thirdstreettavernmke.com",
+        "name": "Third Street Tavern",
+        "name:2003": "Gus' Mexican Cantina",
+        "name:2004": "Lucille's Piano Bar & Grill",
+        "name:2016": "Matador Taco + Tequila Bar",
+        "name:2017": "Cantina Tequila & Taco Bar",
+        "opening_hours": "Mo-Th 11:00-00:30, Fr-Sa 11:00-02:30, Su 11:00-00:30",
+        "phone": "+1 414 897 8137",
+        "source": "https://onmilwaukee.com/dining/articles/third-street-tavern-opens-friday.html",
+        "start_date": "2020-06-26",
+        "takeaway": "yes",
+        "website": "https://thirdstreettavernmke.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9142425,
+          43.0445055
+        ]
+      },
+      "id": "node/5415473642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5417861280",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "340",
+        "addr:postcode": "53203",
+        "addr:street": "West Kilbourn Avenue",
+        "amenity": "bar",
+        "branch": "Milwaukee",
+        "contact:phone": "+1 414 271 3414",
+        "contact:website": "http://www.majorgoolsbys.com",
+        "cuisine": "burger",
+        "delivery": "yes",
+        "name": "Major Goolsby's",
+        "opening_hours": "11:00-22:00",
+        "outdoor_seating": "yes",
+        "source": "https://onmilwaukee.com/bars/business/goolsbys.html",
+        "start_date": "1972",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.915583,
+          43.0417425
+        ]
+      },
+      "id": "node/5417861280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5452234762",
+        "amenity": "bar",
+        "contact:phone": "+1 414 276 1234",
+        "contact:website": "https://milwaukee.regency.hyatt.com/en/hotel/dining/Bar333.html",
+        "name": "Bar 333",
+        "opening_hours": "Su-Th 15:00-24:00; Fr 15:00-01:30; Sa 10:00-01:30",
+        "source": "https://onmilwaukee.com/bars/articles/nightlifebar333.html",
+        "start_date": "2009"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9147481,
+          43.0411142
+        ]
+      },
+      "id": "node/5452234762"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5500221324",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "184",
+        "addr:postcode": "53202",
+        "addr:street": "North Broadway Street",
+        "amenity": "bar",
+        "contact:email": "info@splashmilwaukee.com",
+        "contact:phone": "+1 414 882 7621",
+        "contact:website": "https://www.splashmilwaukee.com",
+        "contact:yelp": "https://www.yelp.com/biz/splash-studio-a-painting-bar-milwaukee",
+        "covered": "yes",
+        "description": "A Painting Bar",
+        "entrance": "yes",
+        "name": "Splash Studio",
+        "name:2007": "Penthouse on Broadway",
+        "name:2008-07-09": "Brothers Café",
+        "opening_hours": "We 14:00-21:30; Th 14:00-22:00; Fr 14:00-22:30; Sa 10:30-23:00; Su 12:00-16:00",
+        "start_date": "2012-03"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9069075,
+          43.0323457
+        ]
+      },
+      "id": "node/5500221324"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5502055470",
+        "alt_name": "Skylight Bar & Bistro",
+        "amenity": "bar",
+        "branch": "Skylight Music Theatre",
+        "contact:website": "https://www.yelp.com/biz/indulge-skylight-music-theatre-milwaukee",
+        "level": "1",
+        "name": "Indulge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9067736,
+          43.0316282
+        ]
+      },
+      "id": "node/5502055470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5507220104",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "525",
+        "addr:postcode": "53202",
+        "addr:street": "East Menomonee Street",
+        "amenity": "bar",
+        "branch": "Third Ward Milwaukee",
+        "contact:email": "amanda@campbarmke.com",
+        "contact:phone": "+1 414 930 9282",
+        "contact:website": "https://www.campbarmke.com/milwaukee",
+        "entrance": "yes",
+        "name": "Camp Bar",
+        "opening_hours": "Mo-Th 15:00-02:00; Fr 14:00-02:30; Sa 12:00-02:30; Su 12:00-02:00",
+        "outdoor_seating": "yes",
+        "source": "https://onmilwaukee.com/bars/articles/first-look-campsite-131.html",
+        "start_date": "2016-04"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9035891,
+          43.0315475
+        ]
+      },
+      "id": "node/5507220104"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5614546278",
+        "alt_name": "Ladybug Club",
+        "amenity": "bar",
+        "contact:email": "info@elmntlounge.com",
+        "contact:facebook": "https://www.facebook.com/pg/elmntlounge/",
+        "contact:phone": "+1 414 763 8045",
+        "contact:website": "https://www.elmntlounge.com/",
+        "contact:yelp": "https://www.yelp.com/biz/elmnt-lounge-milwaukee",
+        "min_age": "21",
+        "name": "ELMNT Lounge",
+        "name:2010": "618 Live on Water",
+        "opening_hours": "Th 22:00-02:00; Fr 21:00-02:30; Sa 22:00-02:30",
+        "outdoor_seating": "yes",
+        "reservation": "yes",
+        "source": "https://www.biztimes.com/2018/industries/arts-entertainment-sports/elmnt-lounge-opens-tonight-on-water-street/",
+        "start_date": "2018-12-27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9088124,
+          43.0379203
+        ]
+      },
+      "id": "node/5614546278"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5614546291",
+        "amenity": "bar",
+        "contact:website": "http://districtmke.com",
+        "name": "District On Water",
+        "name:2005": "Swank",
+        "name:2007": "Edgar's Calypso",
+        "name:2009": "JC's Pub and Grill",
+        "name:2014": "Ultra Lounge",
+        "name:2016": "District On Water",
+        "start_date": "2018-12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9088654,
+          43.038159
+        ]
+      },
+      "id": "node/5614546291"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5644417089",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "750",
+        "addr:postcode": "53202",
+        "addr:street": "North Jefferson Street",
+        "amenity": "bar",
+        "contact:email": "info@sportclubmke.com",
+        "contact:phone": "+1 414 808 1588",
+        "contact:website": "https://sportclubmke.com",
+        "cuisine": "world",
+        "name": "SportClub",
+        "name:2011": "Blackthorn Pub & Grill",
+        "name:2013-01": "vacant",
+        "opening_hours": "Mo-Fr 11:00-02:00; Sa-Su 06:00-02:00",
+        "reservation": "no",
+        "source": "https://www.jsonline.com/story/entertainment/dining/carol-deptolla/2018/02/26/sportclub-opens-wednesday-downtown/372202002/",
+        "start_date": "2018-02-28"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9052437,
+          43.040234
+        ]
+      },
+      "id": "node/5644417089"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5644417090",
+        "amenity": "bar",
+        "contact:email": "rita@chicundergroundlounge.com",
+        "contact:phone": "+1 414 882 7708",
+        "contact:website": "https://chicundergroundlounge.com",
+        "cuisine": "american;southern",
+        "delivery": "no",
+        "level": "-1",
+        "name": "Chic Underground Lounge",
+        "name:2014": "Chic Cafe",
+        "name:2015": "Chic Underground Lounge",
+        "opening_hours": "Tu-We 11:00-15:00; Th 11:00-15:00,17:00-01:00; Fr 11:00-15:00,17:00-02:30; Sa 07:00-02:30; Su 11:00-16:00",
+        "start_date": "2014",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9052332,
+          43.0404448
+        ]
+      },
+      "id": "node/5644417090"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5650823326",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "777",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Jefferson Street",
+        "amenity": "bar",
+        "contact:facebook": "https://www.facebook.com/thesofiemke/",
+        "contact:website": "https://www.thesofie.com/",
+        "covered": "yes",
+        "entrance": "yes",
+        "level": "-1",
+        "name": "The Sofie",
+        "name:2000": "Dino's Taverna",
+        "name:2018-04-29": "vacant",
+        "opening_hours": "Tu-Th 16:00-02:00; Fr-Sa 16:00-02:30",
+        "source": "https://onmilwaukee.com/bars/articles/the-sofie-grand-opening.html",
+        "start_date": "2019-11-13"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9057055,
+          43.0407491
+        ]
+      },
+      "id": "node/5650823326"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5654385207",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "326",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Mason Street",
+        "amenity": "bar",
+        "contact:email": "xo.mke1@gmail.com",
+        "contact:facebook": "https://www.facebook.com/XOCocktailParlor/",
+        "contact:website": "https://www.xococktailparlor.com",
+        "entrance": "yes",
+        "name": "XO Cocktail Parlor",
+        "name:2014-2018": "42 Lounge",
+        "opening_date": "We-Th 17:00-23:00; Fr 17:00-02:00; Sa 17:00-02:30",
+        "source": "https://urbanmilwaukee.com/2019/03/27/taverns-xo-cocktail-parlor-opens-in-east-town/",
+        "start_date": "2019-03-27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9070439,
+          43.0400906
+        ]
+      },
+      "id": "node/5654385207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5723555759",
+        "amenity": "bar",
+        "contact:website": "https://milwaukeedowntown.place.hyatt.com/en/hotel/dining/coffee-to-cocktails-bar.html",
+        "name": "Coffee to Cocktails Bar",
+        "opening_hours": "Mo-Fr 06:30-09:00,17:00-24:00; Sa-Su 07:00-09:30,17:00-24:00",
+        "seats": "35",
+        "start_date": "2018-06-26"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9213638,
+          43.0460977
+        ]
+      },
+      "id": "node/5723555759"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6051755387",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "782",
+        "addr:postcode": "53202",
+        "addr:street": "North Jefferson Street",
+        "amenity": "bar",
+        "contact:website": "https://www.facebook.com/TACOBARMKE/",
+        "cuisine": "mexican",
+        "entrance": "yes",
+        "name": "Taco Bar MKE",
+        "name:2014": "Peking House",
+        "name:2018-01": "vacant",
+        "opening_hours": "Mo 11:00-16:00; Tu 11:00-22:30; We-Th 11:00-02:30; Fr-Sa 11:00-03:00",
+        "start_date": "2018-10-04"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.905359,
+          43.0407844
+        ]
+      },
+      "id": "node/6051755387"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6131279185",
+        "access": "customers",
+        "amenity": "bar",
+        "contact:email": "info@thirdspacebrewing.com",
+        "contact:facebook": "https://www.facebook.com/thirdspacebrewing/",
+        "contact:phone": "+1 414 909 2337",
+        "contact:website": "https://thirdspacebrewing.com/the-brewery/",
+        "contact:yelp": "https://www.yelp.com/biz/third-space-brewing-milwaukee",
+        "entrance": "yes",
+        "name": "Third Space Brewing Tap Room",
+        "opening_hours": "We-Th 16:00-21:00; Fr 14:00-22:00; Sa 12:00-22:00; Su 12:00-19:00",
+        "outdoor_seating": "yes",
+        "start_date": "2016-09",
+        "takeaway": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9326545,
+          43.034482
+        ]
+      },
+      "id": "node/6131279185"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6185091524",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1732",
+        "addr:postcode": "53211",
+        "addr:state": "WI",
+        "addr:street": "East North Avenue",
+        "amenity": "bar",
+        "branch": "Milwaukee",
+        "contact:email": "BaccaneraMKE@gmail.com",
+        "contact:facebook": "https://www.facebook.com/pg/BaccaneraMKE/",
+        "contact:phone": "+1 414 763 7422",
+        "contact:website": "https://www.baccaneraenoteca.com",
+        "entrance": "yes",
+        "name": "Baccanera Enoteca",
+        "name:1999-2017-12": "The Eastsider",
+        "opening_hours": "Tu-Th 15:00-24:00; Fr 15:00-02:00; Sa 11:00-02:00; Su 11:00-24:00",
+        "outdoor_seating": "yes",
+        "source": "https://onmilwaukee.com/bars/articles/eastsider-baccanera-wine-bar.html",
+        "start_date": "2019-04"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8882503,
+          43.0602947
+        ]
+      },
+      "id": "node/6185091524"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6204366896",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1905",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East North Avenue",
+        "amenity": "bar",
+        "contact:email": "info@ninebelowmke.com",
+        "contact:phone": "+1 414 210 4470",
+        "contact:website": "https://www.ninebelowmke.com",
+        "contact:yelp": "https://www.yelp.com/biz/nine-below-milwaukee",
+        "covered": "yes",
+        "entrance": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "leisure": "miniature_golf",
+        "level": "-1",
+        "min_age": "16",
+        "name": "Nine Below",
+        "name:1994": "Esoteria",
+        "name:2002": "Mantra Lounge",
+        "name:2007-2011": "Decibel Nightclub / Deep Bar Vodka Lounge",
+        "name:2011-11": "The Library Club",
+        "reservation": "yes",
+        "sport": "golf",
+        "start_date": "2016-09-21",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8866584,
+          43.0599924
+        ]
+      },
+      "id": "node/6204366896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6228503440",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "216",
+        "addr:postcode": "53204",
+        "addr:state": "WI",
+        "addr:street": "South 2nd Street",
+        "amenity": "bar",
+        "name": "Black Sheep",
+        "opening_hours": "Mo-Th 16:00-23:00; Fr 16:00-01:00; Sa 10:00-23:00; Su 10:00-16:00",
+        "outdoor_seating": "yes",
+        "phone": "+1-414-223-0903",
+        "website": "https://www.blacksheepmke.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9124194,
+          43.0289545
+        ]
+      },
+      "id": "node/6228503440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6311071693",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1134",
+        "addr:postcode": "53203",
+        "addr:state": "WI",
+        "addr:street": "North Vel R. Phillips Avenue",
+        "amenity": "bar",
+        "capacity": "600",
+        "contact:phone": "+1 414 908 0401",
+        "contact:website": "https://www.themeccamke.com/",
+        "contact:yelp": "https://www.yelp.com/biz/the-mecca-sports-bar-and-grill-milwaukee-2",
+        "name": "The MECCA Sports Bar & Grill",
+        "opening_hours": "Mo-Th 11:00-24:00; Fr 11:00-02:00; Sa 10:00-02:00; Su 10:00-24:00",
+        "short_name": "The MECCA",
+        "source": "https://urbanmilwaukee.com/pressrelease/the-mecca-sports-bar-and-grill-to-open-at-the-entertainment-block/;https://deerdistrict.com/places/punch-bowl-social-milwaukee",
+        "start_date": "2019-04-30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.915596,
+          43.0451715
+        ]
+      },
+      "id": "node/6311071693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6432106568",
+        "access": "customers",
+        "amenity": "bar",
+        "contact:facebook": "https://www.facebook.com/pg/shanghaimke/",
+        "contact:phone": "+1 414 763 9081",
+        "entrance": "yes",
+        "name": "Shanghai",
+        "opening_hours": "Th-Su 18:00-24:00",
+        "start_date": "2019-01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8853885,
+          43.0598246
+        ]
+      },
+      "id": "node/6432106568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6432933390",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "818",
+        "addr:postcode": "53204",
+        "addr:state": "WI",
+        "addr:street": "South Water Street",
+        "amenity": "bar",
+        "name": "Boone and Crockett",
+        "opening_hours": "Mo-Th 15:00-02:00; Fr-Sa 12:00-02:30; Su 12:00-02:00",
+        "outdoor_seating": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9065984,
+          43.0227184
+        ]
+      },
+      "id": "node/6432933390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6525559237",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "2311",
+        "addr:postcode": "53211",
+        "addr:state": "WI",
+        "addr:street": "North Murray Avenue",
+        "amenity": "bar",
+        "contact:facebook": "https://www.facebook.com/Izzyhopsmilwaukee/",
+        "contact:phone": "+1 414 249 4489",
+        "contact:website": "https://izzyhops.com",
+        "contact:yelp": "https://www.yelp.com/biz/izzy-hops-milwaukee",
+        "cuisine": "italian",
+        "delivery": "no",
+        "entrance": "yes",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "name": "Izzy Hops Swig & Nosh",
+        "name:1998-2017": "Rascal's On Murray",
+        "opening_hours": "Mo-Tu 16:00-24:00, We-Th 16:00-02:00, Fr 16:00-02:30, Sa 11:00-02:30, Su 11:00-24:00",
+        "outdoor_seating": "yes",
+        "reservation": "no",
+        "source": "https://onmilwaukee.com/bars/articles/first-look-izzy-hops-swig-and-nosh.html",
+        "start_date": "2017-09-27",
+        "takeaway": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8857742,
+          43.0605048
+        ]
+      },
+      "id": "node/6525559237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6611934894",
+        "alt_name": "T. D. R.",
+        "amenity": "bar",
+        "architect": "Stonehill Taylor",
+        "contact:email": "kerrydoyne@marcushotels.com",
+        "contact:facebook": "https://www.facebook.com/TheDarkRoomatSaintKate/",
+        "contact:phone": "+1 414 431 1211",
+        "contact:website": "https://www.saintkatearts.com/dining/the-dark-room",
+        "contact:yelp": "https://www.yelp.com/biz/the-dark-room-at-saint-kate-milwaukee-2",
+        "cuisine": "steak_house",
+        "level": "1",
+        "name": "The Dark Room",
+        "opening_date": "2019-09",
+        "opening_hours": "Tu-Sa 17:00-22:00",
+        "reservation": "yes",
+        "short_name": "TDR"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9105069,
+          43.0416523
+        ]
+      },
+      "id": "node/6611934894"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6611934895",
+        "amenity": "bar",
+        "architect": "Stonehill Taylor",
+        "contact:phone": "+1 414 291 4797",
+        "contact:website": "https://www.saintkatearts.com/dining/the-bar-at-saint-kate",
+        "name": "the Bar",
+        "start_date": "2019"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.910983,
+          43.0418714
+        ]
+      },
+      "id": "node/6611934895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6611934896",
+        "amenity": "bar",
+        "architect": "Stonehill Taylor",
+        "contact:phone": "+1 414 270 4424",
+        "contact:website": "https://www.saintkatearts.com/dining/giggly",
+        "level": "1",
+        "name": "Giggly Champagne & Wine Bar",
+        "opening_hours": "12:00-23:00",
+        "start_date": "2019"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9105659,
+          43.0417851
+        ]
+      },
+      "id": "node/6611934896"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6653331179",
+        "amenity": "bar",
+        "contact:email": "connect@unclebucksonthird.com",
+        "contact:facebook": "https://www.facebook.com/pg/unclebucksonthird/",
+        "contact:phone": "+1 414 988 0355",
+        "contact:website": "https://www.unclebucksonthird.com/",
+        "contact:yelp": "https://www.yelp.com/biz/uncle-bucks-on-3rd-milwaukee-2",
+        "cuisine": "american",
+        "level": "0",
+        "name": "Uncle Bucks on Third",
+        "opening_hours": "Tu-We 15:00-24:00; Th 15:00-02:00; Fr-Sa 15:00-02:30; Su 11:00-24:00",
+        "outdoor_seating": "yes",
+        "short_name": "Uncle Bucks",
+        "source": "https://www.jsonline.com/story/entertainment/dining/carol-deptolla/2019/07/09/milwaukee-bucks-beer-garden-fiserv-forum-uncle-bucks-red-star/1678039001/;https://onmilwaukee.com/dining/articles/uncle-bucks-red-star-deer-district.html",
+        "start_date": "2019-09-06"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9146878,
+          43.0449314
+        ]
+      },
+      "id": "node/6653331179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6653491807",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1044",
+        "addr:postcode": "53203",
+        "addr:state": "WI",
+        "addr:street": "North Doctor Martin Luther King Junior Drive",
+        "amenity": "bar",
+        "contact:email": "info@buckheadmke.com",
+        "contact:facebook": "https://www.facebook.com/pg/Buckheadbackbar/",
+        "contact:phone": "+1 414 226 6044",
+        "contact:website": "https://www.buckheadmke.com",
+        "name": "Buckhead Back Bar Saloon",
+        "opening_date": "Th 17:00-02:00; Fr-Sa 17:00-02:30",
+        "outdoor_seating": "yes",
+        "source": "https://onmilwaukee.com/bars/articles/buckhead-saloon-return.html",
+        "start_date": "2018"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9137879,
+          43.0439694
+        ]
+      },
+      "id": "node/6653491807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6654161755",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1130",
+        "addr:postcode": "53233",
+        "addr:state": "WI",
+        "addr:street": "North 9th Street",
+        "amenity": "bar",
+        "architect": "RINKA",
+        "capacity": "155",
+        "contact:facebook": "https://www.facebook.com/therooftopmke",
+        "contact:phone": "+1 414 988 1551",
+        "contact:website": "https://therooftopmke.com/",
+        "cuisine": "new_american",
+        "location": "roof",
+        "name": "The Rooftop",
+        "opening_hours": "Th-Fr 16:00-24:00; Sa-Su 10:00-24:00",
+        "operator": "F Street Hospitality",
+        "seasonal": "spring-autumn",
+        "seats": "80",
+        "source": "https://www.jsonline.com/story/entertainment/dining/carol-deptolla/2019/06/07/rooftop-patio-over-mke-brewing-and-glass-griddle-opens-june-14/1380492001/",
+        "start_date": "2019-06-14"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.922536,
+          43.0450883
+        ]
+      },
+      "id": "node/6654161755"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6720243688",
+        "amenity": "bar",
+        "name": "Kochanski's Concertina Beer Hall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9601518,
+          43.0097177
+        ]
+      },
+      "id": "node/6720243688"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7180103401",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "2335",
+        "addr:postcode": "53207",
+        "addr:state": "WI",
+        "addr:street": "South Kinnickinnic Avenue",
+        "amenity": "bar",
+        "name": "Tonic Tavern"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9039774,
+          43.0021674
+        ]
+      },
+      "id": "node/7180103401"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7189350734",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "2151",
+        "addr:postcode": "53207",
+        "addr:state": "WI",
+        "addr:street": "South Kinnickinnic Avenue",
+        "amenity": "bar",
+        "name": "Lost Whale"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.90645,
+          43.005422
+        ]
+      },
+      "id": "node/7189350734"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7221149171",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "2501",
+        "addr:postcode": "53207",
+        "addr:state": "WI",
+        "addr:street": "South Delaware Avenue",
+        "amenity": "bar",
+        "name": "At Random"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8913477,
+          42.9979192
+        ]
+      },
+      "id": "node/7221149171"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7435084051",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "231",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Buffalo Street",
+        "amenity": "bar",
+        "contact:email": "chris@wizardworksbrewing.com",
+        "contact:facebook": "https://www.facebook.com/wizardworksbrewing/",
+        "contact:phone": "+1 414 477 0222",
+        "contact:website": "https://wizardworksbrewing.com/",
+        "level": "-1",
+        "microbrewery": "yes",
+        "name": "Wizard Works Brewing",
+        "operator:2017-2020": "Broken Bat Brewing Company",
+        "start_date": "2020-04"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9080547,
+          43.0336768
+        ]
+      },
+      "id": "node/7435084051"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7446517598",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "400",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Water Street",
+        "amenity": "bar",
+        "contact:phone": "+1 414 220 8383",
+        "contact:website": "https://www.stpaulfish.com/st-paul-fish-company-public-market/palapa-ice-bar/",
+        "name": "St. Paul Fish Company Palapa / Ice Bar",
+        "source": "https://urbanmilwaukee.com/2019/04/22/bar-exam-st-pauls-palapa-bar-open-all-year/",
+        "start_date": "2016"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.907597,
+          43.0352261
+        ]
+      },
+      "id": "node/7446517598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7512301968",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "333",
+        "addr:postcode": "53203",
+        "addr:street": "West Juneau Avenue",
+        "amenity": "bar",
+        "branch": "Downtown",
+        "contact:phone": "+1 414 539 4343",
+        "contact:website": "https://www.goodcitybrewing.com/locations/downtown/",
+        "microbrewery": "yes",
+        "name": "Good City Brewing Company",
+        "opening_hours": "Tu-Th 16:00-24:00; Fr-Sa 11:00-24:00; Su 14:00-22:00",
+        "start_date": "2019-02-22"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9156492,
+          43.0454579
+        ]
+      },
+      "id": "node/7512301968"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7545211023",
+        "addr:city": "Shorewood",
+        "addr:housenumber": "4488",
+        "addr:postcode": "53211",
+        "addr:state": "WI",
+        "addr:street": "North Oakland Avenue",
+        "amenity": "bar",
+        "name": "Cloud Red",
+        "phone": "4142319660",
+        "website": "https://www.cloudredmke.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8871634,
+          43.097983
+        ]
+      },
+      "id": "node/7545211023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7712190990",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "422",
+        "addr:postcode": "53204",
+        "addr:state": "WI",
+        "addr:street": "South 2nd Street",
+        "amenity": "bar",
+        "email": "shakersmilwaukee@gmail.com",
+        "name": "Shaker's Cigar Bar",
+        "phone": "+1-414-272-4222",
+        "website": "https://www.shakerscigarbar.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9123115,
+          43.0267639
+        ]
+      },
+      "id": "node/7712190990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7890098993",
+        "addr:city": "West Allis",
+        "addr:housenumber": "1100",
+        "addr:postcode": "53214",
+        "addr:state": "WI",
+        "addr:street": "South 60th Street",
+        "amenity": "bar",
+        "name": "Broken Starr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9873159,
+          43.0199488
+        ]
+      },
+      "id": "node/7890098993"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7959809168",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1001",
+        "addr:state": "WI",
+        "addr:street": "West Maple Street",
+        "amenity": "bar",
+        "brewery": "various",
+        "min_age": "21",
+        "name": "La Farándula",
+        "opening_hours": "Su 00:00-02:00, 16:00-24:00; Mo-Th 16:00-24:00; Fr 16:00-24:00; Sa 16:00-24:00",
+        "opening_hours:covid19": "open",
+        "phone": "+1 414 517 2841"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9243471,
+          43.0109153
+        ]
+      },
+      "id": "node/7959809168"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8127041876",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1619",
+        "addr:state": "WI",
+        "addr:street": "South 1st Street",
+        "amenity": "bar",
+        "name": "Points View Boîte"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.911449,
+          43.0138123
+        ]
+      },
+      "id": "node/8127041876"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8279634070",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "817",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Marshall Street",
+        "amenity": "bar",
+        "contact:email": "kelly@thedubbeldutch.com",
+        "contact:phone": "+1 414 376 3439",
+        "contact:website": "https://www.thedubbeldutch.com/dining.htm",
+        "name": "Dubbel Dutch Tavern",
+        "opening_hours": "Tu,Fr,Sa 16:00-22:30; Su 14:00-20:30",
+        "source": "https://onmilwaukee.com/articles/dubbel-dutch-hotel-tavern-now-open",
+        "start_date": "2020-12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9008529,
+          43.0419893
+        ]
+      },
+      "id": "node/8279634070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9002798309",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "5218",
+        "addr:postcode": "53208",
+        "addr:state": "WI",
+        "addr:street": "West Bluemound Road",
+        "amenity": "bar",
+        "name": "Kelly's Bleachers"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9794128,
+          43.0368083
+        ]
+      },
+      "id": "node/9002798309"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9049313211",
+        "amenity": "bar",
+        "name": "Dale Z's On Tour"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9088323,
+          42.9793928
+        ]
+      },
+      "id": "node/9049313211"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9227063497",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "6712",
+        "addr:postcode": "53213",
+        "addr:state": "WI",
+        "addr:street": "West Fairview Avenue",
+        "amenity": "bar",
+        "min_age": "21",
+        "name": "Fairview Inn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9965789,
+          43.0315451
+        ]
+      },
+      "id": "node/9227063497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9377300775",
+        "amenity": "bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9689782,
+          43.0123737
+        ]
+      },
+      "id": "node/9377300775"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9519207417",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "703",
+        "addr:postcode": "53204",
+        "addr:state": "WI",
+        "addr:street": "South 2nd Street",
+        "amenity": "bar",
+        "name": "The Tin Window"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.912833,
+          43.024128
+        ]
+      },
+      "id": "node/9519207417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9553287178",
+        "amenity": "bar",
+        "name": "Aris Sports Bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0474582,
+          43.0121373
+        ]
+      },
+      "id": "node/9553287178"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9587696622",
+        "amenity": "bar",
+        "name": "Jolo's Martini Lounge"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0462743,
+          43.0356679
+        ]
+      },
+      "id": "node/9587696622"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9594989024",
+        "addr:housenumber": "1442",
+        "addr:street": "Underwood Avenue",
+        "amenity": "bar",
+        "name": "Arté"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0082959,
+          43.0504835
+        ]
+      },
+      "id": "node/9594989024"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9735475347",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1122",
+        "addr:postcode": "53203",
+        "addr:state": "WI",
+        "addr:street": "North Vel R. Phillips Avenue",
+        "amenity": "bar",
+        "contact:website": "https://www.punchbowlsocial.com/location/milwaukee",
+        "name": "Punch Bowl Social",
+        "owner": "Head of the Herd Real Estate Development LLC",
+        "source": "https://deerdistrict.com/places/punch-bowl-social-milwaukee",
+        "start_date": "2019-03-30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9156081,
+          43.0448902
+        ]
+      },
+      "id": "node/9735475347"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9735475348",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1133",
+        "addr:postcode": "53203",
+        "addr:state": "WI",
+        "addr:street": "North Doctor Martin Luther King Junior Drive",
+        "amenity": "bar",
+        "contact:website": "https://thebeergardenmke.com/",
+        "name": "The Beer Garden",
+        "owner": "Head of the Herd Real Estate Development LLC",
+        "source": "https://deerdistrict.com/places/the-beer-garden",
+        "start_date": "2019-03-30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9149567,
+          43.0451004
+        ]
+      },
+      "id": "node/9735475348"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9831755812",
+        "addr:city": "West Allis",
+        "addr:housenumber": "7408",
+        "addr:postcode": "53214",
+        "addr:state": "WI",
+        "addr:street": "West Walker Street",
+        "amenity": "bar",
+        "contact:facebook": "www.Facebook.com/eckbarwestallis",
+        "email": "meleckbar@gmail.com",
+        "name": "Eckbar",
+        "opening_hours": "Mo-Th,Su 11:00-24:00, Fr-Sa 11:00-02:30",
+        "phone": "+1-414-488-8151"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.0050841,
+          43.0224735
+        ]
+      },
+      "id": "node/9831755812"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10160348290",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "134",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Juneau Avenue",
+        "amenity": "bar",
+        "contact:facebook": "https://www.facebook.com/MOJOmke/",
+        "email": "mojomilwaukee@gmail.com",
+        "name": "Mojo MKE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9119996,
+          43.0459276
+        ]
+      },
+      "id": "node/10160348290"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10243009835",
+        "amenity": "bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.906493,
+          43.0054009
+        ]
+      },
+      "id": "node/10243009835"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10243009836",
+        "amenity": "bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9064369,
+          43.0053287
+        ]
+      },
+      "id": "node/10243009836"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10243009850",
+        "amenity": "bar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9051714,
+          43.0043811
+        ]
+      },
+      "id": "node/10243009850"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4318739132",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1311",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Brady Street",
+        "amenity": "pub",
+        "contact:email": "JoCatsPub@gmail.com",
+        "contact:facebook": "https://www.facebook.com/JoCatsPub",
+        "contact:phone": "+1 414 765 9955",
+        "contact:yelp": "https://www.yelp.com/biz/jo-cats-pub-milwaukee",
+        "entrance": "yes",
+        "name": "Jo-Cat's Pub",
+        "opening_hours": "Mo-Th 15:00-02:00; Fr 14:00-02:30; Sa 12:00-02:30; Su 12:00-02:00",
+        "outdoor_seating": "yes",
+        "reservation": "no",
+        "start_date": "1978"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8950029,
+          43.0528526
+        ]
+      },
+      "id": "node/4318739132"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4443239928",
+        "amenity": "pub",
+        "contact:email": "info@lakefrontbrewery.com",
+        "contact:phone": "+1 414 372 8800",
+        "contact:website": "http://www.lakefrontbrewery.com/beer-hall",
+        "name": "Lakefront Brewery Beer Hall",
+        "opening_hours": "Mo-Th 11:00-20:00; Fr 11:00-15:00, 16:00-21:00; Sa 11:00-21:00; Su 10:00-17:00",
+        "outdoor_seating": "yes",
+        "short_name": "Beer Hall",
+        "start_date": "2013-12-01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9051461,
+          43.0547707
+        ]
+      },
+      "id": "node/4443239928"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4491186148",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1216",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Brady Street",
+        "amenity": "pub",
+        "contact:email": "booking@theupandunderpub.com",
+        "contact:facebook": "https://www.facebook.com/UpandUnderPub",
+        "contact:phone": "+1 414 276 2677",
+        "contact:website": "https://www.theupandunderpub.com/",
+        "entrance": "yes",
+        "name": "Up and Under Pub",
+        "name:1929": "House of Five Dollar Permanent Wave",
+        "name:1936-1941": "Tony Lass Tavern",
+        "name:1945": "Paul Ehlert Tavern",
+        "name:1959": "Mike’s Tavern",
+        "name:1963-1973": "Mike’s Cafe",
+        "name:1974": "Curro’s Tavern",
+        "name:1977": "Up and Under",
+        "opening_hours": "Su-Th 17:00-02:00; Fr 17:00-02:30; Sa 12:00-02:30",
+        "short_name": "Up and Under",
+        "start_date": "1977"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8963199,
+          43.0530577
+        ]
+      },
+      "id": "node/4491186148"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4491186188",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1234",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Brady Street",
+        "amenity": "pub",
+        "contact:email": "info@petespubonbrady.com",
+        "contact:facebook": "https://www.facebook.com/pg/petespubonbrady/",
+        "contact:instagram": "https://www.instagram.com/petespubonbrady",
+        "contact:phone": "+1 414 312 7457",
+        "contact:website": "https://www.petespubonbrady.com/",
+        "contact:yelp": "https://www.yelp.com/biz/pete-s-pub-milwaukee",
+        "delivery": "yes",
+        "entrance": "yes",
+        "level": "0",
+        "name": "Pete's Pub",
+        "name:1995-2015": "Brady Street Hardware",
+        "name:2016-2020": "Harry's on Brady",
+        "opening_hours": "Su-Th 11:00-02:00; Fr-Sa 11:00-02:30",
+        "outdoor_seating": "yes",
+        "start_date": "2020-05",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8956957,
+          43.0530719
+        ]
+      },
+      "id": "node/4491186188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4915864907",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1203",
+        "addr:postcode": "53205",
+        "addr:street": "North 10th Street",
+        "amenity": "pub",
+        "contact:phone": "+1 414 276 7271",
+        "contact:website": "http://www.jacksonsmke.com",
+        "cuisine": "american",
+        "name": "Jackson's Blue Ribbon Pub",
+        "opening_hours": "Mo-Sa 11:00+; Su 10:00+ || Mo 11:00-22:00; Tu-Th 11:00-23:00; Fr-Sa 11:00-24:00; Su 10:00-22:00 \"Kitchen Hours\"",
+        "outdoor_seating": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9246877,
+          43.0459141
+        ]
+      },
+      "id": "node/4915864907"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5071879143",
+        "amenity": "pub",
+        "branch": "Milwaukee",
+        "contact:phone": "+1 414 271 2337",
+        "contact:website": "https://milwaukee.millertimepubandgrill.com/",
+        "cuisine": "american",
+        "floor": "1",
+        "name": "Miller Time Pub & Grill",
+        "opening_hours": "Mo-Th 11:00-01:00; Fr-Sa 11:00-02:00; Su 11:00-24:00",
+        "operator": "Marcus Corporation",
+        "reservation": "yes",
+        "website": "www.millertimepub.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9176416,
+          43.03869
+        ]
+      },
+      "id": "node/5071879143"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5714414645",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1030",
+        "addr:postcode": "53202",
+        "addr:street": "North Water Street",
+        "amenity": "pub",
+        "capacity": "150",
+        "contact:email": "info@rumpusroommke.com",
+        "contact:phone": "+1 414 292 0100",
+        "contact:website": "https://www.bartolottas.com/rumpus-room",
+        "covered": "yes",
+        "cuisine": "gastropub",
+        "delivery": "no",
+        "description": "A Bartolotta Gastropub",
+        "name": "The Rumpus Room",
+        "opening_hours": "Mo-Th 16:00-22:00; Fr-Sa 16:00-24:00; Su 16:00-21:00",
+        "operator": "The Bartolotta Restaurants",
+        "outdoor_seating": "yes",
+        "reservation": "yes",
+        "source": "https://onmilwaukee.com/dining/articles/rumpusroomevolves.html",
+        "start_date": "2011-10",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9106054,
+          43.044161
+        ]
+      },
+      "id": "node/5714414645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6324313609",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "320",
+        "addr:postcode": "53203",
+        "addr:street": "West Highland Avenue",
+        "amenity": "pub",
+        "contact:website": "https://www.drinkwi.pub/",
+        "name": "Drink Wisconsinbly Pub",
+        "owner": "Head of the Herd Real Estate Development LLC",
+        "source": "https://urbanmilwaukee.com/2018/12/08/fiserv-forum-adds-drink-wisconsinbly/; http://assessments.milwaukee.gov/remast.asp?taxkey=3922983000",
+        "start_date": "2019-03-30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9153436,
+          43.0445388
+        ]
+      },
+      "id": "node/6324313609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6432156109",
+        "access": "customers",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1932",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "East Kenilworth Place",
+        "amenity": "pub",
+        "contact:facebook": "https://www.facebook.com/mergemke/",
+        "contact:phone": "+1 414 226 5160",
+        "contact:website": "https://www.mergemke.com",
+        "contact:yelp": "https://www.yelp.com/biz/merge-milwaukee",
+        "cuisine": "korean",
+        "delivery": "yes",
+        "entrance": "yes",
+        "name": "Merge",
+        "name:2005-2016": "Yield",
+        "name:2017-05-2018-02-05": "Yokohama 1910",
+        "opening_hours": "Tu-Th 16:00-01:00; Fr-Sa 16:00-02:00; Su 16:00-24:00",
+        "outdoor_seating": "yes",
+        "reservation": "no",
+        "start_date": "2018-11-27",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8853369,
+          43.0589512
+        ]
+      },
+      "id": "node/6432156109"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6605665252",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "2018",
+        "addr:postcode": "53211",
+        "addr:state": "WI",
+        "addr:street": "East North Avenue",
+        "amenity": "pub",
+        "branch": "Hacienda North Ave",
+        "contact:email": "info@haciendabeerco.com",
+        "contact:facebook": "https://www.facebook.com/haciendabeerco/",
+        "contact:website": "https://www.haciendabeerco.com/hacienda-north-ave-",
+        "contact:yelp": "https://www.yelp.com/biz/hacienda-beer-co-milwaukee-2",
+        "name": "Hacienda Beer Co.",
+        "opening_date": "Su-Th 11:00-23:00; Fr-Sa 11:00-24:00",
+        "outdoor_seating": "yes",
+        "reservation": "no",
+        "seats": "125",
+        "short_name": "HBC",
+        "start_date": "2019-06-01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8850527,
+          43.0602813
+        ]
+      },
+      "id": "node/6605665252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6793965013",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1701",
+        "addr:postcode": "53202",
+        "addr:state": "WI",
+        "addr:street": "North Arlington Place",
+        "amenity": "pub",
+        "contact:email": "hihatmke@gmail.com",
+        "contact:facebook": "https://www.facebook.com/hihatlounge",
+        "contact:phone": "+1 414 225 9330",
+        "contact:website": "https://www.hihatlounge.com/",
+        "contact:yelp": "https://www.yelp.com/biz/hi-hat-lounge-milwaukee-2",
+        "cuisine": "new_american",
+        "delivery": "no",
+        "name": "Hi Hat Lounge",
+        "opening_hours": "Mo-Th 16:00-02:00; Fr 16:00-02:30; Sa 10:00-02:30; Su 10:00-02:00",
+        "outdoor_seating": "yes",
+        "reservation": "no",
+        "start_date": "1998"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8951526,
+          43.0530662
+        ]
+      },
+      "id": "node/6793965013"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6797868909",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1900",
+        "addr:postcode": "53233",
+        "addr:state": "WI",
+        "addr:street": "West Saint Paul Avenue",
+        "amenity": "pub",
+        "branch": "The Original Sobelman's On St. Paul",
+        "contact:email": "melanie@milwaukeesbestburgers.com",
+        "contact:facebook": "https://www.facebook.com/pg/sobelmans/about/?ref=page_internal",
+        "contact:phone": "+1 414 931 1919",
+        "contact:yelp": "https://www.yelp.com/biz/sobelmans-pub-and-grill-milwaukee",
+        "delivery": "yes",
+        "name": "Sobelman's Pub & Grill",
+        "opening_hours": "Mo-We 11:00-22:00; Th 11:00-24:00; Fr 11:00-23:00; Sa 10:00-23:00; Su 10:00-21:00",
+        "outdoor_seating": "yes",
+        "start_date": "1999-06-01",
+        "takeaway": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.93681,
+          43.0349055
+        ]
+      },
+      "id": "node/6797868909"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7180073218",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "2322",
+        "addr:postcode": "53207",
+        "addr:state": "WI",
+        "addr:street": "South Kinnickinnic Avenue",
+        "amenity": "pub",
+        "name": "Highbury Pub"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9037297,
+          43.0025406
+        ]
+      },
+      "id": "node/7180073218"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7372926662",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "3956",
+        "addr:postcode": "53207",
+        "addr:state": "WI",
+        "addr:street": "South Howell Avenue",
+        "amenity": "pub",
+        "name": "Pat's Niche Pub & Grub",
+        "phone": "+1-414-539-6452",
+        "takeaway": "yes",
+        "website": "https://www.patsniche.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9092689,
+          42.9725287
+        ]
+      },
+      "id": "node/7372926662"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8629417140",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "1128",
+        "addr:postcode": "53233",
+        "addr:state": "WI",
+        "addr:street": "North 9th Street",
+        "amenity": "pub",
+        "microbrewery": "yes",
+        "name": "Pilot Project",
+        "name:2018-2021": "Glass + Griddle / The Venue at MBC",
+        "opening_hours": "Mo-Th 11:00-22:00; Fr-Sa 11:00-24:00; Su 11:00-20:00",
+        "outdoor_seating": "yes",
+        "website": "https://www.pilotprojectbrewing.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9221803,
+          43.0451057
+        ]
+      },
+      "id": "node/8629417140"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8629445314",
+        "amenity": "pub",
+        "brewery": "central_waters",
+        "name": "Central Waters Brewing Co. Milwaukee Taproom",
+        "name:1872": "First German Methodist Episcopal Church",
+        "name:1898-1973": "Forst Keller Restaurant",
+        "name:2017-2020": "Pabst Milwaukee Brewery",
+        "name:2020": "Captain Pabst Pilot House",
+        "real_ale": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9255172,
+          43.0455787
+        ]
+      },
+      "id": "node/8629445314"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9002798308",
+        "addr:city": "Milwaukee",
+        "addr:housenumber": "5230",
+        "addr:postcode": "53208",
+        "addr:state": "WI",
+        "addr:street": "West Bluemound Road",
+        "amenity": "pub",
+        "name": "J & B's Blue Ribbon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9797371,
+          43.0368293
+        ]
+      },
+      "id": "node/9002798308"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9012824386",
+        "addr:city": "Shorewood",
+        "addr:housenumber": "4417",
+        "addr:postcode": "53211",
+        "addr:state": "WI",
+        "addr:street": "North Oakland Avenue",
+        "amenity": "pub",
+        "brewery": "yes",
+        "name": "Draft & Vessel",
+        "outdoor_seating": "yes",
+        "website": "http://www.draftandvessel.com/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8876392,
+          43.0960578
+        ]
+      },
+      "id": "node/9012824386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9012824387",
+        "addr:city": "Shorewood",
+        "addr:housenumber": "4515",
+        "addr:postcode": "53211",
+        "addr:state": "WI",
+        "addr:street": "North Oakland Avenue",
+        "amenity": "pub",
+        "brewery": "yes",
+        "cuisine": "english",
+        "name": "Three Lions Pub",
+        "website": "https://threelionspub.com"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8875982,
+          43.0986204
+        ]
+      },
+      "id": "node/9012824387"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9533850653",
+        "amenity": "pub",
+        "name": "Dugout 54"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9808291,
+          43.0367725
+        ]
+      },
+      "id": "node/9533850653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9596132765",
+        "amenity": "pub",
+        "name": "Ice House Bar & Grill"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9673355,
+          43.0160718
+        ]
+      },
+      "id": "node/9596132765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9635352698",
+        "amenity": "pub",
+        "name": "Axel's"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8881505,
+          43.0707968
+        ]
+      },
+      "id": "node/9635352698"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10049057487",
+        "amenity": "pub",
+        "name": "Sobo's Tap"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.9705508,
+          42.9878152
+        ]
+      },
+      "id": "node/10049057487"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10614263010",
+        "addr:city": "South Milwaukee",
+        "addr:housenumber": "1902",
+        "addr:postcode": "53172",
+        "addr:state": "WI",
+        "addr:street": "17th Avenue",
+        "amenity": "pub",
+        "name": "Brew Town Pub and Grill",
+        "phone": "+1-414-304-8019",
+        "website": "https://www.facebook.com/Brewtownpubandgrill/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.8763386,
+          42.912608
+        ]
+      },
+      "id": "node/10614263010"
+    }
+  ]
+}
