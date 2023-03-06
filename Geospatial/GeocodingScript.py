@@ -16,7 +16,7 @@ ColumnNames = ['ID','Call Number','Date/Time','Location','Police District','Natu
 connection = pymysql.connect(host='pascal.mscsnet.mu.edu',user='project1',password='ThisIsATest',db='MPD')
 my_cursor = connection.cursor()
 
-#Pull a max of 20 records which do not exist (have their ID) in the GEOCODED table
+#Pull a max of 100 records which do not exist (have their ID) in the GEOCODED table
 my_cursor.execute("SELECT c.*  FROM MPD.MPDCOS c LEFT JOIN MPD.GEOCODED q ON q.ID = c.ID WHERE q.ID IS NULL ORDER BY RAND() LIMIT 100;") 
 #my_cursor.execute("SELECT c.*  FROM MPD.MPDCOS c LEFT JOIN MPD.GEOCODED q ON q.ID = c.ID WHERE q.ID IS NULL AND c.`Nature of Call` = 'SHOTSPOTTER' ORDER BY RAND() LIMIT 300;")
 
@@ -84,7 +84,7 @@ def FixIntersection(x): #Takes in a row of the dataset
                 LS2 = []
                 for i in ListLocations1: #For every Location we found:
                     GeoText1 = geolocator.geocode(i.address, geometry ='wkt').raw["geotext"] #< pull out the .raw["geotext"], \/ Turns that it into a list of tuples
-                    exec(GeoText1.replace("LINESTRING(","LS1=[(").replace("POLYGON((","LS1=[(").replace("POINT(","LS2=[(").replace("))",")").replace(")",")]").replace(" ",";").replace(",","), (").replace(";",", "),globals(),BugFixingDict)
+                    exec(GeoText1.replace("LINESTRING(","LS1=[(").replace("POLYGON((","LS1=[(").replace("POINT(","LS1=[(").replace("))",")").replace(")",")]").replace(" ",";").replace(",","), (").replace(";",", "),globals(),BugFixingDict)
                     LS1add = BugFixingDict["LS1"] 
                     LS1 = LS1 + LS1add #Each loop adds all the lat/lng values we found to the list
                 #The lines connecting lat/ lng data for each street will not be perfectly straight, this means that if we take the points "out of order" we may get an incorrect intersection point
