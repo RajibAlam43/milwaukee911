@@ -32,16 +32,27 @@ def ActualDistrict(x):
             output = Districts[i][0]
     return output
 
+def isAdmin(x):
+    #TODO ADD CHECK TO MAKE SURE IT IS ADMINISTRATIVE CALL
+    if(x["Processed Location"] in ["6929 W SILVER SPRING DR, MILWAUKEE, WI", '749 W STATE ST, MILWAUKEE, WI', '4715 W VLIET ST, MILWAUKEE, WI', '6929 W SILVER SPRING DR, MILWAUKEE, WI',
+                                    '3626 W FOND DU LAC AV, MILWAUKEE, WI', '2333 N 49TH ST, MILWAUKEE, WI','2920 N VEL R PHILLIPS AV, MILWAUKEE, WI','245 W LINCOLN AV, MILWAUKEE, WI',
+                                    '3006 S 27TH ST, MILWAUKEE, WI']):
+        return "HQ"
+    if(x["Processed Location"] in ["500 E OAK ST, OAK CREEK, WI", "4777 N 124th ST, BUTLER, WI"]):
+        return "Equipment"
+    else:
+        return False
 
 #Creating Column
 ActualDistrictsList = Data.apply(ActualDistrict,axis = 1)
 DummyCallDensityList = [np.nan] * len(Data.Latitude)
 BarProximityList =  [np.nan] * len(Data.Latitude)
+AdministrativeLocationList = Data.apply(isAdmin, axis = 1)
 
 
 #Send to database
-SendToGeoView = pd.DataFrame(np.column_stack([Data.ID, ActualDistrictsList, DummyCallDensityList, BarProximityList,]),
-    columns= ["ID","Actual District","Call Density","Bar Proximity"])
+SendToGeoView = pd.DataFrame(np.column_stack([Data.ID, ActualDistrictsList, DummyCallDensityList, BarProximityList,AdministrativeLocationList]),
+    columns= ["ID","Actual District","Call Density","Bar Proximity","Is Administrative Location"])
 
 engine = create_engine("mysql+pymysql://{user}:{pw}@pascal.mscsnet.mu.edu/{db}" # create sqlalchemy engine
             .format(user="project1", pw="ThisIsATest",db="MPD"))
