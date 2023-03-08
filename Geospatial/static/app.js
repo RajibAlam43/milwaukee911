@@ -14,6 +14,17 @@ document.getElementById("PlotRelevantPoints").addEventListener("click", PlotRelP
 document.getElementById("PlotDistricts").addEventListener("click", PlotDisticts);
 document.getElementById("PlotBars").addEventListener("click", PlotBars);
 
+var ShotSpotterFilterApply = false;
+document.getElementById("ShotSpotterFilterCheck").addEventListener("change", //ShotSpotter Only Filter
+function(){
+    if(this.checked){
+        ShotSpotterFilterApply = true;
+        ApplyFilters();
+    } else{
+        ShotSpotterFilterApply = false;
+        ApplyFilters();
+    }
+});
 
 var map = L.map('map', {preferCanvas: true}).setView([43.0389, -87.9065], 10);  
 
@@ -22,68 +33,69 @@ attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap,
 }).addTo(map);
 
 var DisplayedRecords = L.layerGroup().addTo(map);
+var filteredData = [];
+ApplyFilters();
 
-//L.canvasMarkerLayer({}).addTo(DisplayedRecords);
+
 
 function ClearPoints() {
     DisplayedRecords.clearLayers();
 }
 
-fetch('/data')
+function Filters(record) {
+//TODO Maybe precompute some of these filters
+    if(ShotSpotterFilterApply == true){
+        return record[4] == "SHOTSPOTTER";
+    }
+    return true;
+}
+
+function ApplyFilters(){
+    fetch('/data')
     .then(response => response.json())
     .then(data => {
-        data.forEach(row => {
-            let marker = L.marker([row[2], row[3]]).addTo(DisplayedRecords);
-            marker.bindPopup(row[1]);
-        });
+        window.filteredData = data.filter(item => {
+        return Filters(item)
     });
-
+    });
+}
 
 function PlotPoints() {
     var locationCounts = {};
-    fetch('/data')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(row => {
-                var location = row[1];
-                locationCounts[location] = (locationCounts[location] || 0) + 1;
-                var radius = locationCounts[location] / 4 * 10;
-                var markerCOS = L.circle([row[2], row[3]]).setRadius(radius).addTo(DisplayedRecords);
-                markerCOS.bindPopup(row[1]);
-            });
-        });
+    window.filteredData.forEach(row => {
+        var location = row[1];
+        locationCounts[location] = (locationCounts[location] || 0) + 1;
+        var radius = locationCounts[location] / 4 * 10;
+        var markerCOS = L.circle([row[2], row[3]]).setRadius(radius).addTo(DisplayedRecords);
+        markerCOS.bindPopup(row[1]);
+    });
 }
 
 function PlotRelPoints() {
     const policeStationsList = ['6929 W SILVER SPRING DR,MKE', '749 W STATE ST,MKE', '4715 W VLIET ST,MKE', '6929 W SILVER SPRING DR,MKE','3626 W FOND DU LAC AV,MKE', '2333 N 49TH ST,MKE','2920 N VEL R PHILLIPS AV,MKE','245 W LINCOLN AV,MKE','3006 S 27TH ST,MKE'];
-    fetch('/data')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(row => {
-                if (policeStationsList.includes(row[1])) {
-                    const policeStations = L.canvasMarker(L.latLng(row[2], row[3]),
-                    { img: {
-                        url: '/Geospatial/static/star-filled.png',
-                        size: [20, 20],     //image size ( default [40, 40] )
-                        //rotate: 10,         //image base rotate ( default 0 )
-                        //offset: { x: 0, y: 0 }, //image offset ( default { x: 0, y: 0 } )
-                    },}).addTo(DisplayedRecords);
-                    policeStations.bindPopup(row[1]);
-                }
-            });
-            const locationCounts = {};
-            data.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
-                const location = row[1];
-                locationCounts[location] = (locationCounts[location] || 0) + 1;
-            });
-            data.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
-                const location = row[1];
-                const radius = 10 + locationCounts[location] / 2 * 10;
-                const markerCOS = L.circle([row[2], row[3]]).setRadius(radius).addTo(DisplayedRecords);
-                markerCOS.bindPopup(row[1]);
-            });
-        });
-
+    window.filteredData.forEach(row => {
+    if (policeStationsList.includes(row[1])) {
+        const policeStations = L.canvasMarker(L.latLng(row[2], row[3]),
+        { img: {
+            url: '/static/star-filled.png',
+            size: [20, 20],     //image size ( default [40, 40] )
+            //rotate: 10,         //image base rotate ( default 0 )
+            //offset: { x: 0, y: 0 }, //image offset ( default { x: 0, y: 0 } )
+        },}).addTo(DisplayedRecords);
+        policeStations.bindPopup(row[1]);
+    }
+    });
+    const locationCounts = {};
+    window.filteredData.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
+        const location = row[1];
+        locationCounts[location] = (locationCounts[location] || 0) + 1;
+    });
+    window.filteredData.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
+        const location = row[1];
+        const radius = 10 + locationCounts[location] / 2 * 10;
+        const markerCOS = L.circle([row[2], row[3]]).setRadius(radius).addTo(DisplayedRecords);
+        markerCOS.bindPopup(row[1]);
+    });
 }
 
 function PlotDisticts() {
@@ -113,7 +125,7 @@ function PlotBars() {
             L.geoJSON(geojson, {
                     pointToLayer: function (feature, latlng) {
                         return L.canvasMarker(L.latLng(latlng), { img: {
-                            url: '/Geospatial/static/baricon.png',
+                            url: '/static/baricon.png',
                             size: [10, 10],
                         }})
                     },
