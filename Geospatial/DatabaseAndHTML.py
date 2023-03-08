@@ -12,10 +12,10 @@ db = mysql.connector.connect(host='pascal.mscsnet.mu.edu',user='project1',passwo
 @app.route('/data')
 def get_data():
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM MPD.GEOCODED WHERE Latitude IS NOT NULL LIMIT 3000;")
-    #cursor.execute("SELECT c.* FROM MPD.GEOCODED c LEFT JOIN MPD.MPDCOS q ON q.ID = c.ID WHERE q.`Nature of Call` = 'SHOTSPOTTER'  AND c.Latitude IS NOT NULL LIMIT 3000;")
+    #cursor.execute("SELECT * FROM MPD.GEOCODED WHERE Latitude IS NOT NULL;")
+    cursor.execute("SELECT g.*, q.`Call Number`,q.`Date/Time`,q.`Police District`,q.`Nature of Call`,q.`Status`,q.`Last Updated`, q.`Actual District`,q.`Call Density`,q.`Bar Proximity`,q.`Is Administrative Location`  FROM MPD.GEOCODED g  LEFT JOIN (SELECT c.*, v.`Actual District`,v.`Call Density`,v.`Bar Proximity`,v.`Is Administrative Location` FROM MPD.MPDCOS c LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = c.ID) q on g.ID = q.ID WHERE g.Latitude IS NOT NULL;")
     DBdata = cursor.fetchall()
-    GEOCODED = [(row[0],row[1],row[2],row[3]) for row in DBdata]
+    GEOCODED = [(row[0],row[1],row[2],row[3],row[8]) for row in DBdata]
     return jsonify(GEOCODED)
     
 @app.route('/geojson')
