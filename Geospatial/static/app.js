@@ -63,7 +63,7 @@ function PlotRelPoints() {
                 if (policeStationsList.includes(row[1])) {
                     const policeStations = L.canvasMarker(L.latLng(row[2], row[3]),
                     { img: {
-                        url: '/static/star-filled.png',
+                        url: '/Geospatial/static/star-filled.png',
                         size: [20, 20],     //image size ( default [40, 40] )
                         //rotate: 10,         //image base rotate ( default 0 )
                         //offset: { x: 0, y: 0 }, //image offset ( default { x: 0, y: 0 } )
@@ -113,7 +113,7 @@ function PlotBars() {
             L.geoJSON(geojson, {
                     pointToLayer: function (feature, latlng) {
                         return L.canvasMarker(L.latLng(latlng), { img: {
-                            url: '/static/baricon.png',
+                            url: '/Geospatial/static/baricon.png',
                             size: [10, 10],
                         }})
                     },

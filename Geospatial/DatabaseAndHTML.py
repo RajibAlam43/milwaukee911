@@ -20,13 +20,13 @@ def get_data():
     
 @app.route('/geojson')
 def get_geojson():
-    with open("./static/modified_mpd.geojson") as file:
+    with open("./Geospatial/static/modified_mpd.geojson") as file:
         geojson = json.load(file)
     return jsonify(geojson)
 
 @app.route('/bars')
 def get_bars():
-    with open("./static/barsexhaustive.geojson") as file:
+    with open("./Geospatial/static/barsexhaustive.geojson") as file:
         geojson = json.load(file)
     return jsonify(geojson)
 
