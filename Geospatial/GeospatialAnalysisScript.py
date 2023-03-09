@@ -61,7 +61,7 @@ engine = create_engine("mysql+pymysql://{user}:{pw}@pascal.mscsnet.mu.edu/{db}" 
 SendToGeoView.to_sql("GEOSPATIAL_VIEW", con = engine, if_exists = 'append', chunksize = 1000,index= False)
 
 #Call Density
-my_cursor.execute("SELECT * FROM MPD.GEOCODED WHERE Latitude IS NOT NULL;")  #Pulls all geocoded records to update density
+my_cursor.execute("SELECT g.* FROM MPD.GEOCODED g LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = g.ID WHERE g.Latitude IS NOT NULL AND v.`Is Administrative Location` = '0';")  #Pulls all geocoded records (-Admin) to update density
 
 result = my_cursor.fetchall() #brings results of query into python
 AllGeocoded = pd.DataFrame(result,columns = ColumnNames) #Converts query results into a pandas dataframe
