@@ -38,10 +38,22 @@ def isAdmin(x):
                                     '3626 W FOND DU LAC AV, MILWAUKEE, WI', '2333 N 49TH ST, MILWAUKEE, WI','2920 N VEL R PHILLIPS AV, MILWAUKEE, WI','245 W LINCOLN AV, MILWAUKEE, WI',
                                     '3006 S 27TH ST, MILWAUKEE, WI']):
         return "HQ"
-    if(x["Processed Location"] in ["500 E OAK ST, OAK CREEK, WI", "4777 N 124th ST, BUTLER, WI"]):
+    if(x["Processed Location"] in ["500 E OAK ST, OAK CREEK, WI", "4777 N 124TH ST, BUTLER, WI"]):
         return "Equipment"
+    if(x["Processed Location"] in ["949 N 9TH ST, MILWAUKEE, WI"]):
+        return "Jail"
+    if(x["Processed Location"] in ["901 N 9TH ST, MILWAUKEE, WI","951 N JAMES LOVELL ST, MILWAUKEE, WI"]):
+        return "Courthouse"
+    if(x["Processed Location"] in ["6680 N TEUTONIA AV, MILWAUKEE, WI"]):
+        return "Training"
+    if(x["Processed Location"] in ["933 W HIGHLAND AV, MILWAUKEE, WI"]):
+        return "Medical Examiner"
     else:
         return False
+    
+    
+    
+    
 
 #Creating Column
 ActualDistrictsList = Data.apply(ActualDistrict,axis = 1)
