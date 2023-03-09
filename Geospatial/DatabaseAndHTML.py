@@ -15,9 +15,9 @@ def get_data():
     #cursor.execute("SELECT * FROM MPD.GEOCODED WHERE Latitude IS NOT NULL;")
     cursor.execute("SELECT g.*, q.`Call Number`,q.`Date/Time`,q.`Police District`,q.`Nature of Call`,q.`Status`,q.`Last Updated`, q.`Actual District`,q.`Call Density`,q.`Bar Proximity`,q.`Is Administrative Location`  FROM MPD.GEOCODED g  LEFT JOIN (SELECT c.*, v.`Actual District`,v.`Call Density`,v.`Bar Proximity`,v.`Is Administrative Location` FROM MPD.MPDCOS c LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = c.ID) q on g.ID = q.ID WHERE g.Latitude IS NOT NULL;")
     DBdata = cursor.fetchall()
-    GEOCODED = [(row[0],row[1],row[2],row[3],row[8]) for row in DBdata]
+    GEOCODED = [(row[0],row[1],row[2],row[3],row[7],row[8],row[12]) for row in DBdata]
     return jsonify(GEOCODED)
-    
+
 @app.route('/geojson')
 def get_geojson():
     with open("./Geospatial/static/modified_mpd.geojson") as file:
