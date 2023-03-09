@@ -12,11 +12,11 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 	<script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
 	<script src="{{ url_for('static', filename='leaflet-canvas-markers.js') }}"></script>
+	<script src="{{ url_for('static', filename= 'chroma.js') }}"></script>
 
 
 
-	<!-- <script src="../../../../Geospatial/static/leaflet-canvas-markers/leaflet-canvas-markers.js"></script> -->
-	<!-- <script src="leaflet-canvas-markers.js"></script> --> 
+
 
 	<style> 
 		html, body {
@@ -60,6 +60,15 @@
 	<label for="ShotSpotterFilter"> Show Only ShotSpotter </label>
 	<br>
 
+	<input type="checkbox" id="PDColorCheck" name="PDColorCheck">
+	<label for="PDColorCheck"> Color By Police Districts </label>
+	<br>
+	
+	<input type="checkbox" id="CallDensityColorCheck" name="CallDensityColorCheck">
+	<label for="CallDensityColorCheck"> Color By Call Density </label>
+	<br>
+
+	
 </div>
 
 

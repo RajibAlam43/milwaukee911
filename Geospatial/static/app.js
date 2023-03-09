@@ -1,5 +1,5 @@
 console.log()
-// import { canvasMarker } from 'leaflet-canvas-markers';
+
 
 if (typeof L.canvasMarker === 'function') {
     console.log("L.canvasMarkers works");
@@ -26,6 +26,30 @@ function(){
     }
 });
 
+var PDColorApply = false;
+document.getElementById("PDColorCheck").addEventListener("change", //Toggle Coloring Markers by Police District
+function(){
+    if(this.checked){
+        PDColorApply = true;
+        document.getElementById("CallDensityColorCheck").checked = false;
+        CallDensityColorApply = false;
+    } else{
+        PDColorApply = false;
+    }
+});
+
+var CallDensityColorApply = false;
+document.getElementById("CallDensityColorCheck").addEventListener("change", //Toggle Coloring Markers by Call Density
+function(){
+    if(this.checked){
+        CallDensityColorApply = true;
+        document.getElementById("PDColorCheck").checked = false;
+        PDColorApply = false;
+    } else{
+        CallDensityColorApply = false;
+    }
+});
+
 var map = L.map('map', {preferCanvas: true}).setView([43.0389, -87.9065], 10);  
 
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -34,6 +58,20 @@ attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap,
 
 var DisplayedRecords = L.layerGroup().addTo(map);
 var filteredData = [];
+
+let CallDensityScaling = 0; // initialize maxVal variable to 0
+
+function UpdateConstants(){
+    return fetch('/data') // fetch data from Flask and return the promise
+    .then(response => response.json()) // parse response as JSON
+    .then(data => {
+        const CallDensityColumn = data.map(record =>  parseFloat(record[6]));
+        CallDensityScaling = 1/ Math.max(...CallDensityColumn);
+        console.log(`The Call Density Scaling is: ${CallDensityScaling}`);
+    })
+    .catch(error => console.error(error)); // handle errors
+}
+
 ApplyFilters();
 
 
@@ -45,7 +83,7 @@ function ClearPoints() {
 function Filters(record) {
 //TODO Maybe precompute some of these filters
     if(ShotSpotterFilterApply == true){
-        return record[4] == "SHOTSPOTTER";
+        return record[5] == "SHOTSPOTTER";
     }
     return true;
 }
@@ -60,41 +98,89 @@ function ApplyFilters(){
     });
 }
 
+function ColorFunction(record,CDS){
+    if(PDColorApply == true){
+        switch (record[4]) {
+            case '1':
+            return  'orange';
+            case '2':
+            return 'green';
+            case '3':
+            return 'blue';
+            case '4':
+            return 'purple';
+            case '5':
+            return 'blue';
+            case '6':
+            return 'red';
+            case '7':
+            return 'yellow';
+            default:
+            return 'white';
+        }
+    }else if(CallDensityColorApply == true){
+        const ColorScale = chroma.scale(['yellow', 'navy']).mode('lch');
+        return ColorScale(record[6] * CDS);
+    } else {
+        return 'blue'
+    }
+}
+
+
 function PlotPoints() {
     var locationCounts = {};
+    UpdateConstants().then(() => {
+        console.log(`Call Density Scaling: ${CallDensityScaling}`);
     window.filteredData.forEach(row => {
         var location = row[1];
         locationCounts[location] = (locationCounts[location] || 0) + 1;
         var radius = locationCounts[location] / 4 * 10;
-        var markerCOS = L.circle([row[2], row[3]]).setRadius(radius).addTo(DisplayedRecords);
+        var markerCOS = L.circle([row[2], row[3]],
+            {   stroke: true,
+                opacity	: .6,
+                color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
+                fillOpacity	: .2,
+                fillColor: ColorFunction(row,CallDensityScaling)
+            }).setRadius(radius).addTo(DisplayedRecords);
         markerCOS.bindPopup(row[1]);
     });
+});    
 }
 
 function PlotRelPoints() {
-    const policeStationsList = ['6929 W SILVER SPRING DR,MKE', '749 W STATE ST,MKE', '4715 W VLIET ST,MKE', '6929 W SILVER SPRING DR,MKE','3626 W FOND DU LAC AV,MKE', '2333 N 49TH ST,MKE','2920 N VEL R PHILLIPS AV,MKE','245 W LINCOLN AV,MKE','3006 S 27TH ST,MKE'];
-    window.filteredData.forEach(row => {
-    if (policeStationsList.includes(row[1])) {
-        const policeStations = L.canvasMarker(L.latLng(row[2], row[3]),
-        { img: {
-            url: '/static/star-filled.png',
-            size: [20, 20],     //image size ( default [40, 40] )
-            //rotate: 10,         //image base rotate ( default 0 )
-            //offset: { x: 0, y: 0 }, //image offset ( default { x: 0, y: 0 } )
-        },}).addTo(DisplayedRecords);
-        policeStations.bindPopup(row[1]);
-    }
-    });
-    const locationCounts = {};
-    window.filteredData.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
-        const location = row[1];
-        locationCounts[location] = (locationCounts[location] || 0) + 1;
-    });
-    window.filteredData.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
-        const location = row[1];
-        const radius = 10 + locationCounts[location] / 2 * 10;
-        const markerCOS = L.circle([row[2], row[3]]).setRadius(radius).addTo(DisplayedRecords);
-        markerCOS.bindPopup(row[1]);
+    UpdateConstants().then(() => {
+        console.log(`Call Density Scaling: ${CallDensityScaling}`);
+        const policeStationsList = ['6929 W SILVER SPRING DR,MKE', '749 W STATE ST,MKE', '4715 W VLIET ST,MKE', '6929 W SILVER SPRING DR,MKE','3626 W FOND DU LAC AV,MKE', '2333 N 49TH ST,MKE','2920 N VEL R PHILLIPS AV,MKE','245 W LINCOLN AV,MKE','3006 S 27TH ST,MKE'];
+        window.filteredData.forEach(row => {
+        if (policeStationsList.includes(row[1])) {
+            const policeStations = L.canvasMarker(L.latLng(row[2], row[3]),
+            { img: {
+                url: '/static/star-filled.png',
+                size: [20, 20],     //image size ( default [40, 40] )
+                //rotate: 10,         //image base rotate ( default 0 )
+                //offset: { x: 0, y: 0 }, //image offset ( default { x: 0, y: 0 } )
+            },}).addTo(DisplayedRecords);
+            policeStations.bindPopup(row[1]);
+        }
+        });
+        const locationCounts = {};
+        window.filteredData.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
+            const location = row[1];
+            locationCounts[location] = (locationCounts[location] || 0) + 1;
+        });
+        window.filteredData.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
+            const location = row[1];
+            const radius = 10 + locationCounts[location] / 2 * 10;
+            const markerCOS = L.circle([row[2], row[3]],
+                {   stroke: true,
+                    opacity	: .6,
+                    weight: 2,
+                    color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
+                    fillOpacity	: .2,
+                    fillColor: ColorFunction(row,CallDensityScaling)
+                }).setRadius(radius).addTo(DisplayedRecords);
+            markerCOS.bindPopup(row[1]);
+        });
     });
 }
 
