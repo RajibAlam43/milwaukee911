@@ -170,7 +170,7 @@ function PlotRelPoints() {
         });
         window.filteredData.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
             const location = row[1];
-            const radius = 10 + locationCounts[location] / 2 * 10;
+            const radius = 10 + (locationCounts[location]**.5) * 10;
             const markerCOS = L.circle([row[2], row[3]],
                 {   stroke: true,
                     opacity	: .6,
