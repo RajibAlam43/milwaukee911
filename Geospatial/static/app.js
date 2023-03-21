@@ -59,7 +59,7 @@ attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap,
 var DisplayedRecords = L.layerGroup().addTo(map);
 var filteredData = [];
 
-let CallDensityScaling = 0; // initialize maxVal variable to 0
+let CallDensityScaling = 0;
 
 function UpdateConstants(){
     return fetch('/data') // fetch data from Flask and return the promise
@@ -129,38 +129,51 @@ function ColorFunction(record,CDS){
 
 function PlotPoints() {
     var locationCounts = {};
+    var PlottedLocations = {};
     UpdateConstants().then(() => {
         console.log(`Call Density Scaling: ${CallDensityScaling}`);
     window.filteredData.forEach(row => {
         var location = row[1];
         locationCounts[location] = (locationCounts[location] || 0) + 1;
-        var radius = locationCounts[location] / 4 * 10;
-        var markerCOS = L.circle([row[2], row[3]],
-            {   stroke: true,
-                opacity	: .6,
-                color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
-                fillOpacity	: .2,
-                fillColor: ColorFunction(row,CallDensityScaling)
-            }).setRadius(radius).addTo(DisplayedRecords);
-        markerCOS.bindPopup(row[1]);
+    });
+    window.filteredData.forEach(row => {
+        var location = row[1];
+        if (!PlottedLocations[location]) {
+            PlottedLocations[location] = true;
+            var radius = locationCounts[location] / 4 * 10;
+            var markerCOS = L.circle([row[2], row[3]],
+                {   stroke: true,
+                    opacity	: .6,
+                    color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
+                    fillOpacity	: .2,
+                    fillColor: ColorFunction(row,CallDensityScaling)
+                }).setRadius(radius).addTo(DisplayedRecords);
+            markerCOS.bindPopup(row[1]);
+        }
     });
 });    
 }
 
 function PlotRelPoints() {
+    var PlottedLocations = {};
     UpdateConstants().then(() => {
         console.log(`Call Density Scaling: ${CallDensityScaling}`);
         const policeStationsList = ['6929 W SILVER SPRING DR,MKE', '749 W STATE ST,MKE', '4715 W VLIET ST,MKE', '6929 W SILVER SPRING DR,MKE','3626 W FOND DU LAC AV,MKE', '2333 N 49TH ST,MKE','2920 N VEL R PHILLIPS AV,MKE','245 W LINCOLN AV,MKE','3006 S 27TH ST,MKE'];
+        //TODO replace this next chunk with just plotting admin locations directly regardless of whether they are in data? or make small check
         window.filteredData.forEach(row => {
         if (policeStationsList.includes(row[1])) {
-            const policeStations = L.canvasMarker(L.latLng(row[2], row[3]),
-            { img: {
-                url: '/static/star-filled.png',
-                size: [20, 20],     //image size ( default [40, 40] )
-                //rotate: 10,         //image base rotate ( default 0 )
-                //offset: { x: 0, y: 0 }, //image offset ( default { x: 0, y: 0 } )
-            },}).addTo(DisplayedRecords);
-            policeStations.bindPopup(row[1]);
+            const location = row[1];
+            if (!PlottedLocations[location]) {
+                PlottedLocations[location] = true;
+                const policeStations = L.canvasMarker(L.latLng(row[2], row[3]),
+                { img: {
+                    url: '/static/star-filled.png',
+                    size: [20, 20],     //image size ( default [40, 40] )
+                    //rotate: 10,         //image base rotate ( default 0 )
+                    //offset: { x: 0, y: 0 }, //image offset ( default { x: 0, y: 0 } )
+                },}).addTo(DisplayedRecords);
+                policeStations.bindPopup(row[1]);
+            }
         }
         });
         const locationCounts = {};
@@ -170,16 +183,19 @@ function PlotRelPoints() {
         });
         window.filteredData.filter(row => !policeStationsList.includes(row[1])).forEach(row => {
             const location = row[1];
-            const radius = 10 + (locationCounts[location]**.5) * 10;
-            const markerCOS = L.circle([row[2], row[3]],
-                {   stroke: true,
-                    opacity	: .6,
-                    weight: 2,
-                    color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
-                    fillOpacity	: .2,
-                    fillColor: ColorFunction(row,CallDensityScaling)
-                }).setRadius(radius).addTo(DisplayedRecords);
-            markerCOS.bindPopup(row[1]);
+            if (!PlottedLocations[location]) {
+                PlottedLocations[location] = true;
+                const radius = 10 + (locationCounts[location]**.5) * 10;
+                const markerCOS = L.circle([row[2], row[3]],
+                    {   stroke: true,
+                        opacity	: .6,
+                        weight: 2,
+                        color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
+                        fillOpacity	: .2,
+                        fillColor: ColorFunction(row,CallDensityScaling)
+                    }).setRadius(radius).addTo(DisplayedRecords);
+                markerCOS.bindPopup(row[1]);
+            }
         });
     });
 }
