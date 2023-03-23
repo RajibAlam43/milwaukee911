@@ -200,6 +200,11 @@ geolocate_column = Data.iloc[:,3].apply(geolocator.geocode, geometry ='wkt') #fi
 
 geolocate_column[geolocate_column.apply(lambda x: x is None)] = Intersections[geolocate_column.apply(lambda x: x is None)] #Inserts the fixed intersections in with the Location data
 
+#TODO
+#43.0839795	-87.9137343 IF mapped to this then replace 3rd st with old world 3rd st
+# Also fix center street stack 1901 W CENTER ST,MKE
+
+
 
 #Combines relevant fields into a pandas dataframe
 SendToDatabase = pd.DataFrame(np.column_stack([Data.ID, OriginalLocation, geolocate_column.apply(getLat), geolocate_column.apply(getLong),Data.Location,]),
