@@ -60,6 +60,10 @@
 	<label for="ShotSpotterFilter"> Show Only ShotSpotter </label>
 	<br>
 
+	<input type="checkbox" id="PatrolFilterCheck" name="BusinessCheckFilterCheck">
+	<label for="PatrolFilter"> Show Only Patrol </label>
+	<br>
+
 	<input type="checkbox" id="PDColorCheck" name="PDColorCheck">
 	<label for="PDColorCheck"> Color By Police Districts </label>
 	<br>
@@ -71,8 +75,12 @@
 	
 </div>
 
-
-<div id="map" style="width: 800px; height: 600px;"></div>
+<table>
+	<tr>
+		<td><div id="map" style="width: 800px; height: 600px;"></div></td>
+		<td><span id = "SelectedCallPrintout">Can click on marker to see calls at that location.</span></td>
+	</tr>
+</table>
 
 </body>
 </html>

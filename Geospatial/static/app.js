@@ -19,9 +19,25 @@ document.getElementById("ShotSpotterFilterCheck").addEventListener("change", //S
 function(){
     if(this.checked){
         ShotSpotterFilterApply = true;
+        document.getElementById("PatrolFilterCheck").checked = false;
+        PatrolFilterApply = false;
         ApplyFilters();
     } else{
         ShotSpotterFilterApply = false;
+        ApplyFilters();
+    }
+});
+
+var PatrolFilterApply = false;
+document.getElementById("PatrolFilterCheck").addEventListener("change", //Patrol Only Filter
+function(){
+    if(this.checked){
+        PatrolFilterApply = true;
+        document.getElementById("ShotSpotterFilterCheck").checked = false;
+        ShotSpotterFilterApply = false;
+        ApplyFilters();
+    } else{
+        PatrolFilterApply = false;
         ApplyFilters();
     }
 });
@@ -85,6 +101,10 @@ function Filters(record) {
     if(ShotSpotterFilterApply == true){
         return record[5] == "SHOTSPOTTER";
     }
+    if(PatrolFilterApply == true){
+        const PatrolList = ["BUSINESS CHECK", "PATROL","PARK AND WALK","TAVERN CHECK","SCHL MONITORING"];
+        return PatrolList.includes(record[5]);
+    }
     return true;
 }
 
@@ -147,12 +167,32 @@ function PlotPoints() {
                     color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
                     fillOpacity	: .2,
                     fillColor: ColorFunction(row,CallDensityScaling)
-                }).setRadius(radius).addTo(DisplayedRecords);
+                }).setRadius(radius).addTo(DisplayedRecords).on('click', MakerClicked);
+            markerCOS.LocationData = Location;
             markerCOS.bindPopup(row[1]);
-        }
+        }        
     });
 });    
 }
+
+function MakerClicked(e) {
+    console.log(e.latlng);
+    console.log(e.target.LocationData);
+    var location = e.target.LocationData
+    var SelectedCallPrintout = document.getElementById("SelectedCallPrintout");
+    var ID = [];
+    var NATUREOFCALL = [];
+    window.filteredData.forEach(row => {
+        if(row[1] == location){
+            ID.push(row[0]);
+            NATUREOFCALL.push(row[5])
+        }
+    })
+    SelectedCallPrintout.innerHTML = (
+    "ID:"+ ID + "<br> Nature of Call:" + NATUREOFCALL
+    );
+}
+
 
 function PlotRelPoints() {
     var PlottedLocations = {};
@@ -193,7 +233,8 @@ function PlotRelPoints() {
                         color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
                         fillOpacity	: .2,
                         fillColor: ColorFunction(row,CallDensityScaling)
-                    }).setRadius(radius).addTo(DisplayedRecords);
+                    }).setRadius(radius).addTo(DisplayedRecords).on('click', MakerClicked);
+                markerCOS.LocationData = location;
                 markerCOS.bindPopup(row[1]);
             }
         });
