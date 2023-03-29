@@ -17,7 +17,7 @@ connection = pymysql.connect(host='pascal.mscsnet.mu.edu',user='project1',passwo
 my_cursor = connection.cursor()
 
 #Pull a max of 100 records which do not exist (have their ID) in the GEOCODED table
-my_cursor.execute("SELECT c.*  FROM MPD.MPDCOS c LEFT JOIN MPD.GEOCODED q ON q.ID = c.ID WHERE q.ID IS NULL ORDER BY RAND() LIMIT 100;") 
+my_cursor.execute("SELECT c.*  FROM MPD.MPDCOS c LEFT JOIN MPD.GEOCODED q ON q.ID = c.ID WHERE q.ID IS NULL ORDER BY RAND() LIMIT 10;") 
 #my_cursor.execute("SELECT c.*  FROM MPD.MPDCOS c LEFT JOIN MPD.GEOCODED q ON q.ID = c.ID WHERE q.ID IS NULL AND c.`Nature of Call` = 'SHOTSPOTTER' ORDER BY RAND() LIMIT 300;")
 
 result = my_cursor.fetchall() #brings results of query into python
