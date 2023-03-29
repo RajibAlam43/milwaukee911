@@ -71,6 +71,7 @@ engine = create_engine("mysql+pymysql://{user}:{pw}@pascal.mscsnet.mu.edu/{db}" 
 
 #Inserts dataframe into MPD.GEOCODED table in the database
 SendToGeoView.to_sql("GEOSPATIAL_VIEW", con = engine, if_exists = 'append', chunksize = 1000,index= False)
+connection.commit()
 
 #Call Density
 my_cursor.execute("SELECT g.* FROM MPD.GEOCODED g LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = g.ID WHERE g.Latitude IS NOT NULL AND v.`Is Administrative Location` = '0';")  #Pulls all geocoded records (-Admin) to update density
@@ -92,6 +93,7 @@ SendToGeoView2.to_sql("DENSITY_LANDING", con = engine, if_exists = 'append', chu
 
 my_cursor.execute("UPDATE MPD.GEOSPATIAL_VIEW GSV INNER JOIN MPD.DENSITY_LANDING DL ON GSV.ID = DL.ID SET GSV.`Call Density` = DL.`Call Density`;")  #Joins Updated Density with GEOSPATIAL_VIEW
 my_cursor.execute("DELETE FROM MPD.DENSITY_LANDING;")  #Deletes Landing Table Data
+my_cursor.execute("UPDATE MPD.GEOSPATIAL_VIEW K RIGHT JOIN (SELECT g.ID FROM MPD.GEOCODED g LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = g.ID WHERE g.Latitude IS NOT NULL AND v.`Is Administrative Location` != '0') J on J.ID = K.ID SET K.`Call Density` = 0;")
 connection.commit()
 connection.close()
 
