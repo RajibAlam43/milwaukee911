@@ -19,7 +19,8 @@ my_cursor.execute("SELECT c.* FROM MPD.GEOCODED c LEFT JOIN MPD.GEOSPATIAL_VIEW 
 result = my_cursor.fetchall() #brings results of query into python
 Data = pd.DataFrame(result,columns = ColumnNames) #Converts query results into a pandas dataframe
 
-with open("Geospatial\static\modified_mpd.geojson") as f:
+with open(r"Geospatial\static\modified_mpd.geojson") as f: #this needs to be used for SSH to understand it when we upload this script to run on crontab
+#with open("Geospatial\static\modified_mpd.geojson") as f:
   DistrictFeatures = json.load(f)["features"]
 
 Districts = [[feature["properties"]["POLICE"],sh.shape(feature["geometry"]).buffer(0)] for feature in DistrictFeatures]
