@@ -115,24 +115,24 @@ def FixIntersection(x): #Takes in a row of the dataset
                 if(np.std(LS1Out["Lat"]) > np.std(LS1Out["Lng"])): #if the data for the street is going mostly EAST-WEST then we want to predict a Lng value with Lat
                     model1.fit(np.array(LS1Out["Lat"]).reshape(-1,1),LS1Out["Lng"]) #trains the model
                     EstMin1 = model1.predict(np.array(MinLat).reshape(-1,1)) #Predicts a lng value at our significantly distanced lat point
-                    EstMax1 = model1.predict(np.array(MaxLat.reshape(-1,1)))
+                    EstMax1 = model1.predict(np.array(MaxLat).reshape(-1,1))
                     ForcedLS1 = [(EstMin1[0],MinLat),(EstMax1[0],MaxLat)] #Creates a list of our 2 significantly distanced points predicted using the linear regression model
                 else:   #if the data for the street is going mostly NORTH-SOUTH then we want to predict a lat value with lng
                     model1.fit(np.array(LS1Out["Lng"]).reshape(-1,1),LS1Out["Lat"])
                     EstMin1 = model1.predict(np.array(MinLng).reshape(-1,1)) #Predicts a lat value at our significantly distanced lng point
-                    EstMax1 = model1.predict(np.array(MaxLng.reshape(-1,1)))
+                    EstMax1 = model1.predict(np.array(MaxLng).reshape(-1,1))
                     ForcedLS1 = [(MinLng,EstMin1[0]),(MaxLng,EstMax1[0])]
                 #Repeats the process for the second street
                 model2 = LinearRegression()
                 if(np.std(LS2Out["Lat"]) > np.std(LS2Out["Lng"])):
                     model2.fit(np.array(LS2Out["Lat"]).reshape(-1,1),LS2Out["Lng"])
                     EstMin2 = model2.predict(np.array(MinLat).reshape(-1,1))
-                    EstMax2 = model2.predict(np.array(MaxLat.reshape(-1,1)))
+                    EstMax2 = model2.predict(np.array(MaxLat).reshape(-1,1))
                     ForcedLS2 = [(EstMin2[0],MinLat),(EstMax2[0],MaxLat)]
                 else:
                     model2.fit(np.array(LS2Out["Lng"]).reshape(-1,1),LS2Out["Lat"])
                     EstMin2 = model2.predict(np.array(MinLng).reshape(-1,1))
-                    EstMax2 = model2.predict(np.array(MaxLng.reshape(-1,1)))
+                    EstMax2 = model2.predict(np.array(MaxLng).reshape(-1,1))
                     ForcedLS2 = [(MinLng,EstMin2[0]),(MaxLng,EstMax2[0])]
                 Output = LineString(ForcedLS1).intersection(LineString(ForcedLS2)) #saves the output as the intersection of the 2 lines constructed using the 4 distanced/predicted points
             else: #if Common Neighborhood or using all listed locatiosn worked
