@@ -81,7 +81,7 @@ function UpdateConstants(){
     return fetch('/data') // fetch data from Flask and return the promise
     .then(response => response.json()) // parse response as JSON
     .then(data => {
-        const CallDensityColumn = data.map(record =>  parseFloat(record[6]));
+        const CallDensityColumn = data.map(record =>  parseFloat(record[12]));
         CallDensityScaling = 1/ Math.max(...CallDensityColumn);
         console.log(`The Call Density Scaling is: ${CallDensityScaling}`);
     })
@@ -99,11 +99,11 @@ function ClearPoints() {
 function Filters(record) {
 //TODO Maybe precompute some of these filters
     if(ShotSpotterFilterApply == true){
-        return record[5] == "SHOTSPOTTER";
+        return record[8] == "SHOTSPOTTER";
     }
     if(PatrolFilterApply == true){
         const PatrolList = ["BUSINESS CHECK", "PATROL","PARK AND WALK","TAVERN CHECK","SCHL MONITORING"];
-        return PatrolList.includes(record[5]);
+        return PatrolList.includes(record[8]);
     }
     return true;
 }
@@ -120,7 +120,7 @@ function ApplyFilters(){
 
 function ColorFunction(record,CDS){
     if(PDColorApply == true){
-        switch (record[4]) {
+        switch (record[7]) {
             case '1':
             return  'orange';
             case '2':
@@ -140,7 +140,7 @@ function ColorFunction(record,CDS){
         }
     }else if(CallDensityColorApply == true){
         const ColorScale = chroma.scale(['yellow', 'navy']).mode('lch');
-        return ColorScale(record[6] * CDS);
+        return ColorScale(record[12] * CDS);
     } else {
         return 'blue'
     }
@@ -186,7 +186,7 @@ function MakerClicked(e) {
     window.filteredData.forEach(row => {
         if(row[1] == location){
             ID.push(row[0]);
-            NATUREOFCALL.push(row[5])
+            NATUREOFCALL.push(row[8])
         }
     })
     var NATUREOFCALLCounts = {};
@@ -212,7 +212,6 @@ function MakerClicked(e) {
         xaxis: {title: 'Nature of Call'},
         yaxis: {title: 'Count'}
       };
-      
       Plotly.newPlot('SelectedCallsPlot', Data, Layout);      
 }
 
