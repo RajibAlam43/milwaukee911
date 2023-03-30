@@ -183,12 +183,16 @@ function MakerClicked(e) {
     SelectedCallPrintout.style.whiteSpace = 'pre-wrap';
     var ID = [];
     var NATUREOFCALL = [];
+    var TIME = [];
     window.filteredData.forEach(row => {
         if(row[1] == location){
             ID.push(row[0]);
             NATUREOFCALL.push(row[8])
+            TIME.push((new Date(Date.parse(row[6]))).getHours())
         }
     })
+
+    //SELECTED BARGRAPH
     var NATUREOFCALLCounts = {};
     NATUREOFCALL.forEach(function(NOC) {
         if (NOC in NATUREOFCALLCounts) {
@@ -198,21 +202,61 @@ function MakerClicked(e) {
         }
     });
     SelectedCallPrintout.innerHTML = (
-    "ID:"+ ID.join(' ') + "<br> Nature of Call:" + NATUREOFCALL.join(' ')
+    "IDs: "+ ID.join(' ')
     );
-    var Config = {
+    var Trace = {
         x:  Array.from(new Set(NATUREOFCALL)),
         y: Object.values(NATUREOFCALLCounts),
         type: 'bar',
         orientation: 'v'
       };
-      var Data = [Config];
+      var Data = [Trace];
       var Layout = {
         title: 'Bargraph at Selection',
+        margin:{t: 30},
         xaxis: {title: 'Nature of Call'},
         yaxis: {title: 'Count'}
       };
-      Plotly.newPlot('SelectedCallsPlot', Data, Layout);      
+      Plotly.newPlot('SelectedCallsPlot', Data, Layout,{displayModeBar: false});
+    
+    //SELECTED TIME HIST
+
+    var TickVals = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5, 14.5, 15.5, 16.5, 17.5, 18.5, 19.5, 20.5, 21.5, 22.5, 23.5, 24.5]; 
+    var TickText = ['12:00 am', '1:00 am', '2:00 am', '3:00 am', '4:00 am', '5:00 am', '6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', '8:00 pm', '9:00 pm', '10:00 pm', '11:00 pm'];
+    var TraceTime = {
+        x:  TIME,
+        autobinx: false,
+        type: 'histogram',
+        orientation: 'v',
+        xbins: { 
+            end: 24,
+            size: 1, 
+            start: 0
+        },
+        hovertemplate: "%{y} Records<extra></extra>"
+    };
+    var DataTime = [TraceTime];
+    var LayoutTime = {
+        title: {text: 'Time of Call', font: {size: 15}},
+        margin:{t: 30},
+        bargap: 0.05,
+        xaxis: {
+            title: 'Time',
+            margin:{t: 20},
+            range: [0, 24],
+            dtick: 1,
+            tickmode: 'array',
+            tickvals: TickVals,
+            ticktext: TickText,
+            tickangle: 90
+        },
+        hovermode: 'closest',
+        yaxis: {title: '',
+        nticks: 2},
+        height: 150
+    };
+    Plotly.newPlot('SelectedCallsTimeHist', DataTime, LayoutTime,{displayModeBar: false});
+      
 }
 
 
