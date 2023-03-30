@@ -180,6 +180,7 @@ function MakerClicked(e) {
     console.log(e.target.LocationData);
     var location = e.target.LocationData
     var SelectedCallPrintout = document.getElementById("SelectedCallPrintout");
+    SelectedCallPrintout.style.whiteSpace = 'pre-wrap';
     var ID = [];
     var NATUREOFCALL = [];
     window.filteredData.forEach(row => {
@@ -188,9 +189,31 @@ function MakerClicked(e) {
             NATUREOFCALL.push(row[5])
         }
     })
+    var NATUREOFCALLCounts = {};
+    NATUREOFCALL.forEach(function(NOC) {
+        if (NOC in NATUREOFCALLCounts) {
+            NATUREOFCALLCounts[NOC]++;
+        } else {
+            NATUREOFCALLCounts[NOC] = 1;
+        }
+    });
     SelectedCallPrintout.innerHTML = (
-    "ID:"+ ID + "<br> Nature of Call:" + NATUREOFCALL
+    "ID:"+ ID.join(' ') + "<br> Nature of Call:" + NATUREOFCALL.join(' ')
     );
+    var Config = {
+        x:  Array.from(new Set(NATUREOFCALL)),
+        y: Object.values(NATUREOFCALLCounts),
+        type: 'bar',
+        orientation: 'v'
+      };
+      var Data = [Config];
+      var Layout = {
+        title: 'Bargraph at Selection',
+        xaxis: {title: 'Nature of Call'},
+        yaxis: {title: 'Count'}
+      };
+      
+      Plotly.newPlot('SelectedCallsPlot', Data, Layout);      
 }
 
 
