@@ -175,10 +175,23 @@ function PlotPoints() {
 });    
 }
 
+var SelectedMarker = null;
 function MakerClicked(e) {
     console.log(e.latlng);
     console.log(e.target.LocationData);
     var location = e.target.LocationData
+
+    if(SelectedMarker !== null){
+        SelectedMarker.setStyle({
+            fillOpacity: .2
+        });
+    }
+    SelectedMarker = e.target
+    SelectedMarker.setStyle({
+        fillOpacity: .7,
+      });
+    SelectedMarker.bringToBack();
+
     var SelectedCallPrintout = document.getElementById("SelectedCallPrintout");
     SelectedCallPrintout.style.whiteSpace = 'pre-wrap';
     var ID = [];
