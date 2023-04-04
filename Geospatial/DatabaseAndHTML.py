@@ -24,6 +24,13 @@ def get_geojson():
         geojson = json.load(file)
     return jsonify(geojson)
 
+
+@app.route('/geojsonZIPCODES')
+def get_geojsonZIPCODE():
+    with open("./Geospatial/static/ZIPCODES.geojson") as file:
+        geojson = json.load(file)
+    return jsonify(geojson)
+
 @app.route('/bars')
 def get_bars():
     with open("./Geospatial/static/barsexhaustive.geojson") as file:

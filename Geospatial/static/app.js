@@ -12,6 +12,7 @@ document.getElementById("ClearPoints").addEventListener("click", ClearPoints);
 document.getElementById("PlotPoints").addEventListener("click", PlotPoints);
 document.getElementById("PlotRelevantPoints").addEventListener("click", PlotRelPoints);
 document.getElementById("PlotDistricts").addEventListener("click", PlotDisticts);
+document.getElementById("PlotZIPCODE").addEventListener("click", PlotZipCodes);
 document.getElementById("PlotBars").addEventListener("click", PlotBars);
 
 var ShotSpotterFilterApply = false;
@@ -279,6 +280,7 @@ function PlotRelPoints() {
         console.log(`Call Density Scaling: ${CallDensityScaling}`);
         const policeStationsList = ['6929 W SILVER SPRING DR,MKE', '749 W STATE ST,MKE', '4715 W VLIET ST,MKE', '6929 W SILVER SPRING DR,MKE','3626 W FOND DU LAC AV,MKE', '2333 N 49TH ST,MKE','2920 N VEL R PHILLIPS AV,MKE','245 W LINCOLN AV,MKE','3006 S 27TH ST,MKE'];
         //TODO replace this next chunk with just plotting admin locations directly regardless of whether they are in data? or make small check
+        //TODO FLIP admin and normal locations so can see admin over points
         window.filteredData.forEach(row => {
         if (policeStationsList.includes(row[1])) {
             const location = row[1];
@@ -335,6 +337,25 @@ function PlotDisticts() {
                 onEachFeature: function (feature, layer) {
                     //console.log(feature.properties.POLICE)
                     layer.bindPopup('District: ' + feature.properties.POLICE);
+                }}).addTo(DisplayedRecords);
+        })
+}
+
+function PlotZipCodes() {
+    fetch('/geojsonZIPCODES')
+        .then(response =>response.json())
+        .then(geojson => {
+            L.geoJSON(geojson, {
+                style: {
+                    color: 'Black',
+                    fillColor: 'grey',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: .05,
+                },
+                onEachFeature: function (feature, layer) {
+                    //console.log(feature.properties.POLICE)
+                    layer.bindPopup('District: ' + feature.properties.ZCTA5CE10);
                 }}).addTo(DisplayedRecords);
         })
 }
