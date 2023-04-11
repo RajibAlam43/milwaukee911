@@ -162,7 +162,7 @@ Data.loc[Data.iloc[:,3] == "D7","Location"] = "3626 W FOND DU LAC AV,MKE"
 
 Data.iloc[:,3] = Data.iloc[:,3].str.replace(",MKE", ", MILWAUKEE, WI") #replaces occurances of  ",MKE" with  ", MILWAUKEE, WI" in the Location column
 Data.iloc[:,3] = Data.iloc[:,3].str.replace(",BUT", ", BUTLER, WI")
-Data.iloc[:,3] = Data.iloc[:,3].str.replace("OAKCREEK", "OAK CREEK")
+Data.iloc[:,3] = Data.iloc[:,3].str.replace("OAKCREEK", "OAK CREEK, WI")
 Data.iloc[:,3] = Data.iloc[:,3].str.replace("GFD", " GREENFIELD, WI")
 Data.iloc[:,3] = Data.iloc[:,3].str.replace("WMW", " MILWAUKEE, WI")
 #for Location records that end in ",WAU" replaces occurances of  ",WAU" with  ", WAUWATOSA, WI" in the Location column
