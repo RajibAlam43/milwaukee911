@@ -1,4 +1,4 @@
-
+import re
 import pandas as pd
 import pymysql
 from sqlalchemy import create_engine
@@ -193,16 +193,39 @@ Data.iloc[:,3] = Data.iloc[:,3].str.replace("LINWAL AV", " LINWAL LANE") #bad da
 
 
 
+BroadwayLocation = geolocator.geocode("N BROADWAY, MILWAUKEE, WI",geometry ='wkt')
+CenterLocation = geolocator.geocode("W CENTER ST, North Division, MILWAUKEE, WI",geometry ='wkt')
+MartinLutherLocation =  geolocator.geocode("N 3RD ST, MILWAUKEE, WI",geometry ='wkt')
+
+def AdjustedGeocoding(Address):
+    GeoLocation= geolocator.geocode(Address, geometry ='wkt')
+    if(GeoLocation is not None):
+        if(GeoLocation == BroadwayLocation):
+            return geolocator.geocode(Address.replace("BROADWAY","BROADWAY ST"),geometry ='wkt')
+        elif('geotext' in GeoLocation.raw):
+            if(GeoLocation.raw["geotext"] == CenterLocation.raw["geotext"]):
+                return FixIntersection(["Dummy1","Dummy2","Dummy3",re.match(r'^(\d+)', Address).group(1)[:-2] + "TH ST / W CENTER ST, MILWAUKEE, WI"])
+            elif(GeoLocation.raw["geotext"] == MartinLutherLocation.raw["geotext"]):
+                return geolocator.geocode(Address.replace("3RD ST", "DOCTOR MARTIN LUTHER KING JUNIOR DR"),geometry ='wkt')
+            else:
+                return GeoLocation
+        else:
+            return GeoLocation
+    else:
+        return GeoLocation
 
 Intersections = Data.apply(FixIntersection,axis = 1) #calls the FixIntersections funciton of the Data we retreived from SQL, saves the fixed intersections as "Intersections"
 
-geolocate_column = Data.iloc[:,3].apply(geolocator.geocode, geometry ='wkt') #finds the Location object for every entry in the location column (This will not work on the intersections)
+geolocate_column = Data.iloc[:,3].apply(AdjustedGeocoding) #finds the Location object for every entry in the location column (This will not work on the intersections)
 
 geolocate_column[geolocate_column.apply(lambda x: x is None)] = Intersections[geolocate_column.apply(lambda x: x is None)] #Inserts the fixed intersections in with the Location data
 
 #TODO
-#43.0839795	-87.9137343 IF mapped to this then replace 3rd st with old world 3rd st
-# Also fix center street stack 1901 W CENTER ST,MKE
+#Fix Stacks:
+#380 W CAPITOL DR,MKE 
+#3300 W CENTER ST,MKE
+#220 S 1ST ST,MKE
+
 
 
 
