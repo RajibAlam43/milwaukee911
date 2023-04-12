@@ -15,25 +15,25 @@ def get_data():
     #cursor.execute("SELECT * FROM MPD.GEOCODED WHERE Latitude IS NOT NULL;")
     cursor.execute("SELECT g.*, q.`Call Number`,q.`Date/Time`,q.`Police District`,q.`Nature of Call`,q.`Status`,q.`Last Updated`, q.`Actual District`,q.`Call Density`,q.`Bar Proximity`,q.`Is Administrative Location`,q.`ZipCode`  FROM MPD.GEOCODED g  LEFT JOIN (SELECT c.*, v.`Actual District`,v.`Call Density`,v.`Bar Proximity`,v.`Is Administrative Location`,v.`ZipCode` FROM MPD.MPDCOS c LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = c.ID) q on g.ID = q.ID WHERE g.Latitude IS NOT NULL AND q.`Call Density` IS NOT NULL;")
     DBdata = cursor.fetchall()
-    GEOCODED = [(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14]) for row in DBdata]
+    GEOCODED = [(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15]) for row in DBdata]
     return jsonify(GEOCODED)
 
 @app.route('/geojson')
 def get_geojson():
-    with open("./static/modified_mpd.geojson") as file: #/Geospatial    
+    with open("../Geospatial/static/modified_mpd.geojson") as file:    
         geojson = json.load(file)
     return jsonify(geojson)
 
 
 @app.route('/geojsonZIPCODES')
 def get_geojsonZIPCODE():
-    with open("./static/ZIPCODES.geojson") as file: #/Geospatial
+    with open("./milwaukee911/Geospatial/static/ZIPCODES.geojson") as file: 
         geojson = json.load(file)
     return jsonify(geojson)
 
 @app.route('/bars')
 def get_bars():
-    with open("./static/barsexhaustive.geojson") as file: #/Geospatial
+    with open("../Geospatial/static/barsexhaustive.geojson") as file: 
         geojson = json.load(file)
     return jsonify(geojson)
 
