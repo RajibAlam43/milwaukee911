@@ -245,7 +245,7 @@ SendToDatabase.to_sql("GEOCODED", con = engine, if_exists = 'append', chunksize 
 # print(SendToDatabase.iloc[91,3])
 
 #Copies the Geocoded Data into MPD.GEOCODED for any MPD.MPDCOS entries with a Location that has been checked already
-my_cursor.execute("INSERT INTO MPD.GEOCODED (ID, Location, Latitude, Longitude, `Processed Location`) SELECT  DISTINCT(q.ID), c.Location, c.Latitude, c.Longitude, c.`Processed Location` FROM MPD.GEOCODED c LEFT JOIN (SELECT a.*  FROM MPD.MPDCOS a LEFT JOIN MPD.GEOCODED b ON b.ID = a.ID WHERE b.ID IS NULL) q ON q.Location = c.Location WHERE q.ID IS NOT NULL LIMIT 100;")
+my_cursor.execute("INSERT INTO MPD.GEOCODED (ID, Location, Latitude, Longitude, `Processed Location`)  SELECT  DISTINCT(Unmapped.ID), GC.Location, GC.Latitude, GC.Longitude, GC.`Processed Location` FROM MPD.GEOCODED GC  RIGHT JOIN (SELECT a.ID, a.Location FROM MPD.MPDCOS a LEFT JOIN MPD.GEOCODED b ON b.ID = a.ID WHERE b.ID IS NULL AND a.Location IN (SELECT Location FROM MPD.GEOCODED)) Unmapped ON Unmapped.Location = GC.Location  LIMIT 100;")
 
 
 #Disconnects from database
