@@ -17,7 +17,7 @@ my_cursor = connection.cursor()
 my_cursor.execute("SELECT c.* FROM MPD.GEOCODED c LEFT JOIN MPD.GEOSPATIAL_VIEW q ON q.ID = c.ID WHERE q.ID IS NULL AND c.Latitude IS NOT NULL;") 
 
 result = my_cursor.fetchall() #brings results of query into python
-Data = pd.DataFrame(result,columns = ColumnNames) #Converts query results into a pandas dataframe
+Data = pd.DataFrame(result,columns = ColumnNames) #Converts query   results into a pandas dataframe
 
 with open("/users/home/cgluesing/Tulsa-MPDCOS/Geospatial/static/modified_mpd.geojson") as f: #this needs to be used for SSH to understand it when we upload this script to run on crontab
 #with open("Geospatial\static\modified_mpd.geojson") as f:
@@ -31,6 +31,20 @@ def ActualDistrict(x):
     for i in range(0,len(Districts)):
         if(Districts[i][1].contains(LongLatPoint)):
             output = Districts[i][0]
+    return output
+
+with open("/users/home/cgluesing/Tulsa-MPDCOS/Geospatial/static/ZIPCODES.geojson") as f: #this needs to be used for SSH to understand it when we upload this script to run on crontab
+#with open("Geospatial\static\ZIPCODES.geojson") as f:
+  ZIPFeatures = json.load(f)["features"]
+
+ZIP = [[feature["properties"]["ZCTA5CE10"],sh.shape(feature["geometry"]).buffer(0)] for feature in ZIPFeatures]
+
+def ZipCode(x):
+    output = 0
+    LongLatPoint = sh.Point((x.Longitude,x.Latitude))
+    for i in range(0,len(ZIP)):
+        if(ZIP[i][1].contains(LongLatPoint)):
+            output = ZIP[i][0]
     return output
 
 def isAdmin(x):
@@ -58,14 +72,15 @@ def isAdmin(x):
 
 #Creating Column
 ActualDistrictsList = Data.apply(ActualDistrict,axis = 1)
+ZipCodesList = Data.apply(ZipCode,axis = 1)
 DummyCallDensityList = [np.nan] * len(Data.Latitude)
 BarProximityList =  [np.nan] * len(Data.Latitude)
 AdministrativeLocationList = Data.apply(isAdmin, axis = 1)
 
 
 #Send to database
-SendToGeoView = pd.DataFrame(np.column_stack([Data.ID, ActualDistrictsList, DummyCallDensityList, BarProximityList,AdministrativeLocationList]),
-    columns= ["ID","Actual District","Call Density","Bar Proximity","Is Administrative Location"])
+SendToGeoView = pd.DataFrame(np.column_stack([Data.ID, ActualDistrictsList, DummyCallDensityList, BarProximityList,AdministrativeLocationList,ZipCodesList]),
+    columns= ["ID","Actual District","Call Density","Bar Proximity","Is Administrative Location", "ZipCode"])
 
 engine = create_engine("mysql+pymysql://{user}:{pw}@pascal.mscsnet.mu.edu/{db}" # create sqlalchemy engine
             .format(user="project1", pw="ThisIsATest",db="MPD"))
