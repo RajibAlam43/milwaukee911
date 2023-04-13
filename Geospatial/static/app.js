@@ -6,14 +6,64 @@ if (typeof L.canvasMarker === 'function') {
   } else {
     console.log('L.canvasMarkers is not defined');
   }
+  if (typeof noUiSlider === 'object') {
+    console.log("Slider works");
+  } else {
+    console.log("Slider doesn't work");
+  }
+  
 
 
 document.getElementById("ClearPoints").addEventListener("click", ClearPoints);
-document.getElementById("PlotPoints").addEventListener("click", PlotPoints);
 document.getElementById("PlotRelevantPoints").addEventListener("click", PlotRelPoints);
 document.getElementById("PlotDistricts").addEventListener("click", PlotDisticts);
 document.getElementById("PlotZIPCODE").addEventListener("click", PlotZipCodes);
 document.getElementById("PlotBars").addEventListener("click", PlotBars);
+document.getElementById('SelectByDistrictButton').addEventListener('click', SelectByButtonClicked);
+document.getElementById('SelectByZipCodeButton').addEventListener('click', SelectByButtonClicked);
+
+document.getElementById("Monday").addEventListener("click", toggleButton);
+document.getElementById("Tuesday").addEventListener("click", toggleButton);
+document.getElementById("Wednesday").addEventListener("click", toggleButton);
+document.getElementById("Thursday").addEventListener("click", toggleButton);
+document.getElementById("Friday").addEventListener("click", toggleButton);
+document.getElementById("Saturday").addEventListener("click", toggleButton);
+
+
+function toggleButton(event) { // Function to toggle "pressed" on buttons when pressed
+  event.target.classList.toggle("pressed");
+}
+
+
+var TODslider = document.getElementById('TimeOfDaySlider');
+noUiSlider.create(TODslider, {
+start: [0, 100], // Initial values of the handles
+connect: true, // Connect the handles with a colored bar
+range: {
+    'min': 0,
+    'max': 100
+}
+});
+
+TODslider.noUiSlider.on('update', function(values) {
+var min = values[0];
+var max = values[1];
+console.log('Selected min value: ' + min);
+console.log('Selected max value: ' + max);});
+
+var checkboxes = document.getElementsByClassName('FilterCheck');
+
+// Function to handle button click
+function SelectByButtonClicked(event) {
+  const clickedButton = event.target;
+  // Remove 'active' class from all buttons
+  const buttons = document.getElementsByClassName('SelectButtons');
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
+  // Add 'active' class to clicked button
+  clickedButton.classList.add('active');
+}
 
 var ShotSpotterFilterApply = false;
 document.getElementById("ShotSpotterFilterCheck").addEventListener("change", //ShotSpotter Only Filter
@@ -44,28 +94,27 @@ function(){
 });
 
 var PDColorApply = false;
-document.getElementById("PDColorCheck").addEventListener("change", //Toggle Coloring Markers by Police District
-function(){
-    if(this.checked){
+document.getElementById("ColorCheckPD").addEventListener("change", function() { // Update ID to match the HTML
+    if (this.checked) {
         PDColorApply = true;
-        document.getElementById("CallDensityColorCheck").checked = false;
+        document.getElementById("ColorCheckCallDensity").checked = false; // Update ID to match the HTML
         CallDensityColorApply = false;
-    } else{
+    } else {
         PDColorApply = false;
     }
 });
 
-var CallDensityColorApply = false;
-document.getElementById("CallDensityColorCheck").addEventListener("change", //Toggle Coloring Markers by Call Density
-function(){
-    if(this.checked){
+var CallDensityColorApply = true;
+document.getElementById("ColorCheckCallDensity").addEventListener("change", function() { // Update ID to match the HTML
+    if (this.checked) {
         CallDensityColorApply = true;
-        document.getElementById("PDColorCheck").checked = false;
+        document.getElementById("ColorCheckPD").checked = false; // Update ID to match the HTML
         PDColorApply = false;
-    } else{
+    } else {
         CallDensityColorApply = false;
     }
 });
+
 
 var map = L.map('map', {preferCanvas: true}).setView([43.0389, -87.9065], 10);  
 
@@ -89,7 +138,10 @@ function UpdateConstants(){
     .catch(error => console.error(error)); // handle errors
 }
 
+//Initialize
 ApplyFilters();
+document.getElementById('ColorCheckCallDensity').checked = true; // Update ID to match the HTML
+PlotRelPoints();
 
 
 
@@ -145,35 +197,6 @@ function ColorFunction(record,CDS){
     } else {
         return 'blue'
     }
-}
-
-
-function PlotPoints() {
-    var locationCounts = {};
-    var PlottedLocations = {};
-    UpdateConstants().then(() => {
-        console.log(`Call Density Scaling: ${CallDensityScaling}`);
-    window.filteredData.forEach(row => {
-        var location = row[1];
-        locationCounts[location] = (locationCounts[location] || 0) + 1;
-    });
-    window.filteredData.forEach(row => {
-        var location = row[1];
-        if (!PlottedLocations[location]) {
-            PlottedLocations[location] = true;
-            var radius = locationCounts[location] / 4 * 10;
-            var markerCOS = L.circle([row[2], row[3]],
-                {   stroke: true,
-                    opacity	: .6,
-                    color: chroma(ColorFunction(row,CallDensityScaling)).darken().hex(),
-                    fillOpacity	: .2,
-                    fillColor: ColorFunction(row,CallDensityScaling)
-                }).setRadius(radius).addTo(DisplayedRecords).on('click', MakerClicked);
-            markerCOS.LocationData = Location;
-            markerCOS.bindPopup(row[1]);
-        }        
-    });
-});    
 }
 
 var SelectedMarker = null;
@@ -275,6 +298,7 @@ function MakerClicked(e) {
 
 
 function PlotRelPoints() {
+    DisplayedRecords.clearLayers();
     var PlottedLocations = {};
     UpdateConstants().then(() => {
         console.log(`Call Density Scaling: ${CallDensityScaling}`);

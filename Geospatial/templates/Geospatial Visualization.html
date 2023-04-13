@@ -14,6 +14,8 @@
 	<script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
 	<script src="{{ url_for('static', filename='leaflet-canvas-markers.js') }}"></script>
 	<script src="{{ url_for('static', filename= 'chroma.js') }}"></script>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.min.css' rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.min.js"></script>
 
 
 
@@ -30,6 +32,35 @@
 			max-width: 100%;
 			max-height: 100%;
 		}
+
+		.SelectButtons {
+			/*Formatting for SelectionButtons (Zipcode / Police District) */	
+		}
+		.active {
+		/* Pressed Buttons */
+			background-color: rgb(157, 157, 157);
+		}
+		
+		.button-row input[type="button"]{
+			background-color:rgb(157, 157, 157);
+		}
+		.button-row input[type="button"].pressed {
+			background-color: f0f0f0
+		}
+
+		.noUi-handle {
+			height: 16px !important;
+			margin-top: 8px !important;
+			background-color: rgb(157, 157, 157);
+		}
+
+		.checkbox-row {
+			display: flex; /* Use flexbox to place checkboxes in a row */
+			align-items: center; /* Align checkboxes vertically */
+		}.checkbox-row input[type="checkbox"]
+		
+		
+
 	</style>
 
 		
@@ -38,15 +69,11 @@
 
 <div>
 	<button type="button"  id="ClearPoints">
-		Clear Points
-	</button>
-
-	<button type="button" id="PlotPoints">
-		Plot Points
+		Clear Points -> Clear Overlays
 	</button>
 
 	<button type="button" id="PlotRelevantPoints">
-		Plot Relevant Points
+		Plot Points -> Apply
 	</button>
 
 	<button type="button" id="PlotDistricts">
@@ -62,21 +89,65 @@
 	</button>
 
 	<input type="checkbox" id="ShotSpotterFilterCheck" name="ShotSpotterFilterCheck">
-	<label for="ShotSpotterFilter"> Show Only ShotSpotter </label>
+	<label for="ShotSpotterFilter"> Show Only ShotSpotter (Will Likely be removed in final version?)</label>
 	<br>
 
 	<input type="checkbox" id="PatrolFilterCheck" name="BusinessCheckFilterCheck">
-	<label for="PatrolFilter"> Show Only Patrol </label>
+	<label for="PatrolFilter"> Show Only Patrol (Will move to Call Type Filter) </label>
 	<br>
 
-	<input type="checkbox" id="PDColorCheck" name="PDColorCheck">
-	<label for="PDColorCheck"> Color By Police Districts </label>
-	<br>
+	Call Type Filter:
+	<div class="checkbox-row">
+		<label for="CallTypeFilterShotSpotter">
+			<input type="checkbox" id="CallTypeFilterShotSpotter">
+			ShotSpotter
+		</label>
+		<label for="CallTypeFilterPatrol">
+			<input type="checkbox" id="CallTypeFilterPatrol">
+			Patrol
+		</label>
+		<label for="CallTypeFilterOther">
+			<input type="checkbox" id="CallTypeFilterOther">
+			Other Call Types
+		</label>
+	</div>
+
+	Time of Day:
+	<div class="noUiSlider", id="TimeOfDaySlider", style="width: 500px; height: 20px;"></div>
+
+	Day of week Filter:
+	<div class="button-row", id ="DayOfWeeKFilter">
+		<input type="button" id="Monday", value="Monday" pressed>
+  		<input type="button" id="Tuesday" value="Tuesday" checked>
+  		<input type="button" id="Wednesday" value="Wednesday" checked>
+		<input type="button" id="Thursday" value="Thursday" checked>
+  		<input type="button" id="Friday" value="Friday" checked>
+  		<input type="button" id="Saturday" value="Saturday" checked>
+	</div>
+
+	<!-- Good -->
+	Color Markers by:
+	<div class="radio-row">
+	  <label for="ColorCheckPD">
+		<input type="radio" id="ColorCheckPD" name="colorBy" value="pd">
+		Color By Police Districts
+	  </label>	
+	  <label for="ColorCheckCallDensity">
+		<input type="radio" id="ColorCheckCallDensity" name="colorBy" value="callDensity">
+		Color By Call Density 
+	  </label>
+	  <label for="ColorCheckResponseTime"> 
+		<input type="radio" id="ColorCheckResponseTime" name="colorBy" value="responseTime">
+		Color By Reponse Time (WIP)
+	  </label>
+	</div>
 	
-	<input type="checkbox" id="CallDensityColorCheck" name="CallDensityColorCheck">
-	<label for="CallDensityColorCheck"> Color By Call Density </label>
-	<br>
 
+	<div id="buttonContainer">
+		<button class="SelectButtons" id="SelectByDistrictButton">Select District (WIP)</button>
+		<button class="SelectButtons" id="SelectByZipCodeButton">Select ZIPCODE (WIP)</button>
+	</div>
+	  
 	
 </div>
 
@@ -89,6 +160,8 @@
 		</td>
 	</tr>
 </table>
+
+
 
 </body>
 </html>
