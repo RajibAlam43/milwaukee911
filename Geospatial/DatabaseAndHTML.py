@@ -27,7 +27,7 @@ def get_geojson():
 
 @app.route('/geojsonZIPCODES')
 def get_geojsonZIPCODE():
-    with open("./milwaukee911/Geospatial/static/ZIPCODES.geojson") as file: 
+    with open("../Geospatial/static/ZIPCODES.geojson") as file: 
         geojson = json.load(file)
     return jsonify(geojson)
 
