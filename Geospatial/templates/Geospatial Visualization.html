@@ -31,9 +31,12 @@
 			width: 600px;
 			max-width: 100%;
 			max-height: 100%;
+			/*Formatting for the Map */
 		}
 
 		.SelectButtons {
+			width: 150px;
+			height: 20px;
 			/*Formatting for SelectionButtons (Zipcode / Police District) */	
 		}
 		.active {
@@ -68,12 +71,12 @@
 <body>
 
 <div>
-	<button type="button"  id="ClearPoints">
-		Clear Points -> Clear Overlays
+	<button type="button"  id="ClearOverlays">
+		Clear Overlays
 	</button>
 
 	<button type="button" id="PlotRelevantPoints">
-		Plot Points -> Apply
+		Apply
 	</button>
 
 	<button type="button" id="PlotDistricts">
@@ -88,26 +91,27 @@
 		Plot Bars
 	</button>
 
-	<input type="checkbox" id="ShotSpotterFilterCheck" name="ShotSpotterFilterCheck">
-	<label for="ShotSpotterFilter"> Show Only ShotSpotter (Will Likely be removed in final version?)</label>
 	<br>
-
-	<input type="checkbox" id="PatrolFilterCheck" name="BusinessCheckFilterCheck">
-	<label for="PatrolFilter"> Show Only Patrol (Will move to Call Type Filter) </label>
-	<br>
-
 	Call Type Filter:
 	<div class="checkbox-row">
 		<label for="CallTypeFilterShotSpotter">
-			<input type="checkbox" id="CallTypeFilterShotSpotter">
+			<input type="checkbox" id="CallTypeFilterShotSpotter" checked>
 			ShotSpotter
 		</label>
-		<label for="CallTypeFilterPatrol">
-			<input type="checkbox" id="CallTypeFilterPatrol">
-			Patrol
+		<label for="CallTypeFilterPassive">
+			<input type="checkbox" id="CallTypeFilterPassive" checked>
+			Passive
+		</label>
+		<label for="CallTypeFilterNVC">
+			<input type="checkbox" id="CallTypeFilterNVC" checked>
+			NVC
+		</label>
+		<label for="CallTypeFilterVC">
+			<input type="checkbox" id="CallTypeFilterVC" checked>
+			VC
 		</label>
 		<label for="CallTypeFilterOther">
-			<input type="checkbox" id="CallTypeFilterOther">
+			<input type="checkbox" id="CallTypeFilterOther" checked>
 			Other Call Types
 		</label>
 	</div>
@@ -117,12 +121,13 @@
 
 	Day of week Filter:
 	<div class="button-row", id ="DayOfWeeKFilter">
-		<input type="button" id="Monday", value="Monday" pressed>
+		<input type="button" id="Monday", value="Monday" checked>
   		<input type="button" id="Tuesday" value="Tuesday" checked>
   		<input type="button" id="Wednesday" value="Wednesday" checked>
 		<input type="button" id="Thursday" value="Thursday" checked>
   		<input type="button" id="Friday" value="Friday" checked>
   		<input type="button" id="Saturday" value="Saturday" checked>
+		<input type="button" id="Sunday" value="Sunday" checked>
 	</div>
 
 	<!-- Good -->
@@ -154,9 +159,9 @@
 <table>
 	<tr>
 		<td><div id="map" style="width: 800px; height: 600px;"></div></td>
-		<td><span id = "SelectedCallPrintout" style="white-space: pre-wrap;" >Can click on marker to see calls at that location.</span>
-			<div id="SelectedCallsTimeHist"></div>
-			<div id="SelectedCallsPlot"></div>
+		<td>Can click on marker to see calls at that location.
+			<div id="SelectedCallsTimeHist" style="width: 800px;"></div>
+			<div id="SelectedCallsPlot" style="width: 800px;"></div>
 		</td>
 	</tr>
 </table>
