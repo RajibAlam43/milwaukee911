@@ -18,8 +18,6 @@ if (typeof chroma === 'undefined') {
 
 
 document.getElementById("PlotRelevantPoints").addEventListener("click", PlotRelPoints);
-document.getElementById("PlotBars").addEventListener("click", PlotBars);
-
 document.getElementById("Monday").addEventListener("click", toggleButton);
 document.getElementById("Tuesday").addEventListener("click", toggleButton);
 document.getElementById("Wednesday").addEventListener("click", toggleButton);
@@ -396,6 +394,7 @@ function PlotRelPoints() {
 
 document.getElementById("PlotDistricts").addEventListener("click", function () { PlotDistricts(BackgroundOverlay) });
 document.getElementById("PlotZIPCODE").addEventListener("click", function () { PlotZipCodes(BackgroundOverlay) });
+document.getElementById("PlotBars").addEventListener("click",  function () { PlotBars(BackgroundOverlay) } );
 
 function PlotDistricts(TargetLayer) {
     console.log("Plotting Districts");
@@ -440,7 +439,7 @@ function PlotZipCodes(TargetLayer) {
 }
 
 
-function PlotBars() {
+function PlotBars(TargetLayer) {
     fetch('/bars')
         .then(response => response.json())
         .then(geojson => {
@@ -456,7 +455,7 @@ function PlotBars() {
                 onEachFeature: function (feature, layer) {
                     layer.bindPopup('Bar: ' + feature.properties.name);
                 }
-            }).addTo(DisplayedRecords);
+            }).addTo(TargetLayer);
         })
         .catch(error => {
             console.log(error); // log any errors
