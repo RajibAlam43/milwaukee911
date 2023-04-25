@@ -225,6 +225,10 @@ geolocate_column[geolocate_column.apply(lambda x: x is None)] = Intersections[ge
 #380 W CAPITOL DR,MKE 
 #3300 W CENTER ST,MKE
 #220 S 1ST ST,MKE
+#Vliet ST
+#W National
+#N PROSPECT AV,MKE
+
 
 
 

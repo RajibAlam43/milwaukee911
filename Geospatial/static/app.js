@@ -265,7 +265,7 @@ function GeoJsonClicked(e) {
         CreateSelectedDisplay(ID, NATUREOFCALL, TIME);
     }
 };
-
+//TODO add table
 function CreateSelectedDisplay(ID, NATUREOFCALL, TIME) {
     //SELECTED BARGRAPH
     var NATUREOFCALLCounts = {};
@@ -333,7 +333,7 @@ function CreateSelectedDisplay(ID, NATUREOFCALL, TIME) {
     Plotly.newPlot('SelectedCallsTimeHist', DataTime, LayoutTime, { displayModeBar: false });
 }
 
-
+//TODO group locations by processed location instead?
 function PlotRelPoints() {
     console.log("Plotting started")
     ApplyFilters();
