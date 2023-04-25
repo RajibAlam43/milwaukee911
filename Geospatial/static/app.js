@@ -1,6 +1,5 @@
 console.log()
 
-
 if (typeof L.canvasMarker === 'function') {
     console.log("L.canvasMarkers works");
 } else {
@@ -105,18 +104,18 @@ var filteredData = [];
 let CallDensityScaling = 0;
 
 function UpdateConstants() {
+    console.log("Beggining Data Pull")
     return fetch('/data') // fetch data from Flask and return the promise
         .then(response => response.json()) // parse response as JSON
         .then(data => {
-            const CallDensityColumn = data.map(record => parseFloat(record[12]));
-            CallDensityScaling = 1 / Math.max(...CallDensityColumn);
-            console.log(`The Call Density Scaling is: ${CallDensityScaling}`);
-        })
-        .catch(error => console.error(error)); // handle errors
+            CallDensityScaling = data.Constants;
+            console.log("End")
+        }).catch(error => console.error(error)); // handle errors
 }
 
 //Initialize
 ApplyFilters();
+console.log("Initializing Plotting")
 document.getElementById('ColorCheckCallDensity').checked = true; // Update ID to match the HTML
 PlotRelPoints();
 
@@ -166,7 +165,8 @@ function ApplyFilters() {
     fetch('/data')
         .then(response => response.json())
         .then(data => {
-            window.filteredData = data.filter(item => {
+            const GEOCODED = data.Geocoded;
+            window.filteredData = GEOCODED.filter(item => {
                 return Filters(item)
             });
         });
@@ -332,24 +332,26 @@ function CreateSelectedDisplay(ID, NATUREOFCALL, TIME) {
 
 
 function PlotRelPoints() {
+    console.log("Plotting started")
     ApplyFilters();
+    console.log("Filters applied")
     DisplayedRecords.clearLayers();
-    var PlottedLocations = {};
+    const PlottedLocations = {};
     UpdateConstants().then(() => {
-        console.log(`Call Density Scaling: ${CallDensityScaling}`);
+        console.log(`Call Density Scaling Calculated: ${CallDensityScaling}`);
         const locationCounts = {};
         window.filteredData.filter(row => row[14] == 0).forEach(row => {
-            const location = row[1];
+            let location = row[1];
             locationCounts[location] = (locationCounts[location] || 0) + 1;
         });
+        console.log("finished counting");
         window.filteredData.filter(row => row[14] == 0).forEach(row => {
-            const location = row[1];
+            let location = row[1];
             if (!PlottedLocations[location]) {
                 PlottedLocations[location] = true;
                 const radius = 10 + (locationCounts[location] ** .5) * 10;
                 const markerCOS = L.circle([row[2], row[3]],
-                    {
-                        stroke: true,
+                    {   stroke: true,
                         opacity: .6,
                         weight: 2,
                         color: chroma(ColorFunction(row, CallDensityScaling)).darken().hex(),
@@ -360,9 +362,9 @@ function PlotRelPoints() {
                 markerCOS.bindPopup(row[1]);
             }
         });
-        window.filteredData.forEach(row => {
-            if ((row[14] != 0)) {
-                const location = row[1];
+        console.log("finished Normal");
+        window.filteredData.filter(row => row[14] != 0).forEach(row => {
+                let location = row[1];
                 if (!PlottedLocations[location]) {
                     PlottedLocations[location] = true;
                     const adminLocations = L.canvasMarker(L.latLng(row[2], row[3]),
@@ -377,8 +379,9 @@ function PlotRelPoints() {
                         adminLocations.LocationData = location;
                         adminLocations.bindPopup(row[1]);
                 }
-            }
+           // }
         });
+        console.log("finished Admin");
     });
 }
 

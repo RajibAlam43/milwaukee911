@@ -1,22 +1,40 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import json
-
-import mysql.connector
+from flask_caching import Cache
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+import time
 
 app = Flask(__name__)
 
-# connect to the database
-db = mysql.connector.connect(host='pascal.mscsnet.mu.edu',user='project1',password='ThisIsATest',db='MPD')
 
+engine = create_engine("mysql+pymysql://{user}:{pw}@pascal.mscsnet.mu.edu/{db}" # create sqlalchemy engine
+            .format(user="project1", pw="ThisIsATest",db="MPD"), pool_size=20, max_overflow=0)
+
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 
 @app.route('/data')
+@cache.cached(timeout=300)
 def get_data():
-    cursor = db.cursor()
-    #cursor.execute("SELECT * FROM MPD.GEOCODED WHERE Latitude IS NOT NULL;")
-    cursor.execute("SELECT g.*, q.`Call Number`,q.`Date/Time`,q.`Police District`,q.`Nature of Call`,q.`Status`,q.`Last Updated`, q.`Actual District`,q.`Call Density`,q.`Bar Proximity`,q.`Is Administrative Location`,q.`ZipCode`  FROM MPD.GEOCODED g  LEFT JOIN (SELECT c.*, v.`Actual District`,v.`Call Density`,v.`Bar Proximity`,v.`Is Administrative Location`,v.`ZipCode` FROM MPD.MPDCOS c LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = c.ID) q on g.ID = q.ID WHERE g.Latitude IS NOT NULL AND q.`Call Density` IS NOT NULL;")
-    DBdata = cursor.fetchall()
-    GEOCODED = [(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15]) for row in DBdata]
-    return jsonify(GEOCODED)
+    start_time = time.time()
+    session = db_session()
+    cursor = session.execute("SELECT g.*, q.`Call Number`,q.`Date/Time`,q.`Police District`,q.`Nature of Call`,q.`Status`,q.`Last Updated`, q.`Actual District`,q.`Call Density`,q.`Bar Proximity`,q.`Is Administrative Location`,q.`ZipCode`  FROM MPD.GEOCODED g  LEFT JOIN (SELECT c.*, v.`Actual District`,v.`Call Density`,v.`Bar Proximity`,v.`Is Administrative Location`,v.`ZipCode` FROM MPD.MPDCOS c LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = c.ID) q on g.ID = q.ID WHERE g.Latitude IS NOT NULL AND q.`Call Density` IS NOT NULL;")
+    db_data = cursor.fetchall()
+    middle_time = time.time()
+    geocoded = [(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15]) for row in db_data]
+    call_density_scaling = 1 / max([float(row[11]) for row in db_data])
+    end_time = time.time()
+    dataExtractTime =  middle_time - start_time
+    elapsed_time = end_time - start_time
+    app.logger.debug("Optimized method took {:.3f} seconds to run.".format(elapsed_time))
+    app.logger.debug(dataExtractTime)
+    return jsonify({"Geocoded": geocoded, "Constants": (call_density_scaling)})
+
+
+# #Called 3 times, ApplyFilters()
+# #PlotRelPoints(ApplyFilters())
+# #PlotRelPoints(UpdateConstraints()) Caching means we don't have fetch the data for these next 2?
 
 @app.route('/geojson')
 def get_geojson():
