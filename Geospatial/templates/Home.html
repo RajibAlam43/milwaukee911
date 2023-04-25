@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+  
+	html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		.SelectButtons {
+			/*Formatting for SelectionButtons (Zipcode / Police District) */	
+		}
+		.active {
+		/* Pressed Buttons */
+			background-color: rgb(157, 157, 157);
+		}
+		
+		.button-row input[type="button"]{
+			background-color:rgb(157, 157, 157);
+		}
+		.button-row input[type="button"].pressed {
+			background-color: f0f0f0
+		}
+		
+		button {
+		  display: inline-block;
+		  padding: 5px 15px;
+		  font-size: 12px;
+		  font-weight: bold;
+		  text-align: center;
+		  text-transform: uppercase;
+		  color: #fff;
+		  background-color: #003366;
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		}
+		button:hover {
+			background-color: #0056b3;
+		}
+		input[type="checkbox"] {
+		  background-color: #fff;
+		  border: 2px solid var(--primary-color);
+		  border-radius: 4px;
+		  width: 10px;
+		  height: 10px;
+		  position: relative;
+		  cursor: pointer;
+		}
+		input[type="checkbox"]:checked:before {
+		  color: var(--primary-color);
+		  font-size: 10px;
+		  position: absolute;
+		}
+	  h1 {
+		  font-family: Arial, sans-serif;
+		  font-size: 36px;
+		  font-weight: bold;
+		  color: white; 
+		  text-align: center;
+		  padding: 5px;
+		  background-color: #003366;
+		  width: 100%; 
+		  margin-bottom: 0;
+		  margin-top: 0;
+		}
+		nav {
+		  margin-top: 0;
+		  margin-bottom: 5;
+		  background-color:#b0aeae;
+		  width: 100%; 
+		  display: block
+		  display: flex;
+		  justify-content: space-between;
+		  width: 100%;
+		}
+		nav a {
+		  color: white;
+		  display: inline-block;
+		  padding: 10px 169.5px;
+		  text-decoration: none;
+		  text-align: center;
+		}
+		nav a:hover {
+		  background-color: #cccccc;
+		}
+	  
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h1>Homepage</h1>
+      <nav>
+		<a href="Home.html">Home</a>
+		<a href="Map.html">Map</a>
+		<a href="Essay.html">Essay</a>
+		<a href="Aboutus.html">About Us</a>
+		</nav>
+    </div>
+    <div id="main">
+      <p> INFORMATION ABOUT OUR PROJECT</p> 
+	 </div>
+  </body>
+</html>
