@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>Proof of Concept Leaflet Plotting</title>
+	<title>Map</title>
 	
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
@@ -50,6 +50,70 @@
 		.button-row input[type="button"].pressed {
 			background-color: f0f0f0
 		}
+		button {
+		  display: inline-block;
+		  padding: 5px 15px;
+		  font-size: 12px;
+		  font-weight: bold;
+		  text-align: center;
+		  text-transform: uppercase;
+		  color: #fff;
+		  background-color: #003366;
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		}
+		button:hover {
+			background-color: #0056b3;
+		}
+		input[type="checkbox"] {
+		  background-color: #fff;
+		  border: 2px solid var(--primary-color);
+		  border-radius: 4px;
+		  width: 10px;
+		  height: 10px;
+		  position: relative;
+		  cursor: pointer;
+		}
+		input[type="checkbox"]:checked:before {
+		  color: var(--primary-color);
+		  font-size: 10px;
+		  position: absolute;
+		}
+		
+		 h1 {
+		  font-family: Arial, sans-serif;
+		  font-size: 36px;
+		  font-weight: bold;
+		  color: white; 
+		  text-align: center;
+		  padding: 5px;
+		  background-color: #003366;
+		  width: 100%; 
+		  margin-bottom: 0;
+		  margin-top: 0;
+		}
+		nav {
+		  margin-top: 0;
+		  margin-bottom: 5;
+		  background-color:#b0aeae;
+		  width: 100%; 
+		  display: block;
+		  display: flex;
+		  justify-content: space-between;
+		  width: 100%;
+		}
+		nav a {
+		  color: white;
+		  display: inline-block;
+		  padding: 10px 167.2px;
+		  text-decoration: none;
+		  text-align: center;
+		}
+		nav a:hover {
+		  background-color: #cccccc;
+		}
 
 		.noUi-handle {
 			height: 16px !important;
@@ -58,8 +122,8 @@
 		}
 
 		.checkbox-row {
-			display: flex; /* Use flexbox to place checkboxes in a row */
-			align-items: center; /* Align checkboxes vertically */
+			display: flex; 
+			align-items: center;
 		}.checkbox-row input[type="checkbox"]
 		
 		
@@ -69,6 +133,16 @@
 		
 </head>
 <body>
+
+<div id="navbar">
+  <h1>Visualization Map</h1>
+  <nav>
+	<a href="Home.html">Home</a>
+	<a href="Geospatial Visualization.html">Map</a>
+	<a href="Essay.html">Essay</a>
+	<a href="Aboutus.html">About Us</a>
+   </nav>
+</div>	
 
 <div>
 	<button type="button"  id="ClearOverlays">
@@ -130,7 +204,6 @@
 		<input type="button" id="Sunday" value="Sunday" checked>
 	</div>
 
-	<!-- Good -->
 	Color Markers by:
 	<div class="radio-row">
 	  <label for="ColorCheckPD">
