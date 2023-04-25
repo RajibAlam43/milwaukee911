@@ -10,7 +10,11 @@ if (typeof noUiSlider === 'object') {
 } else {
     console.log("Slider doesn't work");
 }
-
+if (typeof chroma === 'undefined') {
+    console.log('Chroma.js is not loaded.');
+} else {
+    console.log('Chroma.js works.');
+}  
 
 
 document.getElementById("PlotRelevantPoints").addEventListener("click", PlotRelPoints);
@@ -103,15 +107,15 @@ var filteredData = [];
 
 let CallDensityScaling = 0;
 
-function UpdateConstants() {
-    console.log("Beggining Data Pull")
-    return fetch('/data') // fetch data from Flask and return the promise
-        .then(response => response.json()) // parse response as JSON
-        .then(data => {
-            CallDensityScaling = data.Constants;
-            console.log("End")
-        }).catch(error => console.error(error)); // handle errors
-}
+// function UpdateConstants() {
+//     console.log("Beggining Data Pull")
+//     return fetch('/data') // fetch data from Flask and return the promise
+//         .then(response => response.json()) // parse response as JSON
+//         .then(data => {
+//             CallDensityScaling = data.Constants;
+//             console.log("End")
+//         }).catch(error => console.error(error)); // handle errors
+// }
 
 //Initialize
 ApplyFilters();
@@ -194,7 +198,8 @@ function ColorFunction(record, CDS) {
         }
     } else if (CallDensityColorApply == true) {
         const ColorScale = chroma.scale(['yellow', 'navy']).mode('lch');
-        return ColorScale(record[12] * CDS);
+        //console.log((record[12] * CDS*100))
+        return ColorScale(record[12] * CDS); 
     } else {
         return 'blue'
     }
@@ -337,9 +342,12 @@ function PlotRelPoints() {
     console.log("Filters applied")
     DisplayedRecords.clearLayers();
     const PlottedLocations = {};
-    UpdateConstants().then(() => {
-        console.log(`Call Density Scaling Calculated: ${CallDensityScaling}`);
-        const locationCounts = {};
+    fetch('/data') // fetch data from Flask and return the promise
+        .then(response => response.json()) // parse response as JSON
+        .then(data => {
+            const CallDensityScaling = data.Constants;
+            console.log(`Call Density Scaling Calculated: ${CallDensityScaling}`);
+            const locationCounts = {};
         window.filteredData.filter(row => row[14] == 0).forEach(row => {
             let location = row[1];
             locationCounts[location] = (locationCounts[location] || 0) + 1;

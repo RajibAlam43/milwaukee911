@@ -23,7 +23,7 @@ def get_data():
     db_data = cursor.fetchall()
     middle_time = time.time()
     geocoded = [(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15]) for row in db_data]
-    call_density_scaling = 1 / max([float(row[11]) for row in db_data])
+    call_density_scaling = 1 / max([float(row[12]) for row in db_data])
     end_time = time.time()
     dataExtractTime =  middle_time - start_time
     elapsed_time = end_time - start_time
@@ -38,20 +38,20 @@ def get_data():
 
 @app.route('/geojson')
 def get_geojson():
-    with open("../Geospatial/static/modified_mpd.geojson") as file:    
+    with open("./Geospatial/static/modified_mpd.geojson") as file:    
         geojson = json.load(file)
     return jsonify(geojson)
 
 
 @app.route('/geojsonZIPCODES')
 def get_geojsonZIPCODE():
-    with open("../Geospatial/static/ZIPCODES.geojson") as file: 
+    with open("Geospatial/static/ZIPCODES.geojson") as file: 
         geojson = json.load(file)
     return jsonify(geojson)
 
 @app.route('/bars')
 def get_bars():
-    with open("../Geospatial/static/barsexhaustive.geojson") as file: 
+    with open("./Geospatial/static/barsexhaustive.geojson") as file: 
         geojson = json.load(file)
     return jsonify(geojson)
 
