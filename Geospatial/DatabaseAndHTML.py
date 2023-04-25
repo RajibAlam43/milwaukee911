@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify
 import json
 from flask_caching import Cache
 from sqlalchemy import create_engine
