@@ -60,6 +60,18 @@ def get_bars():
 def Geospatial_Visualization():
     return render_template('Geospatial Visualization.html')
 
+@app.route('/Aboutus.html')
+def about_us():
+    return render_template('Aboutus.html')
+
+@app.route('/Home.html')
+def home():
+    return render_template('Home.html')
+
+@app.route('/Essay.html')
+def essay():
+    return render_template('Essay.html')
+
 if __name__ == '__main__':
      app.run(debug=True)
 

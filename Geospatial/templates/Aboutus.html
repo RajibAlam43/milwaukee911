@@ -5,70 +5,20 @@
     <title>About Us</title>
     <style>
   
-  html, body {
+	  html, body {
 			height: 100%;
 			margin: 0;
-		}
-		.leaflet-container {
-			height: 400px;
-			width: 600px;
-			max-width: 100%;
-			max-height: 100%;
-		}
 
-		.SelectButtons {
-			/*Formatting for SelectionButtons (Zipcode / Police District) */	
-		}
-		.active {
-		/* Pressed Buttons */
-			background-color: rgb(157, 157, 157);
-		}
-		
-		.button-row input[type="button"]{
-			background-color:rgb(157, 157, 157);
-		}
-		.button-row input[type="button"].pressed {
-			background-color: f0f0f0
-		}
-		
-		button {
-		  display: inline-block;
-		  padding: 5px 15px;
-		  font-size: 12px;
-		  font-weight: bold;
-		  text-align: center;
-		  text-transform: uppercase;
-		  color: #fff;
-		  background-color: #003366;
-		  border: none;
-		  border-radius: 5px;
-		  cursor: pointer;
-		  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-		}
-		button:hover {
-			background-color: #0056b3;
-		}
-		input[type="checkbox"] {
-		  background-color: #fff;
-		  border: 2px solid var(--primary-color);
-		  border-radius: 4px;
-		  width: 10px;
-		  height: 10px;
-		  position: relative;
-		  cursor: pointer;
-		}
-		input[type="checkbox"]:checked:before {
-		  color: var(--primary-color);
-		  font-size: 10px;
-		  position: absolute;
-		}
+	  }
+	  
 	  h1 {
 		  font-family: Arial, sans-serif;
 		  font-size: 36px;
 		  font-weight: bold;
 		  color: white; 
 		  text-align: center;
-		  padding: 5px;
+		  padding-bottom: 5px;
+		  padding-top: 5px;
 		  background-color: #003366;
 		  width: 100%; 
 		  margin-bottom: 0;
@@ -88,7 +38,7 @@
 		nav a {
 		  color: white;
 		  display: inline-block;
-		  padding: 10px 166.5px;
+		  padding: 10px 164.8px;
 		  font-size: 18px;
 		  text-decoration: none;
 		  text-align: center;
@@ -96,7 +46,27 @@
 		nav a:hover {
 		  background-color: #cccccc;
 		}
-	  
+		
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.person {
+			display: inline-block;
+			vertical-align: top;
+			width: 30%;
+			padding: 10px;
+			box-sizing: border-box;
+			margin-top: 5px;
+		}
+		.person img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
     </style>
   </head>
   <body>
@@ -110,7 +80,41 @@
 		</nav>
     </div>
     <div id="main">
-      <p>INFORMATION ABOUT OUR TEAM</p> 
-	 </div>
+		<div class="container">
+			<div class="person">
+				<img src="gabby.png" alt="Person 1">
+				<p>Gabriella Fike is a Senior working towards her undergraduate degree in Data Science. She is currently interning at Baird with the PWM Data and Analytics department. ____________________________________________________</p>
+			</div>
+
+			<div class="person">
+				<img src="violet.png" alt="Person 2">
+				<p>Violet Wang is a Junior pursing her Master's degree in Data Science with the Marquette ADP. She currently is interning with Marquette Athletics and is looking for internships in Data Analysis for this upcoming summer.</p>
+			</div>
+
+			<div class="person">
+				<img src="eric.jpg" alt="Person 3">
+				<p>Eric Bryniarski is a Senior pursing his undergraduate degree in both Computer Science and Data Science. He Will be working a full time position as an Embedded Software Engineer at Northrop Grumman after graduation.        </p>
+			</div>
+			<div class="person">
+				<img src="caldwell.jpg" alt="Person 4">
+				<p>Caldwell Gluesing is currently working towards his Master's in Applied Statistics withe Marquette ADP. He currently works as an intern at Fiserv and accept a Data Science internship from Kohler for this upcoming summer.</p>
+			</div>
+
+			<div class="person">
+				<img src="christian.png" alt="Person 5">
+				<p>Christian Scwartz is a Senior pursing his undergraduate in Data Science. He interned at Colder's Furniture, Mattressess, and Appliances. He is hoping to continue there full time as a Junior Data Scientist.              </p>
+			</div>
+
+			<div class="person">
+				<img src="rajib.jpg" alt="Person 6">
+				<p>Rajib Alam is a Senior pursing his undergradute in both Data Science and Computer Science. He interned at Northwestern Mutual as a Software Engineer and will be continuing there after graduation.                             </p>
+			</div>
+
+			<div class="person">
+				<img src="rebecca.png" alt="Person 7">
+				<p>Rebecca Mathews is a Senior pursing her undergraduate in Data Science. She is currently interning at the Illinois Student Assistance Commission. _________________________________________________________________________ s</p>
+			</div>
+		</div>
+	</div>
   </body>
 </html>
