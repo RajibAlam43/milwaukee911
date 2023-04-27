@@ -56,7 +56,7 @@ def get_bars():
     return jsonify(geojson)
 
 
-@app.route('/')
+@app.route('/Geospatial Visualization.html')
 def Geospatial_Visualization():
     return render_template('Geospatial Visualization.html')
 
