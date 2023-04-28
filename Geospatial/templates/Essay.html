@@ -8,71 +8,19 @@
 			height: 100%;
 			margin: 0;
 		}
-		.leaflet-container {
-			height: 400px;
-			width: 600px;
-			max-width: 100%;
-			max-height: 100%;
-		}
-
-		.SelectButtons {
-			/*Formatting for SelectionButtons (Zipcode / Police District) */	
-		}
-		.active {
-		/* Pressed Buttons */
-			background-color: rgb(157, 157, 157);
-		}
-		
-		.button-row input[type="button"]{
-			background-color:rgb(157, 157, 157);
-		}
-		.button-row input[type="button"].pressed {
-			background-color: f0f0f0
-		}
-		
-		button {
-		  display: inline-block;
-		  padding: 5px 15px;
-		  font-size: 12px;
-		  font-weight: bold;
-		  text-align: center;
-		  text-transform: uppercase;
-		  color: #fff;
-		  background-color: #003366;
-		  border: none;
-		  border-radius: 5px;
-		  cursor: pointer;
-		  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-		}
-		button:hover {
-			background-color: #0056b3;
-		}
-		input[type="checkbox"] {
-		  background-color: #fff;
-		  border: 2px solid var(--primary-color);
-		  border-radius: 4px;
-		  width: 10px;
-		  height: 10px;
-		  position: relative;
-		  cursor: pointer;
-		}
-		input[type="checkbox"]:checked:before {
-		  color: var(--primary-color);
-		  font-size: 10px;
-		  position: absolute;
-		}
-	 h1 {
-		  font-family: Arial, sans-serif;
-		  font-size: 36px;
-		  font-weight: bold;
-		  color: white; 
-		  text-align: center;
-		  padding: 5px;
-		  background-color: #003366;
-		  width: 100%; 
-		  margin-bottom: 0;
-		  margin-top: 0;
-		}
+		h1 {
+			font-family: 'Agency FB', sans-serif;
+			font-size: 44px;
+			font-weight: bold;
+			color: white; 
+			text-align: center;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			background-color: #003366;
+			width: 100%; 
+			margin-bottom: 0;
+			margin-top: 0;
+			}
 		
 		nav {
 		  margin-top: 0;
@@ -83,16 +31,25 @@
 		  display: flex;
 		  justify-content: space-between;
 		  width: 100%;
+		  font-family: 'Agency FB', sans-serif;
+		  font-size: 24px;
 		}
 		nav a {
 		  color: white;
 		  display: inline-block;
-		  padding: 10px 169.5px;
+		  padding: 10px 167.3px;
 		  text-decoration: none;
 		  text-align: center;
+		  font-family: 'Agency FB', sans-serif;
+		  font-size: 24px;
 		}
 		nav a:hover {
 		  background-color: #cccccc;
+		}
+
+		main {
+			font-size: 18px;
+			font-family: 'Eurostile', sans-serif;
 		}
 	  
     </style>
@@ -107,8 +64,117 @@
 		<a href="Aboutus.html">About Us</a>
 		</nav>
     </div>
+	<main>
     <div id="main">
-      <p>OUR ESSAY</p> 
+      <p style="text-align: center;">Data Science Capstone 
+
+ 
+
+ 
+
+Resource Allocation by Milwaukee Police Department 
+
+ 
+
+Introduction:  
+
+ 
+
+This paper examines the use of resources by Milwaukee Police Department and provides a model to help allocate the limited resources in a more efficient way.  
+
+ 
+
+This paper focuses on the geospatial spread of the calls, the effectiveness of the ShotSpotter program, and response time to analyze the current resource allocation strategy of the MPD. 
+
+ 
+
+The model predicts the number of calls based on the time of day and the location so that the MPD can allocate more resources to places with a probability of a higher number of calls. 
+
+ 
+
+ 
+
+Data and Method 
+
+Paragraph 1 (how the project, set up server, create database, scrape date from web): 
+
+In this project, we will study data on police activity at MPD. The general goal is to identify issues in policing and from there we will invest deeper into issues in certain factors.  (Explanation on the start of the project) … By employing university resources, a Marquette server to host the database was set up so that the database could be shared to our team, the database itself was created in the server. This database was connected to and was populated with information scraped from the Official Website of the City of Milwaukee’s Dispatched Calls for Service page. The specific data scraped from the website included the columns— “Call Number,” “Date/Time,” “Location,” “Police District,” “Nature of Call,” and “Status”—from the “List of Calls” table. The initial start date for the data scraping occurred in January, and as a script was created to continuously scrape data, the information present in the database spans from January until present day and stretches over 110,749 rows; this copious amount of data was primed and ready for cleaning and the subsequent analyses. 
+
+ 
+
+Paragraph 2 (data profiling and data cleaning): 
+
+As it goes, before any actual in-depth analyses can be performed and conclusions can be drawn, the data needs to be cleaned, and the appropriate measures were taken to enhance the readability of the raw data (what were the problems with the data? What steps were taken to clean it idk) by not just scripts, but those who were intent on looking into it to do preliminary data profiling. (Results of data profiling here.)  
+
+ 
+
+Paragraph 3 (geospatial): (sub sections) 
+
+Once the data cleaning and profiling were complete, the true analyses could begin, and there were three main avenues that were explored: geospatial analysis and ShotSpotter analysis. These two analyses were conducted simultaneously, however, the first one discussed in this paper will be geospatial. (explanation of the results of that and what was done go here) 
+
+ 
+
+ 
+
+Paragraph 4 (ShotSpotter): (Christian) 
+
+The analysis of the ShotSpotters, on the other hand, went in a similar/different direction. (explanation of the results of that and what was done go here) 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+Paragraph 5 (creation of map and website): 
+
+After all the analyses had been completed and conclusions were drawn, it was only natural that a map should be created to detail various points of interest throughout this project. (explanation of map and how it was done go here.) The map can be viewed on a website created specifically for this project to host it and to reinforce the ideas presented in this paper. (explanation of website and how it was done go here) 
+
+ 
+
+Results: 
+
+Final paragraph (end goal): throw the website on here. 
+
+ 
+
+ 
+
+Abstract: 
+
+ 
+
+ 
+
+ 
+
+Sources at end 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ </p> 	    
 	 </div>
+	</main>
   </body>
 </html>

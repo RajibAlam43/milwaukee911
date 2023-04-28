@@ -8,67 +8,16 @@
 	html, body {
 			height: 100%;
 			margin: 0;
-		}
-		.leaflet-container {
-			height: 400px;
-			width: 600px;
-			max-width: 100%;
-			max-height: 100%;
-		}
-
-		.SelectButtons {
-			/*Formatting for SelectionButtons (Zipcode / Police District) */	
-		}
-		.active {
-		/* Pressed Buttons */
-			background-color: rgb(157, 157, 157);
-		}
-		
-		.button-row input[type="button"]{
-			background-color:rgb(157, 157, 157);
-		}
-		.button-row input[type="button"].pressed {
-			background-color: f0f0f0
-		}
-		
-		button {
-		  display: inline-block;
-		  padding: 5px 15px;
-		  font-size: 12px;
-		  font-weight: bold;
-		  text-align: center;
-		  text-transform: uppercase;
-		  color: #fff;
-		  background-color: #003366;
-		  border: none;
-		  border-radius: 5px;
-		  cursor: pointer;
-		  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-		}
-		button:hover {
-			background-color: #0056b3;
-		}
-		input[type="checkbox"] {
-		  background-color: #fff;
-		  border: 2px solid var(--primary-color);
-		  border-radius: 4px;
-		  width: 10px;
-		  height: 10px;
-		  position: relative;
-		  cursor: pointer;
-		}
-		input[type="checkbox"]:checked:before {
-		  color: var(--primary-color);
-		  font-size: 10px;
-		  position: absolute;
+			font-family: 'Agency FB', sans-serif;
 		}
 	  h1 {
-		  font-family: Arial, sans-serif;
-		  font-size: 36px;
+		  font-family: 'Agency FB', sans-serif;
+		  font-size: 44px;
 		  font-weight: bold;
 		  color: white; 
 		  text-align: center;
-		  padding: 5px;
+		  padding-top: 5px;
+		  padding-bottom: 5px;
 		  background-color: #003366;
 		  width: 100%; 
 		  margin-bottom: 0;
@@ -83,23 +32,40 @@
 		  display: flex;
 		  justify-content: space-between;
 		  width: 100%;
+		  font-family: 'Agency FB', sans-serif;
+		  font-size: 24px;
 		}
 		nav a {
 		  color: white;
 		  display: inline-block;
-		  padding: 10px 169.5px;
+		  padding: 10px 167.3px;
 		  text-decoration: none;
 		  text-align: center;
+		  font-family: 'Agency FB', sans-serif;
+		  font-size: 24px;
 		}
 		nav a:hover {
 		  background-color: #cccccc;
 		}
 	  
+		main {
+			font-size: 18px;
+			font-family: 'Eurostile', sans-serif;
+		}
+
+		h2{
+			padding-left: 2px;
+		}
+
+		p {
+			padding-left: 12px;
+		}
+
     </style>
   </head>
   <body>
     <div id="navbar">
-      <h1>Homepage</h1>
+      <h1>Data Science Capstone MPD Analysis</h1>
       <nav>
 		<a href="Home.html">Home</a>
 		<a href="Geospatial Visualization.html">Map</a>
@@ -107,8 +73,17 @@
 		<a href="Aboutus.html">About Us</a>
 		</nav>
     </div>
-    <div id="main">
-      <p> INFORMATION ABOUT OUR PROJECT</p> 
-	 </div>
+	<main>
+		<h2>Purpose</h2>
+		<p>We were tasked with using <a href="https://itmdapps.milwaukee.gov/MPDCallData/" class="cta-button"a>Milwaukee Police Department Call Data</a> to study police activity at the Milwaukee Police Department. The ultimate goal of this project is to analyize and identify issues in policing at the Milwaukee Police Deparment.</p>
+		<h2>Map</h2>
+		<p>Use our interative <a href="Essay.html" class="cta-button">Map</a> to explore the data that we used!</p>
+		<h2>Essay</h2>
+		<p>Check out our <a href="Essay.html" class="cta-button">Research Eassy</a> to explore our findings!</p>
+		<h2>About Us</h2>
+		<p>Our team is comprised of Computer and Data Science students here at Marquette University. Learn more about our <a href="Aboutus.html" class="cta-button">team</a>!</p>
+	  </main>
+
+
   </body>
 </html>
