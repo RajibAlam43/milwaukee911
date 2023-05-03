@@ -18,6 +18,7 @@ db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind
 @app.route('/data')
 @cache.cached(timeout=300)
 def get_data():
+    app.logger.debug("request made")
     start_time = time.time()
     session = db_session()
     cursor = session.execute("SELECT g.*, q.`Call Number`,q.`Date/Time`,q.`Police District`,q.`Nature of Call`,q.`Status`,q.`Last Updated`, q.`Actual District`,q.`Call Density`,q.`Bar Proximity`,q.`Is Administrative Location`,q.`ZipCode`  FROM MPD.GEOCODED g  LEFT JOIN (SELECT c.*, v.`Actual District`,v.`Call Density`,v.`Bar Proximity`,v.`Is Administrative Location`,v.`ZipCode` FROM MPD.MPDCOS c LEFT JOIN MPD.GEOSPATIAL_VIEW v on v.ID = c.ID) q on g.ID = q.ID WHERE g.Latitude IS NOT NULL AND q.`Call Density` IS NOT NULL;")
@@ -57,9 +58,10 @@ def get_bars():
     return jsonify(geojson)
 
 @app.route('/')
-@app.route('/Geospatial Visualization.html')
+@app.route('/Geospatial_Visualization.html')
 def Geospatial_Visualization():
-    return render_template('Geospatial Visualization.html')
+    app.logger.debug("Navigating to Geospatial_Visualization in Flask")
+    return render_template('Geospatial_Visualization.html')
 
 @app.route('/Aboutus.html')
 def about_us():
@@ -74,7 +76,8 @@ def essay():
     return render_template('Essay.html')
 
 if __name__ == '__main__':
-     app.run(debug=True)
+     app.run(debug=True)#,host='0.0.0.0', port=None)
+
 
 
 
