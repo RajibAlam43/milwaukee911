@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 	<script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
-	<script src="{{ url_for('static', filename='leaflet-canvas-markers.js') }}"></script>
-	<script src="{{ url_for('static', filename= 'chroma.js') }}"></script>
+	<!-- <script type="module" src="https://mpdcscapstone.cs.mu.edu/static/app.js"></script> -->
+	<script src="{{ url_for('.static', filename='leaflet-canvas-markers.js') }}"></script>
+	<!-- <script src="https://mpdcscapstone.cs.mu.edu/static/leaflet-canvas-markers.js"></script> -->
+	<script src="{{ url_for('.static', filename= 'chroma.js') }}"></script>
+	<!-- <script src="https://mpdcscapstone.cs.mu.edu/static/chroma.js"></script> -->
+
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.min.css' rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.min.js"></script>
 
@@ -146,7 +151,7 @@
 <div id="navbar">
   <h1>Geospatial Visualization</h1>
   <nav>
-	<a href="Home.html">Home</a>
+	<a href="index.html">Home</a>
 	<a href="Geospatial Visualization.html">Map</a>
 	<a href="Essay.html">Essay</a>
 	<a href="Aboutus.html">About Us</a>

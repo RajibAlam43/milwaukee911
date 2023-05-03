@@ -340,7 +340,7 @@ function PlotRelPoints() {
     console.log("Filters applied")
     DisplayedRecords.clearLayers();
     const PlottedLocations = {};
-    fetch('/data') // fetch data from Flask and return the promise
+    fetch('https://mpdcscapstone.cs.mu.edu:5000/data') // fetch data from Flask and return the promise
         .then(response => response.json()) // parse response as JSON
         .then(data => {
             const CallDensityScaling = data.Constants;

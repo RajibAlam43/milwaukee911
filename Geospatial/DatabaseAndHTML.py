@@ -5,7 +5,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 import time
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='./')
+app.logger.debug('Flask Is Running')
 
 
 engine = create_engine("mysql+pymysql://{user}:{pw}@pascal.mscsnet.mu.edu/{db}" # create sqlalchemy engine
@@ -56,6 +57,7 @@ def get_bars():
     return jsonify(geojson)
 
 @app.route('/')
+@app.route('/Geospatial Visualization.html')
 def Geospatial_Visualization():
     return render_template('Geospatial Visualization.html')
 
@@ -63,9 +65,9 @@ def Geospatial_Visualization():
 def about_us():
     return render_template('Aboutus.html')
 
-@app.route('/Home.html')
-def home():
-    return render_template('Home.html')
+@app.route('/index.html')
+def index():
+    return render_template('index.html')
 
 @app.route('/Essay.html')
 def essay():
