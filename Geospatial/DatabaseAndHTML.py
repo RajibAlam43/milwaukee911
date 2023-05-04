@@ -15,7 +15,7 @@ CORS(app, resources={r"/*": {"origins": "https://mpdcscapstone.cs.mu.edu:5000"}}
 app = Flask(__name__, template_folder='./')
 app.logger.debug('Flask Is Running')
 
-CallTypesDict = pd.read_csv('CallType2.csv')
+CallTypesDict = pd.read_csv('Geospatial/CallType2.csv')
 classifications = CallTypesDict.iloc[:,1]
 CallTypeClassMap = dict(zip(CallTypesDict.iloc[:,0], classifications))
 

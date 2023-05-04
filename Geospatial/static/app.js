@@ -34,14 +34,32 @@ function toggleButton(event) {
 
 var TODslider = document.getElementById('TimeOfDaySlider');
 noUiSlider.create(TODslider, {
-    start: [0, 100], // Initial values of the handles
+    start: [0, 24], // Initial values of the handles
     connect: true, // Connect the handles with a colored bar
     range: {
         'min': 0,
-        'max': 100
+        'max': 24
     }
 });
 
+function timeToFloat(timeStr) {
+    var parts = timeStr.split(":");
+    var hours = parseInt(parts[0]);
+    var minutes = parseInt(parts[1]);
+    var seconds = parseInt(parts[2]);
+    return hours + minutes/60 + seconds/3600;
+  }
+
+function floatToTimeDisplay(decimalTime) {
+    var hours = Math.floor(decimalTime);
+    var minutes = Math.round((decimalTime - hours) * 60);
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
 
 document.getElementById('SelectByDistrictButton').addEventListener('click', SelectByButtonClicked);
 document.getElementById('SelectByZipCodeButton').addEventListener('click', SelectByButtonClicked);
@@ -133,17 +151,18 @@ var CheckboxNVC = document.getElementById("CallTypeFilterNVC");
 var CheckboxVC = document.getElementById("CallTypeFilterVC");
 var CheckboxOther = document.getElementById("CallTypeFilterOther");
 
-var MinTime = 0; // TODO CHANGE WHEN BINS DONE
+var MinTime = 0; 
 var MaxTime = 24;
 TODslider.noUiSlider.on('update', function (values) {
     MinTime = values[0];
     MaxTime = values[1];
+    document.getElementById("MinSliderVal").innerHTML = floatToTimeDisplay(MinTime);
+    document.getElementById("MaxSliderVal").innerHTML = floatToTimeDisplay(MaxTime);
     console.log('Selected min value: ' + MinTime);
     console.log('Selected max value: ' + MaxTime);
 });
 
 function Filters(record) {
-    //return true; //TODO remove
     const CheckBoxFilters = ["SHOTSPOTTER", "Passive", "NVC", "VC", "NC"];
     var CheckBoxFiltersChecked = [CheckboxShotSpotter.checked, CheckboxPassive.checked, CheckboxNVC.checked, CheckboxVC.checked, CheckboxOther.checked]
     const SelectedFilters = [];
@@ -156,11 +175,11 @@ function Filters(record) {
     var PressedDays = document.querySelectorAll(".pressed");
     const SelectedDays = [];
     for (let i = 0; i < Days.length; i++) {
-        if (PressedDays[i]) {
+        if (!PressedDays[i]) {
             SelectedDays.push(Days[i]);
         }
     }
-    return (SelectedFilters.includes(record[18]) & SelectedDays.includes(record[16]) & MinTime < record[18] & MaxTime > record[17]);
+    return (SelectedFilters.includes(record[18]) & SelectedDays.includes(record[16]) & MinTime < timeToFloat(record[17]) & MaxTime > timeToFloat(record[17]));
 }
 
 function ApplyFilters() {
