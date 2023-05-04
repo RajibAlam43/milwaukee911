@@ -143,8 +143,8 @@ TODslider.noUiSlider.on('update', function (values) {
 });
 
 function Filters(record) {
-    return true; //TODO remove
-    const CheckBoxFilters = ["SHOTSPOTTER", "PASSIVE", "NVC", "VC", "OTHER"];
+    //return true; //TODO remove
+    const CheckBoxFilters = ["SHOTSPOTTER", "Passive", "NVC", "VC", "NC"];
     var CheckBoxFiltersChecked = [CheckboxShotSpotter.checked, CheckboxPassive.checked, CheckboxNVC.checked, CheckboxVC.checked, CheckboxOther.checked]
     const SelectedFilters = [];
     for (let i = 0; i < CheckBoxFilters.length; i++) {
@@ -152,7 +152,7 @@ function Filters(record) {
             SelectedFilters.push(CheckBoxFilters[i]);
         }
     }
-    const Days = ["MON", "TUES", "WED", "THUR", "FRI", "SAT", "SUN"];
+    const Days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     var PressedDays = document.querySelectorAll(".pressed");
     const SelectedDays = [];
     for (let i = 0; i < Days.length; i++) {
@@ -160,7 +160,7 @@ function Filters(record) {
             SelectedDays.push(Days[i]);
         }
     }
-    return (SelectedFilters.includes(record[8]) & SelectedDays.includes(record[20]) & MinTime < record[21] & MaxTime > record[21]);
+    return (SelectedFilters.includes(record[18]) & SelectedDays.includes(record[16]) & MinTime < record[18] & MaxTime > record[17]);
 }
 
 function ApplyFilters() {
@@ -340,7 +340,8 @@ function PlotRelPoints() {
     console.log("Filters applied")
     DisplayedRecords.clearLayers();
     const PlottedLocations = {};
-    fetch('https://mpdcscapstone.cs.mu.edu:5000/data') // fetch data from Flask and return the promise
+    //fetch('https://mpdcscapstone.cs.mu.edu:5000/data')
+    fetch('/data') // fetch data from Flask and return the promise
         .then(response => response.json()) // parse response as JSON
         .then(data => {
             const CallDensityScaling = data.Constants;

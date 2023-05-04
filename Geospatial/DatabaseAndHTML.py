@@ -4,10 +4,20 @@ from flask_caching import Cache
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 import time
+from flask_cors import CORS
+import datetime
+import pandas as pd
+
+app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "https://mpdcscapstone.cs.mu.edu:5000"}})
+
 
 app = Flask(__name__, template_folder='./')
 app.logger.debug('Flask Is Running')
 
+CallTypesDict = pd.read_csv('CallType2.csv')
+classifications = CallTypesDict.iloc[:,1]
+CallTypeClassMap = dict(zip(CallTypesDict.iloc[:,0], classifications))
 
 engine = create_engine("mysql+pymysql://{user}:{pw}@pascal.mscsnet.mu.edu/{db}" # create sqlalchemy engine
             .format(user="project1", pw="ThisIsATest",db="MPD"), pool_size=20, max_overflow=0)
@@ -25,13 +35,23 @@ def get_data():
     db_data = cursor.fetchall()
     middle_time = time.time()
     geocoded = [(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15]) for row in db_data]
+    #TODO Create bins for  Day of Week, & time of day,Crime Type
     call_density_scaling = 1 / max([float(row[12]) for row in db_data])
+    DateTime = [row[6] for row in geocoded]
+    DateTimeObject = [datetime.datetime.strptime(x, "%m/%d/%Y %I:%M:%S %p") for x in DateTime]
+    NatureOfCall = [row[8] for row in geocoded]
+    DayOfWeek = list(map(lambda x: x.strftime("%A"), DateTimeObject))
+    TimeOfDay = list(map(lambda x: x.strftime("%H:%M:%S"), DateTimeObject))
+    CallType = [CallTypeClassMap.get(call_type, 'NC') for call_type in NatureOfCall]
+    geocoded = [(*row, day, time, call) for row, day, time, call in zip(geocoded, DayOfWeek, TimeOfDay, CallType)]
     end_time = time.time()
     dataExtractTime =  middle_time - start_time
     elapsed_time = end_time - start_time
     app.logger.debug("Optimized method took {:.3f} seconds to run.".format(elapsed_time))
     app.logger.debug(dataExtractTime)
-    return jsonify({"Geocoded": geocoded, "Constants": (call_density_scaling)})
+    response =jsonify({"Geocoded": geocoded, "Constants": (call_density_scaling)})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 # #Called 3 times, ApplyFilters()
